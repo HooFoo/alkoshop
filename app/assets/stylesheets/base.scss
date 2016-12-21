@@ -1,0 +1,210 @@
+body {
+  margin: 0px;
+}
+
+.main-screen{
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 0;
+
+  .burger {
+    /* Base style */
+    width: 30px;
+    height: 18px;
+    border-radius: 0;
+
+    position: fixed;
+    top: 25px;
+    left: 29px;
+    background: url("/images/burger.png");
+    z-index: 1;
+    cursor: pointer;
+  }
+  .cart-icon {
+    width: 30px;
+    height: 21px;
+
+    position: fixed;
+    top: 25px;
+    right: 34px;
+    z-index: 1;
+
+    background: url("/images/cart.png");
+    background-repeat: no-repeat;
+    background-position: bottom;
+    opacity: 0.7;
+    transition: opacity 0.4s;
+
+    .cart-items {
+      /* Style for "3" */
+      width: 8px;
+      height: 12px;
+      color: #ebad71;
+      font-family: Circe;
+      font-size: 16px;
+      font-weight: 400;
+      line-height: 20px;
+      font-variant: small-caps;
+
+      margin: 0 auto;
+    }
+    &:hover {
+      opacity: 1;
+    }
+  }
+
+  .quads {
+    width: 13px;
+    height: auto;
+    position: fixed;
+    top: 305px;
+    left: 24px;
+    opacity: 0.9;
+    transition: opacity 0.3s;
+
+    &:hover {
+      opacity: 1;
+    }
+
+    .quad {
+      /* Style for "Rounded Re" */
+      width: 6px;
+      height: 6px;
+      background-color: rgb(235, 173, 113);
+      transition: opacity 0.3s;
+      opacity: 0.14;
+      margin-bottom: 37px;
+      cursor: pointer;
+
+      &:hover {
+        border: 1px solid rgb(235, 173, 113);
+        opacity: 0.48;
+      }
+      .active{
+        opacity: 0.58;
+      }
+    }
+  }
+
+  .sidenav {
+    width: 100vh;
+    height: 0px;
+    position: fixed;
+    overflow: hidden;
+
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+
+    transform: rotate(270deg) translateX(-100%);
+    transform-origin: left top;
+    display: flex;
+
+    transition: height 0.3s;
+
+    z-index: 3;
+
+    .nav-item {
+      width: 100%;
+      height: auto;
+      background-color: #721e1e;
+      text-align: center;
+      border-top: 1px solid rgba(235,173,113,0.27);
+      transition: border 0.3s;
+
+      &:hover {
+        border-top: 1px solid #ebad71;
+      }
+      .nav-nav{
+
+        text-decoration: none;
+
+        .nav-text {
+          /* Style for "Ваш профил" */
+          color: #ebad71;
+          font-family: Circe;
+          font-size: 14px;
+          font-weight: 400;
+          line-height: 115px;
+          font-variant: small-caps;
+          display: block;
+          width: 100%;
+          height: 100%;
+          margin: 0px;
+        }
+      }
+    }
+
+    .odd {
+      background-color: #482828;
+    }
+  }
+  .open {
+    height: 115px;
+  }
+}
+
+.index-bg {
+  height: 100%;
+  width: 100%;
+  background: url("/images/index_background.png");
+  background-size: 100% 100%;
+
+  .logo {
+    width: 540px;
+    height: 206px;
+
+    position: absolute;
+    top: 202px;
+    left: 50%;
+    transform: translateX(-50%);
+
+    background: url("/images/logo.png");
+    background-repeat: no-repeat;
+    background-size: cover ;
+
+  }
+
+  .text {
+    /* Style for "Все, что н" */
+    width: 420px;
+    height: 51px;
+    color: #ebad71;
+    font-family: "PT Serif";
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 20px;
+    position: absolute;
+    top: 58.4%;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+  }
+}
+
+.profile {
+  height: 100%;
+  width: 100%;
+  background: url("/images/profile_background.png");
+  background-size: 100% 100%;
+
+  .text {
+    /* Style for "Здравствуй" */
+    width: 672px;
+    height: 44px;
+    color: #ebad71;
+    font-family: Circe;
+    font-size: 50px;
+    font-weight: 700;
+    line-height: 57px;
+    font-variant: small-caps;
+    text-align: center;
+    position: absolute;
+    top: 39%;
+    left: 50%;
+    transform: translate(-50%);
+  }
+}

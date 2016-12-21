@@ -1,0 +1,5 @@
+%div.profile
+  - if @user.nil?
+    =render partial: 'shared/profile_log_in'
+  -else
+    =render partial: 'shared/profile_signed_in'
