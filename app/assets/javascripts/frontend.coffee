@@ -7,19 +7,28 @@ class Ui
     $('.burger, .nav-item').click( =>
       @toggleSidenav()
     )
-    @showLink()
+    @loginScreen()
 
   toggleSidenav: ->
     $('.sidenav').toggleClass('open')
 
-  showLink: () ->
-    $('.login_link').on "ajax:success", (e, data) ->
-      $('.top').html(data)
-      $('.top > form').on( "ajax:sucess", (e, data) ->
-        $('.top').html(data))
-      .on "ajax:error", (e, data) ->
+  loginScreen: () ->
+    $('.login_link').on "ajax:success", (e, data) =>
+      @updateTop(data)
+      $('.close_button').click (e) =>
+        @updateTop('')
+      $('.overlay > form').on( "ajax:success", (e, data) =>
+        @updateTop(data)
+      ).on "ajax:error", (e, data) ->
+        console.log('Error')
         $('.errors').html('Регистрационные данные не верны')
+    $('.sign-out').on "ajax:success", (e, data) =>
+      @updateTop(data)
 
+
+
+  updateTop: (data) ->
+    $('.top').html(data)
 
 ready = ->
   window.ui = new Ui()

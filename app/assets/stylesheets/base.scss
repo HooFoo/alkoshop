@@ -2,7 +2,35 @@ body {
   margin: 0px;
 }
 
-.main-screen{
+.button {
+  width: 224px;
+  height: 63px;
+  border-top: 1px solid #ebad71;
+  border-bottom: 1px solid #ebad71;
+  opacity: 0.9;
+  transition: opacity 0.3s;
+  text-align: center;
+  a {
+    text-decoration: none;
+
+    .button_text {
+      /* Style for "ваши данны" */
+      color: #ebad71;
+      font-family: Circe;
+      font-size: 20px;
+      font-weight: 700;
+      line-height: 64px;
+      font-variant: small-caps;
+      margin: 0px;
+    }
+  }
+
+  &:hover {
+    opacity: 1;
+  }
+}
+
+.main-screen {
   width: 100vw;
   height: 100vh;
   position: fixed;
@@ -83,7 +111,7 @@ body {
         border: 1px solid rgb(235, 173, 113);
         opacity: 0.48;
       }
-      .active{
+      .active {
         opacity: 0.58;
       }
     }
@@ -112,13 +140,13 @@ body {
       height: auto;
       background-color: #721e1e;
       text-align: center;
-      border-top: 1px solid rgba(235,173,113,0.27);
+      border-top: 1px solid rgba(235, 173, 113, 0.27);
       transition: border 0.3s;
 
       &:hover {
         border-top: 1px solid #ebad71;
       }
-      .nav-nav{
+      .nav-nav {
 
         text-decoration: none;
 
@@ -164,7 +192,7 @@ body {
 
     background: url("/images/logo.png");
     background-repeat: no-repeat;
-    background-size: cover ;
+    background-size: cover;
 
   }
 
@@ -197,17 +225,129 @@ body {
     left: 50%;
     transform: translate(-50%);
     text-align: center;
+    z-index: 2;
 
+    .overlay {
+      position: absolute;
+      transform: translate(-50%, -39%);
+      left: 0;
+      top: 0;
+      width: 100vw;
+      height: 100vh;
+      background-color: #004a80;
+      animation: overlay_open 0.3s;
+      overflow: hidden;
+
+      .close_button {
+        position: absolute;
+        top: 58px;
+        left: 28px;
+        width: 24px;
+        height: 24px;
+        background: url('/images/close.png');
+        cursor: pointer;
+      }
+      .sign_up {
+        top: 20px !important;
+        .input {
+          margin-bottom: 0px !important;
+
+          input {
+            padding: 5px 10px 5px 5px !important;
+          }
+          select{
+            margin-bottom: 20px;
+            margin-right: 0px;
+          }
+        }
+      }
+      form {
+        position: absolute;
+        left: 50%;
+        top: 39%;
+        font-family: Circe;
+
+        .errors {
+          font-size: 18px;
+          color: #ebad71
+        }
+        /* form starting stylings ------------------------------- */
+        .input {
+          position: relative;
+          margin-bottom: 45px;
+
+          input, select {
+            font-size: 18px;
+            padding: 10px 10px 10px 5px;
+            display: block;
+            width: 496px;
+            border: none;
+            border-bottom: 2px solid rgba(235, 173, 113, 0.37);
+            background-color: #004a80;
+            color: #ebad71;
+          }
+          input:focus {
+            outline: none;
+          }
+
+          /* active state */
+          input:focus ~ label, input:valid ~ label,
+          select:focus ~ label, select:valid ~ label{
+            top: -20px;
+            font-size: 14px;
+            color: #7c230b;
+          }
+          /* LABEL ======================================= */
+          label {
+            color: #999;
+            font-size: 18px;
+            font-weight: normal;
+            position: absolute;
+            pointer-events: none;
+            left: 5px;
+            top: 10px;
+            transition: 0.2s ease all;
+            -moz-transition: 0.2s ease all;
+            -webkit-transition: 0.2s ease all;
+          }
+        }
+        input[type="submit"] {
+          color: #ebad71;
+          font-family: Circe;
+          font-size: 20px;
+          font-weight: 700;
+          line-height: 64px;
+          font-variant: small-caps;
+          background: none;
+          margin: 0px;
+          border: none;
+          border-top: 1px solid #ebad71;
+          border-bottom: 1px solid #ebad71;
+        }
+
+      }
+    }
     .text {
       /* Style for "Здравствуй" */
-      width: 672px;
-      height: 44px;
+      width: 100vw;
+      height: 57px;
       color: #ebad71;
       font-family: Circe;
       font-size: 50px;
       font-weight: 700;
       line-height: 57px;
       font-variant: small-caps;
+    }
+    .sign_out {
+      /* Style for "выход" */
+      width: 71px;
+      height: 15px;
+      color: #ebad71;
+      font-family: "PT Serif";
+      font-size: 21px;
+      font-weight: 700;
+      line-height: 26px;
+      text-decoration: underline;
     }
   }
 
@@ -219,33 +359,7 @@ body {
     display: flex;
     width: 527px;
 
-    .button {
-      width: 224px;
-      height: 63px;
-      border-top: 1px solid #ebad71;
-      border-bottom: 1px solid #ebad71;
-      opacity: 0.9;
-      transition: opacity 0.3s;
-      text-align: center;
-      a {
-        text-decoration: none;
 
-        .button_text {
-          /* Style for "ваши данны" */
-          color: #ebad71;
-          font-family: Circe;
-          font-size: 20px;
-          font-weight: 700;
-          line-height: 64px;
-          font-variant: small-caps;
-          margin: 0px;
-        }
-      }
-
-      &:hover {
-        opacity: 1;
-      }
-    }
     .right {
       float: left;
       margin-left: auto;

@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
-  devise_for :users
+  devise_for :users, controllers: {
+      sessions: 'users/sessions',
+      registrations: 'users/registrations'
+  }
   root 'frontend#index'
   get '/', controller: 'frontend', action: :index
   get '/profile', controller: 'frontend', action: :profile

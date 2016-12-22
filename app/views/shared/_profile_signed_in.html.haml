@@ -1,12 +1,13 @@
 %div.top
   %div.text
     = "Здравствуйте, #{@user.email}!"
+  = link_to 'Выход', '/users/sign_out', remote: true, method: :delete, class: 'sign_out'
 %div.buttons
   %div.button.left
-    =link_to '/template/login_form', remote: true, id: 'login', class: 'login_link' do
+    =link_to '/profile', id: 'login', class: 'login_link' do
       %p.button_text.login
         Ваши заказы
   %div.button.right
-    =link_to '/template/registration_form', remote: true, id: 'signup', class: 'login_link' do
+    =link_to '/template/registration_update_form', remote: true, id: 'signup', class: 'login_link' do
       %p.button_text.signup
         Ваши данные

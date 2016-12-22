@@ -1,6 +1,12 @@
-= simple_form_for @user, url: new_user_session_path, remote: true do |f|
-  %div.errors
-  = f.input :email
-  = f.input :password
+%div.overlay
+  %div.close_button
+  = simple_form_for @user, url: new_user_session_path, remote: true do |f|
+    %div.errors
+    %div.input
+      = f.input_field :email, required: true
+      = f.label :email
+    %div.input
+      = f.input_field :password, required: true
+      = f.label 'Пароль'
 
-  = f.submit
+    = f.submit 'Войти', class: 'button'

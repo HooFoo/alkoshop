@@ -34,6 +34,9 @@ gem 'devise'
 gem 'kaminari'
 gem 'haml-rails'
 gem 'simple_form'
+gem 'country_select'
+gem 'materialize-sass'
+
 gem 'inherited_resources', github: 'activeadmin/inherited_resources'
 
 

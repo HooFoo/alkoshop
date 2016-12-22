@@ -1,6 +1,6 @@
 %div.overlay
   %div.close_button
-  = simple_form_for @user, url: user_registration_path, remote: true, html: {class: 'sign_up' } do |f|
+  = simple_form_for @user, url: edit_user_registration_path, method: 'put', remote: true, html: {class: 'sign_up' } do |f|
     %div.errors
     %div.input       
       = f.input_field :name, required: true
@@ -30,4 +30,4 @@
       = f.input_field :password_confirmation, required: true
       = f.label 'Подтверждение пароля'
 
-    =f.submit 'Зарегистрироваться', class: 'button'
+    =f.submit 'Обновить', class: 'button'

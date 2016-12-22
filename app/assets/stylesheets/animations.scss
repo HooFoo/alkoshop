@@ -1,0 +1,28 @@
+@keyframes overlay_open {
+  from {
+    width: 0;
+    height: 0;
+    top: 39%;
+    left: 50%;
+    opacity: 0;
+  }
+  to {
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    opacity: 1;
+  }
+}
+@-webkit-keyframes inputHighlighter {
+  from { background:#5264AE; }
+  to 	{ width:0; background:transparent; }
+}
+@-moz-keyframes inputHighlighter {
+  from { background:#5264AE; }
+  to 	{ width:0; background:transparent; }
+}
+@keyframes inputHighlighter {
+  from { background:#5264AE; }
+  to 	{ width:0; background:transparent; }
+}
