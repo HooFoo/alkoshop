@@ -8,7 +8,9 @@ class FrontendController < ApplicationController
   def profile
 
   end
-
+  def shop
+    
+  end
   def template
     render template: "templates/#{params[:name]}",layout: false
   end

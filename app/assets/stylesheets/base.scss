@@ -367,3 +367,60 @@ body {
     }
   }
 }
+
+.shop_screen {
+  height: 100%;
+  width: 100%;
+  display: flex;
+
+  .column {
+    height: 100vh;
+    text-align: center;
+  }
+  .left {
+    width: 45vw;
+    background: url("/images/shop_left_column.png");
+    background-size: 100% 100%;
+
+    .column {
+      height: 100%;
+    }
+    .text {
+      position: relative;
+      top: 37.4%;
+      left: 50%;
+      transform: translateX(-50%);
+      text-align: center;
+      width: 496px;
+      max-width: 100%;
+      height: 93px;
+      color: #ebad71;
+      font-family: "PT Serif";
+      font-size: 20px;
+      font-weight: 700;
+      line-height: 26px;
+    }
+    .button {
+      position: relative;
+      top: 41%;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+  }
+  .center {
+    width: 510px;
+  }
+  .right {
+    width: calc(55vw - 510px);
+    background: url("/images/shop_right_column.png");
+    background-size: 100% 100%;
+
+    .button {
+      position: relative;
+      top: 53%;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+  }
+
+}

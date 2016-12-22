@@ -1,33 +1,33 @@
 %div.overlay
   %div.close_button
-  = simple_form_for @user, url: edit_user_registration_path, method: 'put', remote: true, html: {class: 'sign_up' } do |f|
+  = simple_form_for @user, url: user_registration_path, method: 'put', remote: true, html: {class: 'sign_up' } do |f|
     %div.errors
     %div.input       
-      = f.input_field :name, required: true
+      = f.input_field :name
       = f.label 'Имя'
     %div.input
-      = f.input_field :surname, required: true
+      = f.input_field :surname
       = f.label 'Фамилия'
     %div.input
-      = f.phone_field :phone, required: true
+      = f.phone_field :phone
       = f.label 'Телефон'
     %div.input
-      = f.input_field :email, required: true
+      = f.input_field :email
       = f.label 'Email'
     %div.input.input-field
-      = f.country_select :country, ['Russia'], required: true
+      = f.country_select :country, ['Russia']
       = f.label 'Страна'
     %div.input
-      = f.input_field :district, required: true
+      = f.input_field :district
       = f.label 'Область'
     %div.input
-      = f.input_field :city, required: true
+      = f.input_field :city
       = f.label 'Город'
     %div.input
-      = f.input_field :password, required: true
+      = f.input_field :password
       = f.label 'Пароль'
     %div.input
-      = f.input_field :password_confirmation, required: true
+      = f.input_field :password_confirmation
       = f.label 'Подтверждение пароля'
 
     =f.submit 'Обновить', class: 'button'
