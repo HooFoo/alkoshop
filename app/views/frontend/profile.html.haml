@@ -1,5 +1,5 @@
 %div.profile
-  - if @user.nil?
+  - if @user.new_record?
     =render partial: 'shared/profile_log_in'
   -else
     =render partial: 'shared/profile_signed_in'

@@ -4,10 +4,13 @@ class FrontendController < ApplicationController
   def index
 
   end
+
   def profile
 
   end
 
-
+  def template
+    render template: "templates/#{params[:name]}",layout: false
+  end
 
 end

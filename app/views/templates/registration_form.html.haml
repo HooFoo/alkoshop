@@ -1,0 +1,7 @@
+= simple_form_for @user, url: user_registration_path, remote: true do |f|
+  %div.errors
+  =f.input :email
+  =f.input :password
+  =f.input :password_confirmation
+
+  =f.submit

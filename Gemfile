@@ -33,6 +33,7 @@ gem 'activeadmin', github: 'activeadmin'
 gem 'devise'
 gem 'kaminari'
 gem 'haml-rails'
+gem 'simple_form'
 gem 'inherited_resources', github: 'activeadmin/inherited_resources'
 
 

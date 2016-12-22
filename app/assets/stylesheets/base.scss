@@ -191,20 +191,64 @@ body {
   background: url("/images/profile_background.png");
   background-size: 100% 100%;
 
-  .text {
-    /* Style for "Здравствуй" */
-    width: 672px;
-    height: 44px;
-    color: #ebad71;
-    font-family: Circe;
-    font-size: 50px;
-    font-weight: 700;
-    line-height: 57px;
-    font-variant: small-caps;
-    text-align: center;
+  .top {
     position: absolute;
     top: 39%;
     left: 50%;
     transform: translate(-50%);
+    text-align: center;
+
+    .text {
+      /* Style for "Здравствуй" */
+      width: 672px;
+      height: 44px;
+      color: #ebad71;
+      font-family: Circe;
+      font-size: 50px;
+      font-weight: 700;
+      line-height: 57px;
+      font-variant: small-caps;
+    }
+  }
+
+  .buttons {
+    position: absolute;
+    top: 54%;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    width: 527px;
+
+    .button {
+      width: 224px;
+      height: 63px;
+      border-top: 1px solid #ebad71;
+      border-bottom: 1px solid #ebad71;
+      opacity: 0.9;
+      transition: opacity 0.3s;
+      text-align: center;
+      a {
+        text-decoration: none;
+
+        .button_text {
+          /* Style for "ваши данны" */
+          color: #ebad71;
+          font-family: Circe;
+          font-size: 20px;
+          font-weight: 700;
+          line-height: 64px;
+          font-variant: small-caps;
+          margin: 0px;
+        }
+      }
+
+      &:hover {
+        opacity: 1;
+      }
+    }
+    .right {
+      float: left;
+      margin-left: auto;
+    }
   }
 }

@@ -4,18 +4,24 @@
 class Ui
 
   constructor: ->
-    console.log 'ctor'
     $('.burger, .nav-item').click( =>
       @toggleSidenav()
     )
+    @showLink()
 
   toggleSidenav: ->
-    console.log 'toggle'
     $('.sidenav').toggleClass('open')
+
+  showLink: () ->
+    $('.login_link').on "ajax:success", (e, data) ->
+      $('.top').html(data)
+      $('.top > form').on( "ajax:sucess", (e, data) ->
+        $('.top').html(data))
+      .on "ajax:error", (e, data) ->
+        $('.errors').html('Регистрационные данные не верны')
 
 
 ready = ->
-  console.log 'polomkah'
   window.ui = new Ui()
 
 $(document).on('turbolinks:load', ready)
