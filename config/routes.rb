@@ -1,15 +1,19 @@
 Rails.application.routes.draw do
-  post 'users/edit'
+  scope '/shop' do
+    get '/brands', controller: 'shop', action: :brands
+  end
 
-  devise_for :users, controllers: {
-      sessions: 'users/sessions',
-      registrations: 'users/registrations'
-  }
-  root 'frontend#index'
+
   get '/', controller: 'frontend', action: :index
   get '/profile', controller: 'frontend', action: :profile
   get '/shop', controller: 'frontend', action: :shop
   get '/template/:name', controller: 'frontend', action: 'template'
+
+  devise_for :users, controllers: {
+      sessions: 'users/sessions',
+      registrations: 'users/registrations'
+    }
+  root 'frontend#index'
 
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
