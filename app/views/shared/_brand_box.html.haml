@@ -1,3 +1,12 @@
-%div.brand_box
+%div.brand_box.col-3
   %div.front
-    %imd.brand_image{ src:brand_box.image.url(:brand)}
+    %img.brand_image{src:brand_box.image.brand}
+  %div.back
+    %div.sbutton
+      =link_to "/template/brand_about?brand=#{brand_box.name}", remote: true do
+        %p.sbutton_text
+          О бренде
+    %div.sbutton
+      =link_to"/shop/catalog?brand=#{brand_box.name}" do
+        %p.sbutton_text
+          Продукция

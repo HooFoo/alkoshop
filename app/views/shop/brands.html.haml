@@ -1,6 +1,6 @@
 %div.brands_screen
   %div.header
     Бренды
-  %div.brands
+  %div.brands.row
     -@brands.each do |brand|
       =render partial: 'shared/brand_box', object: brand

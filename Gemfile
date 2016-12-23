@@ -38,6 +38,7 @@ gem 'country_select'
 gem 'materialize-sass'
 gem 'carrierwave'
 gem 'rmagick', '~> 2.13.1'
+gem 'bootstrap'
 
 gem 'inherited_resources', github: 'activeadmin/inherited_resources'
 
