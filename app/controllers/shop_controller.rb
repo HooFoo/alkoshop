@@ -1,5 +1,5 @@
 class ShopController < ApplicationController
   def brands
-    @brands = Brands.all
+    @brands = Brand.all
   end
 end
