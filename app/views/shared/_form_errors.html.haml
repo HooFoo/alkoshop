@@ -1,0 +1,4 @@
+%ul.list
+  -form_errors.messages.each do |e|
+    %li
+      = "#{e[0]} - #{e[1].join ', '}"

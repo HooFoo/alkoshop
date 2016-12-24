@@ -1,6 +1,5 @@
 class Users::RegistrationsController < Devise::RegistrationsController
-# before_action :configure_sign_up_params, only: [:create]
-# before_action :configure_account_update_params, only: [:update]
+  before_filter :configure_permitted_parameters, if: :devise_controller?
 
   # GET /resource/sign_up
   # def new
@@ -8,18 +7,26 @@ class Users::RegistrationsController < Devise::RegistrationsController
   # end
 
   # POST /resource
-  # def create
-  #   super
-  # end
+  def create
+    user = User.new user_params
+    if user.save
+      sign_in(:user, user)
+      redirect_to after_sign_up_path_for(user)
+    else
+      render status: 422, partial: 'shared/form_errors', object: user.errors
+    end
+  end
 
   # GET /resource/edit
 
   # PUT /resource
   def update
-    if current_user.update(params[:user])
-      redirect_to after_sign_up_path_for(current_user)
+    user = current_user
+    if user.update(user_params)
+      sign_in(:user, user)
+      redirect_to after_sign_up_path_for(user)
     else
-      401
+      render status: 422, partial: 'shared/form_errors', object: user.errors
     end
   end
 
@@ -38,17 +45,42 @@ class Users::RegistrationsController < Devise::RegistrationsController
   #   super
   # end
 
-  # protected
+  protected
 
-  # If you have extra params to permit, append them to the sanitizer.
-  def configure_sign_up_params
-    devise_parameter_sanitizer.permit(:sign_up, keys: [:name,:surname,:phone,:country,:district,:city])
+  def user_params
+    params.require(:user).permit(:name,:surname,:email,:phone,:country,:district,:city, :password, :password_confirmation)
   end
 
-  # If you have extra params to permit, append them to the sanitizer.
-  def configure_account_update_params
-    devise_parameter_sanitizer.permit(:account_update, keys: [:name,:surname,:phone,:country,:district,:city])
-  end
+
+  def configure_permitted_parameters
+    devise_parameter_sanitizer.permit(:sign_up, keys: [:name,
+                                                       :surname,
+                                                       :email,
+                                                       :phone,
+                                                       :country,
+                                                       :district,
+                                                       :city,
+                                                       :password,
+                                                       :password_confirmation])
+    devise_parameter_sanitizer.permit(:account_update, keys: [:name,
+                                                              :surname,
+                                                              :email,
+                                                              :phone,
+                                                              :country,
+                                                              :district,
+                                                              :city,
+                                                              :password,
+                                                              :password_confirmation])
+    devise_parameter_sanitizer.permit(:user, keys: [:name,
+                                                              :surname,
+                                                              :email,
+                                                              :phone,
+                                                              :country,
+                                                              :district,
+                                                              :city,
+                                                              :password,
+                                                              :password_confirmation])
+    end
 
   #The path used after sign up.
   def after_sign_up_path_for(resource)

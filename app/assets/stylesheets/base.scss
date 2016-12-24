@@ -12,6 +12,8 @@ body {
   text-align: center;
   a {
     text-decoration: none;
+    color: #ebad71;
+
     &:hover {
       text-decoration: none;
     }
@@ -271,7 +273,10 @@ body {
 
         .errors {
           font-size: 18px;
-          color: #ebad71
+          color: #ebad71;
+          .ul {
+            text-align: left;
+          }
         }
         /* form starting stylings ------------------------------- */
         .input {

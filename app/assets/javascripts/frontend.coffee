@@ -13,15 +13,16 @@ class Ui
     $('.sidenav').toggleClass('open')
 
   loginScreen: () ->
+    old_top = $('.top').html()
     $('.login_link').on "ajax:success", (e, data) =>
       @updateTop(data)
       $('.close_button').click (e) =>
-        @updateTop('')
+        @updateTop(old_top)
       $('.overlay > form').on( "ajax:success", (e, data) =>
         @updateTop(data)
       ).on "ajax:error", (e, data) ->
         console.log('Error')
-        $('.errors').html('Регистрационные данные не верны')
+        $('.errors').html(data.responseText)
     $('.sign-out').on "ajax:success", (e, data) =>
       @updateTop(data)
 
