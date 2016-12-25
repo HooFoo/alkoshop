@@ -34,6 +34,26 @@ body {
   }
 }
 
+.overlay {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  animation: overlay_open 0.3s;
+  overflow: hidden;
+
+  .close_button {
+    position: absolute;
+    top: 58px;
+    left: 28px;
+    width: 24px;
+    height: 24px;
+    background: url('/images/close.png');
+    cursor: pointer;
+  }
+}
+
 .main-screen {
   width: 100vw;
   height: 100vh;
@@ -232,25 +252,8 @@ body {
     z-index: 2;
 
     .overlay {
-      position: absolute;
       transform: translate(-50%, -39%);
-      left: 0;
-      top: 0;
-      width: 100vw;
-      height: 100vh;
       background-color: #004a80;
-      animation: overlay_open 0.3s;
-      overflow: hidden;
-
-      .close_button {
-        position: absolute;
-        top: 58px;
-        left: 28px;
-        width: 24px;
-        height: 24px;
-        background: url('/images/close.png');
-        cursor: pointer;
-      }
       .sign_up {
         top: 20px !important;
         .input {
@@ -491,6 +494,60 @@ body {
           margin-top: 18%;
 
         }
+      }
+    }
+  }
+  .overlay {
+    background: #fcfcfc;
+  .breadcrumb {
+    display: flex;
+    margin-top: 70px;
+
+    .breadcrumb-item {
+      &:before {
+        content: "\2192 \0020";
+        border-width: 0.35em 0 0.35em 0.45em;
+        display: block;
+        height: 0;
+        width: 0;
+        left: -1em;
+        position: relative;
+        color: black;
+
+      }
+      &:first-child:before {
+        display: none;
+      }
+      a > p  {
+        margin: 0;
+        margin-right: 18px;
+
+        font-family: Circe;
+        font-size: 18px;
+        font-weight: 700;
+        /* Text style for "Главная Ма" */
+        color: #ebad71;
+      }
+      p {
+        margin: 0;
+        margin-right: 18px;
+        font-family: Circe;
+        font-size: 18px;
+        font-weight: 700;
+        color: #350905;
+      }
+      }
+    }
+    .brand_logo {
+      padding: 17px 0px;
+      border-top: 1px solid #ebad71;
+      border-bottom: 1px solid #ebad71;
+      float: left;
+      margin-right: 8%;
+      margin-left: 16%;
+      .brand_img {
+        width: 499px;
+        height: 352px;
       }
     }
   }

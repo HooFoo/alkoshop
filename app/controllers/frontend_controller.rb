@@ -11,8 +11,9 @@ class FrontendController < ApplicationController
   def shop
     
   end
+
   def template
-    render template: "templates/#{params[:name]}",layout: false
+    super
   end
 
 end

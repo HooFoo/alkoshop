@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   scope '/shop' do
     get '/brands', controller: 'shop', action: :brands
+    get '/template/:name', controller: 'shop', action: :template
   end
 
 

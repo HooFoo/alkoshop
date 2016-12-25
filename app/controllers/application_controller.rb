@@ -5,6 +5,11 @@ class ApplicationController < ActionController::Base
 
   protected
 
+  def template
+    render template: "templates/#{params[:name]}",layout: false
+  end
+
+
   def configure_permitted_parameters
     devise_parameter_sanitizer.permit(:sign_up, keys: [:username])
   end
