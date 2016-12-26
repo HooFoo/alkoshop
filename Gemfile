@@ -40,8 +40,12 @@ gem 'carrierwave'
 gem 'rmagick', '~> 2.13.1'
 gem 'bootstrap'
 
+
 gem 'inherited_resources', github: 'activeadmin/inherited_resources'
 
+group :production do
+  gem 'cloudinary'
+end
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

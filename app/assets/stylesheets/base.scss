@@ -499,56 +499,80 @@ body {
   }
   .overlay {
     background: #fcfcfc;
-  .breadcrumb {
-    display: flex;
-    margin-top: 70px;
+    .breadcrumb {
+      display: flex;
+      margin-top: 70px;
 
-    .breadcrumb-item {
-      &:before {
-        content: "\2192 \0020";
-        border-width: 0.35em 0 0.35em 0.45em;
-        display: block;
-        height: 0;
-        width: 0;
-        left: -1em;
-        position: relative;
-        color: black;
+      .breadcrumb-item {
+        &:before {
+          content: "\2192 \0020";
+          border-width: 0.35em 0 0.35em 0.45em;
+          display: block;
+          height: 0;
+          width: 0;
+          left: -1em;
+          position: relative;
+          color: black;
 
-      }
-      &:first-child:before {
-        display: none;
-      }
-      a > p  {
-        margin: 0;
-        margin-right: 18px;
+        }
+        &:first-child:before {
+          display: none;
+        }
+        a > p  {
+          margin: 0;
+          margin-right: 18px;
 
-        font-family: Circe;
-        font-size: 18px;
-        font-weight: 700;
-        /* Text style for "Главная Ма" */
-        color: #ebad71;
-      }
-      p {
-        margin: 0;
-        margin-right: 18px;
-        font-family: Circe;
-        font-size: 18px;
-        font-weight: 700;
-        color: #350905;
-      }
-      }
+          font-family: Circe;
+          font-size: 18px;
+          font-weight: 700;
+          /* Text style for "Главная Ма" */
+          color: #ebad71;
+        }
+        p {
+          margin: 0;
+          margin-right: 18px;
+          font-family: Circe;
+          font-size: 18px;
+          font-weight: 700;
+          color: #350905;
+        }
+        }
     }
-    .brand_logo {
-      padding: 17px 0px;
-      border-top: 1px solid #ebad71;
-      border-bottom: 1px solid #ebad71;
-      float: left;
-      margin-right: 8%;
-      margin-left: 16%;
-      .brand_img {
-        width: 499px;
-        height: 352px;
+    .brand_info {
+      .brand_logo {
+        padding: 17px 0px;
+        border-top: 1px solid #ebad71;
+        border-bottom: 1px solid #ebad71;
+        float: left;
+        margin-right: 8%;
+        margin-left: 16%;
+        .brand_img {
+          width: 499px;
+          height: 352px;
+        }
       }
-    }
+      .brand_text {
+        float: right;
+        margin-right: 17%;
+        color: #25160f;
+
+        .brand_name {
+          margin: 0;
+          font-family: Circe;
+          font-size: 34px;
+          font-weight: 700;
+          line-height: 42px;
+          text-transform: uppercase;
+          margin-bottom: 1em;
+        }
+        .brand_description {
+          font-family: "PT Serif";
+          font-size: 21px;
+          font-weight: 400;
+          line-height: 29px;
+          margin-bottom: 70px;
+        }
+      }
+  }
   }
 }
