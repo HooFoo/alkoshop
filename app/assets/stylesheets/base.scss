@@ -461,9 +461,9 @@ body {
 
     .brand_box {
       /* Style for "Rectangle" */
-      width: 23%;
+      width: 23.2vw;
       margin: 0.8%;
-      height: 272px;
+      height: 23.2vw;
       background-color: #fff;
       z-index: 3;
       float: left;
@@ -555,6 +555,7 @@ body {
         float: right;
         margin-right: 17%;
         color: #25160f;
+        max-width: calc(100% - 41% - 499px);
 
         .brand_name {
           margin: 0;
