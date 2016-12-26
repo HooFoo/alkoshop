@@ -577,3 +577,164 @@ body {
   }
   }
 }
+.catalog_screen {
+  height: 100vh;
+  width: 100vw;
+  overflow-y: visible;
+  overflow-x: hidden;
+
+  .header {
+    top: 0;
+    padding: 10vh 0;
+    width: 100vw;
+    text-align: center;
+    height: 56px;
+    color: #240604;
+    font-family: Circe;
+    font-size: 56px;
+    font-weight: 700;
+    line-height: 20px;
+    font-variant: small-caps;
+  }
+  .items {
+    width: 100vw;
+    min-height: 80vh;
+    margin: 0px;
+    background-color: #cbcbcb;
+
+    .item_box {
+      /* Style for "Rectangle" */
+      width: 23.2vw;
+      margin: 0.8%;
+      height: 36.2vw;
+      background-color: #fff;
+      z-index: 3;
+      float: left;
+      text-align: center;
+      .name {
+        width: 100%;
+        font-family: Circe;
+        /* Text style for "Вино Chate" */
+        color: #350905;
+        font-size: 18px;
+        font-weight: 700;
+        text-transform: uppercase;
+        margin-top: 10%;
+      }
+      .heading{
+        color: #350905;
+        font-size: 18px;
+        font-weight: 700;
+        text-transform: uppercase;
+        /* Text style for "." */
+        font-variant: small-caps;
+      }
+      .short_description {
+        color: #ebad71;
+        font-size: 16px;
+        font-weight: 400;
+      }
+      .image {
+        margin-top: 8%;
+        .img {
+          height: 320px;
+          width: 240px;
+        }
+      }
+      .price {
+        height: 24px;
+        color: #350905;
+        font-family: "PT Serif";
+        font-size: 34px;
+        font-weight: 700;
+        line-height: 41px;
+        margin-top: 8%;
+
+      }
+      .sbutton {
+        margin: auto;
+        margin-top: 10%;
+
+      }
+    }
+  }
+  .overlay {
+    background: #fcfcfc;
+    .breadcrumb {
+      display: flex;
+      margin-top: 70px;
+
+      .breadcrumb-item {
+        &:before {
+          content: "\2192 \0020";
+          border-width: 0.35em 0 0.35em 0.45em;
+          display: block;
+          height: 0;
+          width: 0;
+          left: -1em;
+          position: relative;
+          color: black;
+
+        }
+        &:first-child:before {
+          display: none;
+        }
+        a > p  {
+          margin: 0;
+          margin-right: 18px;
+
+          font-family: Circe;
+          font-size: 18px;
+          font-weight: 700;
+          /* Text style for "Главная Ма" */
+          color: #ebad71;
+        }
+        p {
+          margin: 0;
+          margin-right: 18px;
+          font-family: Circe;
+          font-size: 18px;
+          font-weight: 700;
+          color: #350905;
+        }
+        }
+    }
+    .brand_info {
+      .brand_logo {
+        padding: 17px 0px;
+        border-top: 1px solid #ebad71;
+        border-bottom: 1px solid #ebad71;
+        float: left;
+        margin-right: 8%;
+        margin-left: 16%;
+        .brand_img {
+          width: 499px;
+          height: 352px;
+        }
+      }
+      .brand_text {
+        float: right;
+        margin-right: 17%;
+        color: #25160f;
+        max-width: calc(100% - 41% - 499px);
+
+        .brand_name {
+          margin: 0;
+          font-family: Circe;
+          font-size: 34px;
+          font-weight: 700;
+          line-height: 42px;
+          text-transform: uppercase;
+          margin-bottom: 1em;
+        }
+        .brand_description {
+          font-family: "PT Serif";
+          font-size: 21px;
+          font-weight: 400;
+          line-height: 29px;
+          margin-bottom: 70px;
+        }
+      }
+  }
+  }
+}

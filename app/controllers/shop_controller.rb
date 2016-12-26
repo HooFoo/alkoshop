@@ -1,6 +1,11 @@
 class ShopController < ApplicationController
+
   def brands
     @brands = Brand.all
+  end
+
+  def catalog
+    @items = Item.all
   end
 
   def template

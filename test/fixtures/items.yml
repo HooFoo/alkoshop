@@ -1,0 +1,27 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  brand: one
+  type: one
+  name: MyString
+  image: MyString
+  price: 1.5
+  type_extra: MyString
+  region: MyString
+  facturer: MyString
+  alcohol: 1.5
+  source: MyString
+  description: MyString
+
+two:
+  brand: two
+  type: two
+  name: MyString
+  image: MyString
+  price: 1.5
+  type_extra: MyString
+  region: MyString
+  facturer: MyString
+  alcohol: 1.5
+  source: MyString
+  description: MyString
