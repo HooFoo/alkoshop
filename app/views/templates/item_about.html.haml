@@ -15,13 +15,26 @@
         = @item.name
   %div.item_info
     %div.item_logo
-      %img.item_img{src: "#{@item.image.brand}"}
+      %img.item_img{src: "#{@item.image}"}
     %div.item_text
       %h3.item_name
         = @item.name
-      %div.item_description
-        = @item.description
-      %div.sbutton
-        =link_to("/shop/catalog?brand=#{@item.name}") do
-          %p.sbutton_text
-            Продукция
+      %p.item_art
+        = "арт. #{@item.article}"
+      %div.item_price
+        = "#{@item.price} Р"
+      %div.item_extra
+        %div.string
+          = "#{@item.type}: #{@item.type_extra}"
+        %div.string
+          = "Регион: #{@item.region}"
+        %div.string
+          = "Производитель: #{@item.facturer}"
+        %div.string
+          = "Крепость: #{@item.alcohol}%"
+        %div.string
+          = "Компоненты: #{@item.source}"
+        %div.string
+          = "Описание: #{@item.description}"
+
+

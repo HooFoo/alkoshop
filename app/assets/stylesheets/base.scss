@@ -850,40 +850,71 @@ body {
         }
     }
     .item_info {
+      text-align: left;
       .item_logo {
-        padding: 17px 0px;
+        padding: 0px 17px;
         border-left: 1px solid #ebad71;
         border-right: 1px solid #ebad71;
         float: left;
         margin-right: 126px;
         margin-left: 11%;
+        width: 746px;
+        text-align: center;
         .item_img {
-          width: 746px;
+          margin: auto;
+          width: 300px;
           height: 788px;
         }
       }
       .item_text {
         float: right;
-        margin-right: 17%;
+        margin-right: 6%;
         color: #25160f;
         max-width: calc(100% - 41% - 499px);
 
         .item_name {
+          /* Style for "Вино Elibo" */
+          width: 466px;
+          height: 90px;
+          overflow: hidden;
+          color: #350905;
           margin: 0;
           font-family: Circe;
-          font-size: 34px;
+          font-size: 46px;
           font-weight: 700;
-          line-height: 42px;
-          text-transform: uppercase;
-          margin-bottom: 1em;
+          line-height: 48px;
+          font-variant: small-caps;
         }
-        .item_description {
-          font-family: "PT Serif";
-          font-size: 21px;
+        .item_art {
+          margin: 0;
+          padding-top: 1em;
+          /* Style for "арт. 94703" */
+          opacity: 0.41;
+          color: #240604;
+          font-family: Circe;
+          font-size: 14px;
           font-weight: 400;
-          line-height: 29px;
-          margin-bottom: 70px;
         }
+        .item_price {
+          padding-top: 39px;
+          /* Style for "1200 Р" */
+          color: #350905;
+          font-family: "PT Serif";
+          font-size: 50px;
+          font-weight: 700;
+        }
+        .item_extra {
+          /* Style for "Вино: Бело" */
+          font-family: Circe;
+          font-size: 14px;
+          font-weight: 400;
+          color: #350905;
+          line-height: 24px;
+          .item_description {
+
+          }
+        }
+
       }
   }
   }
