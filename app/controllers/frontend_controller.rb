@@ -9,7 +9,7 @@ class FrontendController < ApplicationController
 
   end
   def shop
-    
+    @item = Item.promoted
   end
 
   def template

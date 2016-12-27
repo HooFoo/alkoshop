@@ -7,6 +7,20 @@
         %p.sbutton_text
           Каталог
   %div.column.center
+    %div.name
+      = @item.name
+    %div.heading
+      = @item.heading
+    %div.short_description
+      = @item.short_description
+    %div.image
+      %img.img{src: @item.image.promo_box}
+    %div.price
+      = @item.price
+    %div.sbutton
+      =link_to('/cart/add', remote:true) do
+        %p.sbutton_text
+          В корзину
   %div.column.right
     %div.sbutton
       =link_to '/shop/brands' do

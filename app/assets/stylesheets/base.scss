@@ -390,7 +390,7 @@ body {
   .left {
     width: 45vw;
     background: url("/images/shop_left_column.png");
-    background-size: 100% 100%;
+    background-size: cover;
 
     .column {
       height: 100%;
@@ -419,6 +419,52 @@ body {
   }
   .center {
     width: 510px;
+    .name {
+      width: 100%;
+      font-family: Circe;
+      /* Text style for "Вино Chate" */
+      color: #350905;
+      font-size: 18px;
+      font-weight: 700;
+      text-transform: uppercase;
+      margin-top: 10%;
+    }
+    .heading{
+      color: #350905;
+      font-size: 18px;
+      font-weight: 700;
+      text-transform: uppercase;
+      /* Text style for "." */
+      font-variant: small-caps;
+    }
+    .short_description {
+      color: #ebad71;
+      font-size: 16px;
+      font-weight: 400;
+    }
+    .image {
+      margin-top: 8%;
+      .img {
+        height: 540px;
+        width: 100%;
+      }
+    }
+    .price {
+      height: 24px;
+      color: #350905;
+      font-family: "PT Serif";
+      font-size: 34px;
+      font-weight: 700;
+      line-height: 41px;
+      margin-top: 8%;
+
+    }
+    .sbutton {
+      margin: auto;
+      margin-top: 10%;
+
+    }
+
   }
   .right {
     width: calc(55vw - 510px);
@@ -434,6 +480,7 @@ body {
   }
 
 }
+
 .brands_screen {
   height: 100vh;
   width: 100vw;
@@ -577,6 +624,7 @@ body {
   }
   }
 }
+
 .catalog_screen {
   height: 100vh;
   width: 100vw;

@@ -14,4 +14,8 @@ class Item < ApplicationRecord
   def heading
     "#{source}"
   end
+
+  def self.promoted
+    where(promote: true).sample
+  end
 end
