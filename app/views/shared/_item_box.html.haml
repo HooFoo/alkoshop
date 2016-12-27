@@ -1,5 +1,5 @@
 %div.item_box
-  =link_to('/shop/template/item_about', remote: true, class: 'item_about_link') do
+  =link_to("/shop/template/item_about?item=#{item_box.id}", remote: true, class: 'item_about_link') do
     %div.name
       = item_box.name
     %div.heading

@@ -168,9 +168,9 @@ body {
 
     .nav-item {
       width: 100%;
-      height: auto;
       text-align: center;
       transition: border 0.3s;
+      height: 115px;
 
       &:hover {
         border-top: 1px solid #ebad71;
@@ -195,6 +195,26 @@ body {
       }
     }
 
+    .index {
+      background-image: url('/images/index_background.png');
+      background-size: cover;
+    }
+    .contacts {
+      background-image: url('/images/contacts_background.png');
+      background-size: cover;
+    }
+    .news {
+      background-image: url('/images/news_background.png');
+      background-size: cover;
+    }
+    .shop {
+      background-image: url('/images/shop_left_column.png');
+      background-size: cover;
+    }
+    .profile {
+      background-image: url('/images/profile_background.png');
+      background-size: cover;
+    }
     .odd {
     }
   }
@@ -829,26 +849,26 @@ body {
         }
         }
     }
-    .brand_info {
-      .brand_logo {
+    .item_info {
+      .item_logo {
         padding: 17px 0px;
-        border-top: 1px solid #ebad71;
-        border-bottom: 1px solid #ebad71;
+        border-left: 1px solid #ebad71;
+        border-right: 1px solid #ebad71;
         float: left;
-        margin-right: 8%;
-        margin-left: 16%;
-        .brand_img {
-          width: 499px;
-          height: 352px;
+        margin-right: 126px;
+        margin-left: 11%;
+        .item_img {
+          width: 746px;
+          height: 788px;
         }
       }
-      .brand_text {
+      .item_text {
         float: right;
         margin-right: 17%;
         color: #25160f;
         max-width: calc(100% - 41% - 499px);
 
-        .brand_name {
+        .item_name {
           margin: 0;
           font-family: Circe;
           font-size: 34px;
@@ -857,7 +877,7 @@ body {
           text-transform: uppercase;
           margin-bottom: 1em;
         }
-        .brand_description {
+        .item_description {
           font-family: "PT Serif";
           font-size: 21px;
           font-weight: 400;

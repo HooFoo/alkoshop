@@ -20,6 +20,9 @@ class ShopController < ApplicationController
     if params[:brand]
       @brand = Brand.find_by_name params[:brand]
     end
+    if params[:item]
+      @item = Item.find params[:item]
+    end
     super
   end
 

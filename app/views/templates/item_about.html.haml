@@ -1,0 +1,27 @@
+%div.overlay
+  %div.close
+  %ul.breadcrumb
+    %li.breadcrumb-item
+      =link_to('/') do
+        %p Главная
+    %li.breadcrumb-item
+      =link_to('/shop') do
+        %p Магазин
+    %li.breadcrumb-item
+      =link_to('/shop/catalog') do
+        %p Каталог
+    %li.breadcrumb-item
+      %p
+        = @item.name
+  %div.item_info
+    %div.item_logo
+      %img.item_img{src: "#{@item.image.brand}"}
+    %div.item_text
+      %h3.item_name
+        = @item.name
+      %div.item_description
+        = @item.description
+      %div.sbutton
+        =link_to("/shop/catalog?brand=#{@item.name}") do
+          %p.sbutton_text
+            Продукция
