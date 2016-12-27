@@ -677,6 +677,7 @@ body {
       float: left;
       text-align: center;
       transition: background 0.3s;
+      padding: 0px 20px;
 
       &:hover {
         background: #f8f8f8;
@@ -693,6 +694,8 @@ body {
           font-weight: 700;
           text-transform: uppercase;
           margin-top: 10%;
+          max-height: 77px;
+          overflow: hidden;
         }
         .heading{
           color: #350905;
@@ -710,7 +713,7 @@ body {
         .image {
           margin-top: 8%;
           .img {
-            height: 455px;
+            height: 420px;
             width: 240px;
           }
         }
