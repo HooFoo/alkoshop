@@ -417,16 +417,17 @@ body {
       top: 41%;
       left: 50%;
       transform: translateX(-50%);
-      color: #ebad71;
       font-family: Circe;
       font-size: 20px;
       font-weight: 700;
       line-height: 26px;
       font-variant: small-caps;
+
     }
   }
   .center {
     width: 510px;
+    padding: 0px 20px;
     .name {
       width: 100%;
       font-family: Circe;
@@ -453,8 +454,8 @@ body {
     .image {
       margin-top: 8%;
       .img {
-        height: 540px;
-        width: 100%;
+        height: 580px;
+        width: 70%;
       }
     }
     .price {
@@ -470,7 +471,11 @@ body {
     .sbutton {
       margin: auto;
       margin-top: 10%;
-
+      border-top: 1px solid #350905;
+      border-bottom: 1px solid #350905;
+      .sbutton_text {
+        color: #350905;
+      }
     }
 
   }
@@ -643,7 +648,7 @@ body {
   width: 100vw;
   overflow-y: visible;
   overflow-x: hidden;
-  background-color: #cbcbcb;
+  background-color: #f6f6f6;
 
   .header {
     top: 0;
@@ -664,7 +669,6 @@ body {
     min-height: 80vh;
     height: 100%;
     margin: 0px;
-    background-color: #cbcbcb;
     padding-left: calc( ( 100% - 1600px) /2 );
 
     .item_box {
@@ -680,7 +684,7 @@ body {
       padding: 0px 20px;
 
       &:hover {
-        background: #f8f8f8;
+        background: #fdfdfd;
       }
 
       .item_about_link {
@@ -731,6 +735,12 @@ body {
       .sbutton {
         margin: auto;
         margin-top: 10%;
+        border-top: 1px solid #350905;
+        border-bottom: 1px solid #350905;
+        color: #350905;
+        .sbutton_text {
+          color: #350905;
+        }
 
       }
     }
