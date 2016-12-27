@@ -417,6 +417,12 @@ body {
       top: 41%;
       left: 50%;
       transform: translateX(-50%);
+      color: #ebad71;
+      font-family: Circe;
+      font-size: 20px;
+      font-weight: 700;
+      line-height: 26px;
+      font-variant: small-caps;
     }
   }
   .center {
@@ -497,9 +503,9 @@ body {
     height: 56px;
     color: #240604;
     font-family: Circe;
-    font-size: 56px;
+    font-size: 90px;
     font-weight: 700;
-    line-height: 20px;
+    line-height: 26px;
     font-variant: small-caps;
   }
   .brands {
@@ -520,6 +526,7 @@ body {
 
       &:hover  .back {
         height: 100%;
+        opacity: 1;
 
       }
       .front {
@@ -534,10 +541,14 @@ body {
       .back {
         height: 0;
         width: 100%;
-        background-color: white;
-        transition: height 0.3s;
+        background: rgba(26, 6, 2, 0.95);
+        box-shadow: inset 0px 0px 0px 1px #ebad71;
+        outline: 10px solid rgba(26, 6, 2, 0.95);        transition: height 0.3s;
         overflow: hidden;
         transform: translateY(-100%);
+        opacity: 0;
+        transition: opacity 0.3s ease-in-out, height 0.3s;
+
         .sbutton {
           margin: auto;
           margin-top: 18%;
