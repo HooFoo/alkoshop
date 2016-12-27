@@ -664,12 +664,55 @@ body {
     line-height: 20px;
     font-variant: small-caps;
   }
+  .filters {
+    background: #ffffff;
+    width: 100%;
+    .filters_list {
+      display: inline-flex;
+      margin: auto;
+      margin-left: 50%;
+      transform: translateX(-50%);
+
+      .filter_item {
+        margin-right: 139px;
+        width: 116px;
+
+        &:last-child {
+          margin: 0;
+        }
+
+        .select-wrapper {
+          text-align: justify;
+          .caret {
+            display: none;
+          }
+          .select-dropdown {
+            color: #240604;
+            font-family: Circe;
+            font-size: 16px;
+            font-weight: 700;
+            line-height: 26px;
+            text-transform: uppercase;
+            border-bottom: 2px solid rgba(203, 186, 185, 0.49);
+          }
+        }
+      }
+    }
+  }
+  .whitespace {
+    width: 100%;
+    padding: 50px;
+    background: white;
+    z-index: 2;
+  }
   .items {
     width: 100vw;
     min-height: 80vh;
     height: 100%;
     margin: 0px;
     padding-left: calc( ( 100% - 1600px) /2 );
+    transform: translateY(-100px);
+    z-index: 2;
 
     .item_box {
       /* Style for "Rectangle" */

@@ -1,6 +1,18 @@
 %div.catalog_screen
   %div.header
     Каталог
+  %div.filters
+    %ul.filters_list
+      %li.filter_item
+        = select_tag 'brand_select', options_for_select(@filters[:brands]), prompt: 'Все бренды'
+      %li.filter_item
+        = select_tag 'type_select', options_for_select(@filters[:types]), prompt: 'Все напитки'
+      %li.filter_item
+        = select_tag 'country_select', options_for_select(@filters[:countries]), prompt: 'Все страны'
+      %li.filter_item
+        = select_tag 'sort_select', options_for_select(@filters[:sort]), prompt: 'По новизне'
+  %div.whitespace
+
   %div.items
     -@items.each do |item|
       =render partial: 'shared/item_box', object: item
