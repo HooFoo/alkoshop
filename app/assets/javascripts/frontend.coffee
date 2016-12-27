@@ -4,8 +4,12 @@
 class Ui
 
   constructor: ->
-    $('.burger, .nav-item').click( =>
-      @toggleSidenav()
+    $('.sidenav').hover( =>
+        $('.burger').hide()
+      ,
+      =>
+        $('.burger').show(300)
+
     )
     @loginScreen()
 

@@ -74,6 +74,10 @@ body {
     background: url("/images/burger.png");
     z-index: 1;
     cursor: pointer;
+
+    &:hover ~ .sidenav{
+      height: 115px;
+    }
   }
   .cart-icon {
     width: 30px;
@@ -158,13 +162,14 @@ body {
     transition: height 0.3s;
 
     z-index: 3;
+    &:hover {
+      height: 115px;
+    }
 
     .nav-item {
       width: 100%;
       height: auto;
-      background-color: #721e1e;
       text-align: center;
-      border-top: 1px solid rgba(235, 173, 113, 0.27);
       transition: border 0.3s;
 
       &:hover {
@@ -191,12 +196,9 @@ body {
     }
 
     .odd {
-      background-color: #482828;
     }
   }
-  .open {
-    height: 115px;
-  }
+
 }
 
 .index-bg {
@@ -206,8 +208,8 @@ body {
   background-size: 100% 100%;
 
   .logo {
-    width: 568px;
-    height: 206px;
+    width: 700px;
+    height: 268px;
 
     position: absolute;
     top: 202px;
@@ -230,7 +232,7 @@ body {
     font-weight: 700;
     line-height: 20px;
     position: absolute;
-    top: 58.4%;
+    top: 568px;
     left: 50%;
     transform: translateX(-50%);
     text-align: center;
