@@ -1,14 +1,15 @@
 %div.item_box
-  %div.name
-    = item_box.name
-  %div.heading
-    = item_box.heading
-  %div.short_description
-    = item_box.short_description
-  %div.image
-    %img.img{src: item_box.image.item_box}
-  %div.price
-    = item_box.price
+  =link_to('/shop/template/item_about', remote: true, class: 'item_about_link') do
+    %div.name
+      = item_box.name
+    %div.heading
+      = item_box.heading
+    %div.short_description
+      = item_box.short_description
+    %div.image
+      %img.img{src: item_box.image.item_box}
+    %div.price
+      = item_box.price
   %div.sbutton
     =link_to('/cart/add', remote:true) do
       %p.sbutton_text

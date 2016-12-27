@@ -206,7 +206,7 @@ body {
   background-size: 100% 100%;
 
   .logo {
-    width: 540px;
+    width: 568px;
     height: 206px;
 
     position: absolute;
@@ -214,7 +214,7 @@ body {
     left: 50%;
     transform: translateX(-50%);
 
-    background: url("/images/logo.png");
+    background: url("/images/logo.svg");
     background-repeat: no-repeat;
     background-size: cover;
 
@@ -647,6 +647,7 @@ body {
   .items {
     width: 100vw;
     min-height: 80vh;
+    height: 100%;
     margin: 0px;
     background-color: #cbcbcb;
 
@@ -659,45 +660,54 @@ body {
       z-index: 3;
       float: left;
       text-align: center;
-      .name {
-        width: 100%;
-        font-family: Circe;
-        /* Text style for "Вино Chate" */
-        color: #350905;
-        font-size: 18px;
-        font-weight: 700;
-        text-transform: uppercase;
-        margin-top: 10%;
-      }
-      .heading{
-        color: #350905;
-        font-size: 18px;
-        font-weight: 700;
-        text-transform: uppercase;
-        /* Text style for "." */
-        font-variant: small-caps;
-      }
-      .short_description {
-        color: #ebad71;
-        font-size: 16px;
-        font-weight: 400;
-      }
-      .image {
-        margin-top: 8%;
-        .img {
-          height: 320px;
-          width: 240px;
-        }
-      }
-      .price {
-        height: 24px;
-        color: #350905;
-        font-family: "PT Serif";
-        font-size: 34px;
-        font-weight: 700;
-        line-height: 41px;
-        margin-top: 8%;
+      transition: background 0.3s;
 
+      &:hover {
+        background: #f8f8f8;
+      }
+
+      .item_about_link {
+
+        .name {
+          width: 100%;
+          font-family: Circe;
+          /* Text style for "Вино Chate" */
+          color: #350905;
+          font-size: 18px;
+          font-weight: 700;
+          text-transform: uppercase;
+          margin-top: 10%;
+        }
+        .heading{
+          color: #350905;
+          font-size: 18px;
+          font-weight: 700;
+          text-transform: uppercase;
+          /* Text style for "." */
+          font-variant: small-caps;
+        }
+        .short_description {
+          color: #ebad71;
+          font-size: 16px;
+          font-weight: 400;
+        }
+        .image {
+          margin-top: 8%;
+          .img {
+            height: 320px;
+            width: 240px;
+          }
+        }
+        .price {
+          height: 24px;
+          color: #350905;
+          font-family: "PT Serif";
+          font-size: 34px;
+          font-weight: 700;
+          line-height: 41px;
+          margin-top: 8%;
+
+        }
       }
       .sbutton {
         margin: auto;
