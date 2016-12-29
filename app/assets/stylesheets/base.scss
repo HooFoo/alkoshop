@@ -146,7 +146,7 @@ body {
   }
 
   .sidenav {
-    width: 100vh;
+    width: 100vw;
     height: 0px;
     position: fixed;
     overflow: hidden;
@@ -155,8 +155,6 @@ body {
     margin: 0;
     list-style-type: none;
 
-    transform: rotate(270deg) translateX(-100%);
-    transform-origin: left top;
     display: flex;
 
     transition: height 0.3s;
