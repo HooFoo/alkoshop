@@ -3,7 +3,7 @@ class Item < ApplicationRecord
   belongs_to :type
   belongs_to :country
 
-  has_many :volume
+  has_and_belongs_to_many :volume
 
   mount_uploader :image, ImagesUploader
 

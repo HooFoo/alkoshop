@@ -39,9 +39,10 @@ body {
   left: 0;
   top: 0;
   width: 100vw;
-  height: 100vh;
+  min-height: 100vh;
   animation: overlay_open 0.3s;
   overflow: hidden;
+  z-index: 1;
 
   .close_button {
     position: absolute;
@@ -51,6 +52,7 @@ body {
     height: 24px;
     background: url('/images/close.png');
     cursor: pointer;
+    z-index: 1;
   }
 }
 
@@ -584,7 +586,8 @@ body {
     background: #fcfcfc;
     .breadcrumb {
       display: flex;
-      margin-top: 70px;
+      margin-top: 57px;
+      margin-left: 97px;
 
       .breadcrumb-item {
         &:before {
@@ -810,7 +813,8 @@ body {
     background: #fcfcfc;
     .breadcrumb {
       display: flex;
-      margin-top: 70px;
+      margin-top: 57px;
+      margin-left: 97px;
 
       .breadcrumb-item {
         &:before {
