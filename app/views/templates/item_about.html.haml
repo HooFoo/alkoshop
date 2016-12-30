@@ -22,19 +22,53 @@
       %p.item_art
         = "арт. #{@item.article}"
       %div.item_price
-        = "#{@item.price} Р"
+        = "#{@item.show_price} Р"
+      %div.cart_section
+        %input.count{value:1}
+        %div.sbutton
+          =link_to("/cart/add?id=#{@item.id}", remote:true) do
+            %p.sbutton_text
+              В корзину
       %div.item_extra
-        %div.string
-          = "#{@item.type}: #{@item.type_extra}"
-        %div.string
-          = "Регион: #{@item.region}"
-        %div.string
-          = "Производитель: #{@item.facturer}"
-        %div.string
-          = "Крепость: #{@item.alcohol}%"
-        %div.string
-          = "Компоненты: #{@item.source}"
-        %div.string
-          = "Описание: #{@item.description}"
+        %div.extra
+          %div.name
+            = "#{@item.type}:"
+          %div.string
+            ="#{@item.type_extra}"
+        %div.extra
+          %div.name
+            = "Регион:"
+          %div.string
+            ="#{@item.region}"
+        %div.extra
+          %div.name
+            = "Производитель:"
+          %div.string
+            ="#{@item.facturer}"
+        %div.extra
+          %div.name
+            = "Крепость:"
+          %div.string
+            ="#{@item.alcohol}%"
+        %div.extra
+          %div.name
+            = "Объем:"
+          %div.string.volumes
+            -@item.volumes.each do |volume|
+              %a
+                ="#{volume.ml} ml"
+        %div.extra
+          %div.name
+            = "Компоненты:"
+          %div.string
+            ="#{@item.source}"
+        %div.extra
+          %div.name
+            = "Описание:"
+          %div.string
+            ="#{@item.description}"
 
 
+
+  %div.same_box
+    = render partial: 'shared/same_items', object: @same

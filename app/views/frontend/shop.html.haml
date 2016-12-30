@@ -16,7 +16,7 @@
     %div.image
       %img.img{src: @item.image.promo_box}
     %div.price
-      = @item.price
+      = @item.show_price
     %div.sbutton
       =link_to('/cart/add', remote:true) do
         %p.sbutton_text

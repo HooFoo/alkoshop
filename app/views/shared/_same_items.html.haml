@@ -1,0 +1,8 @@
+%div.same
+  %div.same_head
+    Похожие товары
+  %div.whitespace
+
+  %div.items
+    - same_items.each do |i|
+      = render partial: 'shared/item_box', object: i

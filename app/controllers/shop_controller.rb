@@ -22,6 +22,7 @@ class ShopController < ApplicationController
     end
     if params[:item]
       @item = Item.find params[:item]
+      @same = Item.same @item
     end
     super
   end

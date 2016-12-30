@@ -9,8 +9,8 @@
     %div.image
       %img.img{src: item_box.image.item_box}
     %div.price
-      = item_box.price
+      = item_box.show_price
   %div.sbutton
-    =link_to('/cart/add', remote:true) do
+    =link_to("/cart/add?id=#{item_box.id}", remote:true) do
       %p.sbutton_text
         В корзину

@@ -3,17 +3,9 @@
 # You can use CoffeeScript in this file: http://coffeescript.org/
 class Shop
   constructor: ->
+    @activate_buttons()
 
-    $('.show_brand').on 'ajax:success', (e, data) =>
-      $('.brands_screen').append(data)
-    $('.item_about_link').on 'ajax:success', (e, data) =>
-      $('.catalog_screen').append(data)
 
-    $('a').on 'ajax:success', (e) =>
-      @add_location(e.target['href'])
-      $('.close_button').click =>
-        remove_params()
-        $('.overlay').remove()
 
 
   add_location: (url) =>
@@ -29,6 +21,20 @@ class Shop
       a = arr[1].split('=')
       if a.length == 2
         $("a[href*='#{arr[1]}']")[0].click()
+
+  activate_buttons: =>
+    $('.show_brand').on 'ajax:success', (e, data) =>
+      $('.overlay').remove()
+      $('.brands_screen').append(data)
+    $('.item_about_link').on 'ajax:success', (e, data) =>
+      $('.overlay').remove()
+      $('.catalog_screen').append(data)
+    $('a').on 'ajax:success', (e) =>
+      @add_location(e.target['href'])
+      @activate_buttons()
+      $('.close_button').click =>
+        remove_params()
+        $('.overlay').remove()
 
   add_params = (key, val, url ) ->
     arr = url.split('#')
