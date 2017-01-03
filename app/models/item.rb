@@ -5,6 +5,9 @@ class Item < ApplicationRecord
 
   has_and_belongs_to_many :volumes
 
+  default_scope { where('in_stock > 0') }
+
+
   mount_uploader :image, ImagesUploader
 
   def short_description

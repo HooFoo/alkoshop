@@ -12,6 +12,9 @@ class Ui
 
     )
     @loginScreen()
+    $('.cart-icon').click () =>
+      @toggleCart()
+    @activateCart()
 
   toggleSidenav: ->
     $('.sidenav').toggleClass('open')
@@ -30,7 +33,22 @@ class Ui
     $('.sign-out').on "ajax:success", (e, data) =>
       @updateTop(data)
 
+  updateCart: (data) =>
+    $('.cart_wrapper').remove()
+    $('.cart_board').append(data)
+    $('.cart-items').html($('.cart_items > .item').length)
+    $('.cart-count').material_select();
+    @activateCart()
 
+  toggleCart: () ->
+    $('.cart_board').toggleClass('opened')
+    $('.main-screen').toggleClass('compressed')
+    $('.cart-icon').toggleClass('replaced')
+
+  activateCart: () =>
+    $('.cart_close').click () =>
+      @toggleCart()
+    $('.cart-items').html($('.cart_items > .item').length)
 
   updateTop: (data) ->
     $('.top').html(data)

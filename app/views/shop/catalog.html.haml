@@ -4,13 +4,13 @@
   %div.filters
     %ul.filters_list
       %li.filter_item
-        = select_tag 'brand_select', options_for_select(@filters[:brands]), prompt: 'Все бренды'
+        = select_tag 'brand_select', options_for_select(@filters[:brands]), prompt: 'Все бренды', class: 'filter'
       %li.filter_item
-        = select_tag 'type_select', options_for_select(@filters[:types]), prompt: 'Все напитки'
+        = select_tag 'type_select', options_for_select(@filters[:types]), prompt: 'Все напитки', class: 'filter'
       %li.filter_item
-        = select_tag 'country_select', options_for_select(@filters[:countries]), prompt: 'Все страны'
+        = select_tag 'country_select', options_for_select(@filters[:countries]), prompt: 'Все страны', class: 'filter'
       %li.filter_item
-        = select_tag 'sort_select', options_for_select(@filters[:sort]), prompt: 'По новизне'
+        = select_tag 'sort_select', options_for_select(@filters[:sort]), prompt: 'По новизне', class: 'filter'
   %div.whitespace
 
   %div.items

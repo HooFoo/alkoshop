@@ -1,4 +1,11 @@
 Rails.application.routes.draw do
+  scope '/cart' do
+    get '/add', controller: 'cart', action: :add
+    get '/remove', controller: 'cart', action: :remove
+    get '/show', controller: 'cart', action: :show
+  end
+
+
   scope '/shop' do
     get '/brands', controller: 'shop', action: :brands
     get '/catalog', controller: 'shop', action: :catalog
