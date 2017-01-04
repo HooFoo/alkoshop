@@ -1,10 +1,10 @@
 class ShopController < ApplicationController
 
   Sorts = {
-      'Сначала новые': :created_at,
-      'Сначала старые': :created_at,
-      'Сначала премиальные': :price,
-      'Сначала бюджетные': :price,
+      'Сначала новые': 'created_at ASC',
+      'Сначала старые': 'created_at DESC',
+      'Сначала премиальные': 'price DESC',
+      'Сначала бюджетные': 'price ASC',
   }
 
   def brands
@@ -13,7 +13,7 @@ class ShopController < ApplicationController
 
   def catalog
     @filters = prepare_filters
-    @items = Item.all
+    @items = Item.filtered(@filters).limit(12)
   end
 
   def template
@@ -31,10 +31,19 @@ class ShopController < ApplicationController
 
   def prepare_filters
     {
-        brands: Brand.cached_all,
-        types: Type.cached_all,
-        countries: Country.cached_all,
-        sort: Sorts
+        brands: {
+            values: Brand.cached_all,
+            current: params[:brand]},
+        types: {
+            values: Type.cached_all,
+            current: params[:type]},
+        countries: {
+            values: Country.cached_all,
+            current: params[:country]},
+        sort: {
+            values: Sorts,
+            current: params[:sort]
+        }
     }
   end
 end

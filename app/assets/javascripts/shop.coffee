@@ -6,6 +6,7 @@ class Shop
     @handle_links()
     $('.catalog_screen, .brands_screen').bind "DOMSubtreeModified", () =>
       @activate_buttons()
+    @handle_filters()
 
   add_location: (url) =>
     type = url.split('?')[1]
@@ -44,6 +45,19 @@ class Shop
   handle_links: =>
     $('.about').on 'ajax:success', (e, data) =>
       @activate_overlay(e,data)
+
+  handle_filters: =>
+    $('.filter').on 'change', (e) =>
+      type = e.target.id
+      value = e.target.value
+      url = "#{location.origin}#{location.pathname}"
+      filters = $.makeArray($('select.filter').map( (index,element) =>
+        "#{element.id}=#{element.value}"
+      ))
+      console.log(filters)
+
+      location.href = "#{url}?#{filters.join('&')}"
+
 
 
 

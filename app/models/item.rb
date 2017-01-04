@@ -5,10 +5,30 @@ class Item < ApplicationRecord
 
   has_and_belongs_to_many :volumes
 
+  mount_uploader :image, ImagesUploader
+
   default_scope { where('in_stock > 0') }
 
 
-  mount_uploader :image, ImagesUploader
+  def self.promoted
+    where(promote: true).sample
+  end
+
+  def self.same(item)
+    Item.where(type: item.type).sample(4)
+  end
+
+  def self.filtered(filters, options = {limit:24, offset:0})
+    wheres = []
+    names = filters.map do |type,filter|
+      unless filter[:current].empty? || type == :sort
+        wheres << "#{type}.name = '#{filter[:current].to_s}'"
+        type.to_s.singularize.to_sym
+      end
+    end
+    Item.joins(*names).where(wheres.join(' AND ')).order(filters[:sort][:current])
+  end
+
 
   def short_description
     "#{type_extra}. #{region}"
@@ -24,13 +44,5 @@ class Item < ApplicationRecord
     else
       price
     end
-  end
-
-  def self.promoted
-    where(promote: true).sample
-  end
-
-  def self.same item
-    Item.where(type: item.type).sample(4)
   end
 end
