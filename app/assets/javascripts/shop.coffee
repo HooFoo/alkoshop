@@ -4,10 +4,8 @@
 class Shop
   constructor: ->
     @handle_links()
-    @activate_buttons()
-
-
-
+    $('.catalog_screen, .brands_screen').bind "DOMSubtreeModified", () =>
+      @activate_buttons()
 
   add_location: (url) =>
     type = url.split('?')[1]
@@ -24,29 +22,30 @@ class Shop
         $("a[href*='#{arr[1]}']")[0].click()
 
   activate_buttons: =>
-    $('.about').on 'ajax:success', (e) =>
-      @add_location(e.target['href'])
-      @activate_buttons()
-      $('.count').change (e)=>
-        button= $('.cart_section > .sbutton > a')[0]
-        base= button.href.split('?')[0]
-        params = button.href.split('?')[1].split('&')
-        url = "#{base}?#{params[0]}&quantity=#{e.target.value}"
-        console.log(url)
-        button.href = url
-      $('.close_button').click =>
-        remove_params()
-        $('.overlay').remove()
-      $('.buy').on 'ajax:success', (e, data) =>
-        ui.updateCart(data)
+    $('.count').change (e)=>
+      button= $('.cart_section > .sbutton > a')[0]
+      base= button.href.split('?')[0]
+      params = button.href.split('?')[1].split('&')
+      url = "#{base}?#{params[0]}&quantity=#{e.target.value}"
+      button.href = url
+    $('.close_button').click =>
+      remove_params()
+      $('.overlay').remove()
+    $('.buy').on 'ajax:success', (e, data) =>
+      ui.updateCart(data)
+    $('.overlay').find('.about').on 'ajax:success', (e,data) =>
+      @activate_overlay(e,data)
+
+  activate_overlay: (e,data) =>
+    $('.overlay').remove()
+    $('.brands_screen, .catalog_screen').append(data)
+    @add_location(e.target['href'])
 
   handle_links: =>
-    $('.show_brand').on 'ajax:success', (e, data) =>
-      $('.overlay').remove()
-      $('.brands_screen').append(data)
-    $('.item_about_link').on 'ajax:success', (e, data) =>
-      $('.overlay').remove()
-      $('.catalog_screen').append(data)
+    $('.about').on 'ajax:success', (e, data) =>
+      @activate_overlay(e,data)
+
+
 
   add_params = (key, val, url ) ->
     arr = url.split('#')

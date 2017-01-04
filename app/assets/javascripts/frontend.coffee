@@ -48,7 +48,10 @@ class Ui
   activateCart: () =>
     $('.cart_close').click () =>
       @toggleCart()
-    $('.cart-items').html($('.cart_items > .item').length)
+    if $('.cart_items > .item').length > 0
+      $('.cart-items').html($('.cart_items > .item').length)
+    $('.remove').on 'ajax:success', (e,data) =>
+      @updateCart(data)
 
   updateTop: (data) ->
     $('.top').html(data)
