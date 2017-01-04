@@ -33,7 +33,7 @@ class CartController < ApplicationController
 
   def order_item_params
     {
-        quantity: params[:quantity],
+        quantity: params[:quantity] || 1,
         item_id: params[:id]
     }
   end

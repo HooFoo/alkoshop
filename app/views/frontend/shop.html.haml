@@ -18,7 +18,7 @@
     %div.price
       = @item.show_price
     %div.sbutton
-      =link_to('/cart/add', remote:true, class: 'buy') do
+      =link_to("/cart/add?id=#{@item.id}&quantity=1", remote:true, class: 'buy') do
         %p.sbutton_text
           В корзину
   %div.column.right

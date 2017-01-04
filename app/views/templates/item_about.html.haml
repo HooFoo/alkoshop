@@ -26,7 +26,7 @@
       %div.cart_section
         =select_tag 'quantity', options_for_select((1..@item.in_stock).to_a, 1), class: 'count'
         %div.sbutton
-          =link_to("/cart/add?id=#{@item.id}", remote:true, class: 'buy') do
+          =link_to("/cart/add?id=#{@item.id}&quantity=1", remote:true, class: 'buy') do
             %p.sbutton_text
               В корзину
       %div.item_extra
