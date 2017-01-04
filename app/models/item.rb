@@ -21,12 +21,16 @@ class Item < ApplicationRecord
   def self.filtered(filters, options = {limit:24, offset:0})
     wheres = []
     names = filters.map do |type,filter|
-      unless filter[:current].empty? || type == :sort
+      unless filter[:current].nil? || filter[:current].empty? || type == :sort
         wheres << "#{type}.name = '#{filter[:current].to_s}'"
         type.to_s.singularize.to_sym
       end
     end
-    Item.joins(*names).where(wheres.join(' AND ')).order(filters[:sort][:current])
+    if wheres.size > 0
+      Item.joins(*names).where(wheres.join(' AND ')).order(filters[:sort][:current])
+    else
+      Item.all
+    end
   end
 
 
