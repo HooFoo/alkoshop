@@ -13,7 +13,13 @@ class ShopController < ApplicationController
 
   def catalog
     @filters = prepare_filters
-    @items = Item.filtered(@filters).limit(12)
+    @items = Item.filtered(@filters).limit(24)
+  end
+
+  def more
+    @filters = prepare_filters
+    @items = Item.filtered(@filters).limit(24).offset(params[:offset])
+    render template: 'shop/more', layout: false
   end
 
   def template

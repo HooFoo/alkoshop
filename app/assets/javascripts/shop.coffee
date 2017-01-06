@@ -2,11 +2,15 @@
 # All this logic will automatically be available in application.js.
 # You can use CoffeeScript in this file: http://coffeescript.org/
 class Shop
+
   constructor: ->
+    @offset = 24
     @handle_links()
     $('.catalog_screen, .brands_screen').bind "DOMSubtreeModified", () =>
       @activate_buttons()
     @handle_filters()
+    @activate_more()
+    @update_more()
 
   add_location: (url) =>
     type = url.split('?')[1]
@@ -30,6 +34,7 @@ class Shop
       url = "#{base}?#{params[0]}&quantity=#{e.target.value}"
       button.href = url
     $('.close_button').click =>
+      console.log('Тута')
       remove_params()
       $('.overlay').remove()
     $('.buy').on 'ajax:success', (e, data) =>
@@ -37,10 +42,22 @@ class Shop
     $('.overlay').find('.about').on 'ajax:success', (e,data) =>
       @activate_overlay(e,data)
 
+
   activate_overlay: (e,data) =>
     $('.overlay').remove()
     $('.brands_screen, .catalog_screen').append(data)
     @add_location(e.target['href'])
+
+  update_more: =>
+    console.log('here')
+    $('.more_link')[0 ].href = "/shop/more#{location.search}&offset=#{@offset}"
+
+  activate_more: =>
+    $('.more_link').on 'ajax:success', (e,data) =>
+      $('.items').append(data)
+      @handle_links()
+      @offset += 24
+      @update_more()
 
   handle_links: =>
     $('.about').on 'ajax:success', (e, data) =>

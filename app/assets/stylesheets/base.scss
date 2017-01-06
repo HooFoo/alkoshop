@@ -1026,6 +1026,21 @@ body {
       }
     }
   }
+
+  .more {
+    text-align: center;
+    margin-bottom: 77px;
+    .more_link {
+      .more_text {
+        color: #e09b59;
+        font-family: Circe;
+        font-size: 18px;
+        font-weight: 400;
+        text-decoration: underline;
+        font-variant: small-caps;
+      }
+    }
+  }
 }
 .whitespace {
   width: 100%;
@@ -1037,12 +1052,16 @@ body {
 .items {
   width: 100vw;
   min-height: 80vh;
-  height: 100%;
   margin: 0px;
   padding-left: calc( ( 100% - 1600px) /2 );
   margin-top: -100px;
   z-index: 2;
 
+  &:after {
+    clear: both;
+    content: "";
+    display: table;
+  }
   .item_box {
     /* Style for "Rectangle" */
     width: 376px;

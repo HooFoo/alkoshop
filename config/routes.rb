@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   scope '/shop' do
     get '/brands', controller: 'shop', action: :brands
     get '/catalog', controller: 'shop', action: :catalog
+    get '/more', controller: 'shop', action: :more
     get '/template/:name', controller: 'shop', action: :template
   end
 

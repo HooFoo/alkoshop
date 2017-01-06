@@ -16,3 +16,7 @@
   %div.items
     -@items.each do |item|
       =render partial: 'shared/item_box', object: item
+  %div.more
+    = link_to('/shop/more', remote: true, class: 'more_link') do
+      %p.more_text
+        загрузить еще
