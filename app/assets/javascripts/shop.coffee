@@ -49,7 +49,6 @@ class Shop
     @add_location(e.target['href'])
 
   update_more: =>
-    console.log('here')
     $('.more_link')[0 ].href = "/shop/more#{location.search}&offset=#{@offset}"
 
   activate_more: =>
@@ -68,7 +67,7 @@ class Shop
       type = e.target.id
       value = e.target.value
       url = "#{location.origin}#{location.pathname}"
-      filters = $.makeArray($('select.filter').map( (index,element) =>
+      filters = $.makeArray($('select.filter, input.filter').map( (index,element) =>
         "#{element.id}=#{element.value}"
       ))
       console.log(filters)

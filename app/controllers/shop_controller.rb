@@ -49,6 +49,10 @@ class ShopController < ApplicationController
         sort: {
             values: Sorts,
             current: params[:sort]
+        },
+        search: {
+          values: '',
+          current: params[:search]
         }
     }
   end

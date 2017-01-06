@@ -22,8 +22,13 @@ class Item < ApplicationRecord
     wheres = []
     names = filters.map do |type,filter|
       unless filter[:current].nil? || filter[:current].empty? || type == :sort
-        wheres << "#{type}.name = '#{filter[:current].to_s}'"
-        type.to_s.singularize.to_sym
+        if type == :search
+          wheres << "items.name LIKE '%#{filter[:current]}%'"
+          nil
+        else
+          wheres << "#{type}.name = '#{filter[:current].to_s}'"
+          type.to_s.singularize.to_sym
+        end
       end
     end
     if wheres.size > 0
