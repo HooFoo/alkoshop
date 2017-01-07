@@ -22,6 +22,13 @@ class Order < ApplicationRecord
     end
   end
 
+  def complete! address, delivery
+    self.address = address
+    self.delivery = delivery
+    self.order_state =  OrderState.where(name: 'Finished').first_or_create!
+    save!
+  end
+
   private
   def set_order_status
     self.order_state_id = 1

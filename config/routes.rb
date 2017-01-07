@@ -3,6 +3,8 @@ Rails.application.routes.draw do
     get '/add', controller: 'cart', action: :add
     get '/remove', controller: 'cart', action: :remove
     get '/show', controller: 'cart', action: :show
+    get '/complete', controller: 'cart', action: :complete
+    post '/complete', controller: 'cart', action: :finish
   end
 
 

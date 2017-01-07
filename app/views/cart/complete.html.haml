@@ -1,0 +1,20 @@
+%div.cart_complete_screen
+  %div.close.back
+  %div.panels
+    %div.panel.left_panel
+      %h1.subprice
+        Итого
+      %h1.subprice
+        = "#{@order.show_price} P"
+      = form_tag '/cart/complete', method: :post, remote: true, class: 'delivery_form' do
+        %p.delivery
+          = radio_button_tag :delivery, :self
+          = label_tag :delivery_self, 'Самовывоз'
+        %p.delivery
+          = radio_button_tag :delivery, :courier, checked: true
+          = label_tag :delivery_courier,'Доставка курьером по Вашему адресу'
+        %p.old_address
+          =text_field_tag :adress, '197373, Россия, Москва, Большеозтинский проспект, 43, к 2, кв 345. (300 р)'
+        = submit_tag 'Оформить заказ', class: 'submit sbutton'
+    %div.panel.right_panel
+      = render partial: 'shared/cart_items'

@@ -58,6 +58,173 @@ body {
   }
 }
 
+.whitespace {
+  width: 100%;
+  padding: 50px;
+  background: white;
+  z-index: 2;
+}
+
+.items {
+  width: 100vw;
+  min-height: 80vh;
+  margin: 0px;
+  padding-left: calc( ( 100% - 1600px) /2 );
+  margin-top: -100px;
+  z-index: 2;
+
+  &:after {
+    clear: both;
+    content: "";
+    display: table;
+  }
+  .item_box {
+    /* Style for "Rectangle" */
+    width: 376px;
+    margin: 0.8%;
+    height: 805px;
+    background-color: #fff;
+    z-index: 3;
+    float: left;
+    text-align: center;
+    transition: background 0.3s;
+    padding: 0px 20px;
+
+    &:hover {
+      background: #fdfdfd;
+    }
+
+    .item_about_link {
+
+      .name {
+        width: 100%;
+        font-family: Circe;
+        /* Text style for "Вино Chate" */
+        color: #350905;
+        font-size: 18px;
+        font-weight: 700;
+        text-transform: uppercase;
+        margin-top: 10%;
+        max-height: 77px;
+        overflow: hidden;
+      }
+      .heading{
+        color: #350905;
+        font-size: 18px;
+        font-weight: 700;
+        text-transform: uppercase;
+        /* Text style for "." */
+        font-variant: small-caps;
+      }
+      .short_description {
+        color: #ebad71;
+        font-size: 16px;
+        font-weight: 400;
+      }
+      .image {
+        margin-top: 8%;
+        .img {
+          height: 420px;
+          width: 240px;
+        }
+      }
+      .price {
+        height: 24px;
+        color: #350905;
+        font-family: "PT Serif";
+        font-size: 34px;
+        font-weight: 700;
+        line-height: 41px;
+        margin-top: 8%;
+
+      }
+    }
+    .sbutton {
+      margin: auto;
+      margin-top: 10%;
+      border-top: 1px solid #350905;
+      border-bottom: 1px solid #350905;
+      color: #350905;
+      .sbutton_text {
+        color: #350905;
+      }
+
+    }
+  }
+}
+
+.compressed{
+  width: calc(100vw - 499px);
+}
+
+.cart_items {
+  margin: 0;
+  overflow-y: auto;
+  height: calc(100vh - 343px);
+  .item {
+    .item_small {
+      display: flex;
+      .item_image {
+        width: 152px;
+        height: 152px;
+        margin-right: 34px;
+      }
+      .short_info {
+        .name {
+          color: #350905;
+          font-family: "PT Serif";
+          font-size: 18px;
+          font-weight: 700;
+          margin: 0;
+        }
+        .price {
+          color: #350905;
+          font-family: Circe;
+          font-size: 23px;
+          font-weight: 300;
+          margin: 0.5em 0;
+        }
+        .control_box {
+          display: flex;
+          .cart-count {
+            width: 129px;
+            margin-right: auto;
+            height: 38px;
+            border: 1px solid #d89e67;
+
+            color: #ebad71;
+            font-family: Circe;
+            font-size: 18px;
+            font-weight: 400;
+
+            .select-dropdown {
+              border-bottom: 0px;
+              margin: 0px;
+              text-align: center;
+            }
+            .select-content {
+              text-align: center;
+            }
+            .caret {
+              display: none;
+            }
+          }
+          .remove {
+            /* Style for "удалить" */
+            height: 14px;
+            color: #ebad71;
+            font-family: Circe;
+            font-size: 18px;
+            font-weight: 300;
+            text-decoration: underline;
+            margin-right: 29px;
+          }
+        }
+      }
+    }
+  }
+}
+
 .main-screen {
   width: 100vw;
   height: 100vh;
@@ -250,73 +417,7 @@ body {
         cursor: pointer;
         z-index: 1;
       }
-      .cart_items {
-        margin: 0;
-        overflow-y: auto;
-        height: calc(100vh - 343px);
-        .item {
-          .item_small {
-            display: flex;
-            .item_image {
-              width: 152px;
-              height: 152px;
-              margin-right: 34px;
-            }
-            .short_info {
-              .name {
-                color: #350905;
-                font-family: "PT Serif";
-                font-size: 18px;
-                font-weight: 700;
-                margin: 0;
-              }
-              .price {
-                color: #350905;
-                font-family: Circe;
-                font-size: 23px;
-                font-weight: 300;
-                margin: 0.5em 0;
-              }
-              .control_box {
-                display: flex;
-                .cart-count {
-                  width: 129px;
-                  margin-right: auto;
-                  height: 38px;
-                  border: 1px solid #d89e67;
 
-                  color: #ebad71;
-                  font-family: Circe;
-                  font-size: 18px;
-                  font-weight: 400;
-
-                  .select-dropdown {
-                    border-bottom: 0px;
-                    margin: 0px;
-                    text-align: center;
-                  }
-                  .select-content {
-                    text-align: center;
-                  }
-                  .caret {
-                    display: none;
-                  }
-                }
-                .remove {
-                  /* Style for "удалить" */
-                  height: 14px;
-                  color: #ebad71;
-                  font-family: Circe;
-                  font-size: 18px;
-                  font-weight: 300;
-                  text-decoration: underline;
-                  margin-right: 29px;
-                }
-              }
-            }
-          }
-        }
-      }
       .order_box{
         /* Style for "Прямоуголь" */
         width: 100%;
@@ -1076,101 +1177,96 @@ body {
     }
   }
 }
-.whitespace {
-  width: 100%;
-  padding: 50px;
-  background: white;
-  z-index: 2;
-}
 
-.items {
-  width: 100vw;
-  min-height: 80vh;
-  margin: 0px;
-  padding-left: calc( ( 100% - 1600px) /2 );
-  margin-top: -100px;
-  z-index: 2;
-
-  &:after {
-    clear: both;
-    content: "";
-    display: table;
+.cart_complete_screen {
+  .close {
+    position: absolute;
+    top: 58px;
+    left: 28px;
+    width: 24px;
+    height: 24px;
+    background: url('/images/close.png');
+    cursor: pointer;
+    z-index: 1;
   }
-  .item_box {
-    /* Style for "Rectangle" */
-    width: 376px;
-    margin: 0.8%;
-    height: 805px;
-    background-color: #fff;
-    z-index: 3;
-    float: left;
-    text-align: center;
-    transition: background 0.3s;
-    padding: 0px 20px;
-
-    &:hover {
-      background: #fdfdfd;
+  .panels {
+    display: flex;
+    height: 100vh;
+    width: 100%;
+    .panel {
+      width: 50%;
+      height: 100vh;
+      padding: 0px 100px;
     }
-
-    .item_about_link {
-
-      .name {
+    .left_panel {
+      padding-top: 176px;
+      .subprice {
         width: 100%;
+        margin: 0px;
+
+        text-align: center;
+        color: #240604;
         font-family: Circe;
-        /* Text style for "Вино Chate" */
-        color: #350905;
-        font-size: 18px;
+        font-size: 94px;
         font-weight: 700;
-        text-transform: uppercase;
-        margin-top: 10%;
-        max-height: 77px;
-        overflow: hidden;
-      }
-      .heading{
-        color: #350905;
-        font-size: 18px;
-        font-weight: 700;
-        text-transform: uppercase;
-        /* Text style for "." */
         font-variant: small-caps;
       }
-      .short_description {
-        color: #ebad71;
-        font-size: 16px;
-        font-weight: 400;
-      }
-      .image {
-        margin-top: 8%;
-        .img {
-          height: 420px;
-          width: 240px;
+      .delivery_form {
+        margin-top: 104px;
+        .delivery {
+          margin: 22px 0;
+          > label {
+            color: #350905;
+            font-family: Circe;
+            font-size: 18px;
+            font-weight: 400;
+            line-height: 42px;
+            font-variant: small-caps;
+            padding-left: 56px;
+            &:before {
+              width: 36px;
+              height: 36px;
+              border: 1px solid #d89e67;
+              background-color: #ffffff;
+              border-radius: 0px;
+            }
+            &:after {
+              width: 8px;
+              height: 8px;
+              border: 1px solid #d89e67;
+              background-color: #ebad71;
+              margin-top: 18px;
+              margin-left: 18px;
+              border-radius: 0px;
+            }
+          }
+        }
+        .submit {
+          color: #350905;
+          font-family: Circe;
+          font-size: 20px;
+          font-weight: 700;
+          line-height: 64px;
+          font-variant: small-caps;
+          background: none;
+          margin: 0px;
+          border: none;
+          border-top: 1px solid #350905;
+          border-bottom: 1px solid #350905;
+          width: 100%;
+          margin-top: 112px;
         }
       }
-      .price {
-        height: 24px;
-        color: #350905;
-        font-family: "PT Serif";
-        font-size: 34px;
-        font-weight: 700;
-        line-height: 41px;
-        margin-top: 8%;
-
-      }
     }
-    .sbutton {
-      margin: auto;
-      margin-top: 10%;
-      border-top: 1px solid #350905;
-      border-bottom: 1px solid #350905;
-      color: #350905;
-      .sbutton_text {
-        color: #350905;
+    .right_panel {
+      overflow: auto;
+      .cart_items {
+        margin-top: 186px;
+        margin-bottom: 186px;
+        height: auto;
+        overflow: initial;
       }
-
     }
   }
 }
 
-.compressed{
-  width: calc(100vw - 499px);
-}

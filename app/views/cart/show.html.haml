@@ -1,20 +1,6 @@
 %div.cart_wrapper
   %div.cart_close
-  %ul.cart_items
-    -@order_items.each do |cart_item|
-      -item = cart_item.item
-      -unless item.nil?
-        %li.item
-          %div.item_small
-            %img.item_image{src: item.image.thumb}
-            %div.short_info
-              %p.name
-                = item.name
-              %p.price
-                = "#{cart_item.unit_price} Р"
-              %div.control_box
-                =select_tag 'quantity', options_for_select((1..item.in_stock).to_a, cart_item.quantity), class: 'cart-count'
-                = link_to 'удалить',"/cart/remove?id=#{cart_item.id}", remote: true, class: 'remove'
+  =render partial: 'shared/cart_items'
   %div.order_box
     %div.order_price
       %p.text

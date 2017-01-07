@@ -36,8 +36,8 @@ class Ui
   updateCart: (data) =>
     $('.cart_wrapper').remove()
     $('.cart_board').append(data)
-    $('.cart-items').html($('.cart_items > .item').length)
-    $('.cart-count').material_select();
+    $('.cart_board .cart-items').html($('.cart_board .cart_items > .item').length)
+    $('.cart_board .cart-count').material_select();
     @activateCart()
 
   toggleCart: () ->
@@ -52,6 +52,11 @@ class Ui
       $('.cart-items').html($('.cart_items > .item').length)
     $('.remove').on 'ajax:success', (e,data) =>
       @updateCart(data)
+    $('.cart-count').change  (e) =>
+      id = e.target.attributes['data-item'].value
+      value = e.target.value
+      $.ajax("/cart/add?id=#{id}&quantity=#{value}").success (data) =>
+        @updateCart(data)
 
   updateTop: (data) ->
     $('.top').html(data)

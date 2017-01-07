@@ -59,7 +59,9 @@ class Shop
 
 
   update_more: =>
-    $('.more_link')[0 ].href = "/shop/more#{location.search}&offset=#{@offset}"
+    link = $('.more_link')[0]
+    if link
+      link.href = "/shop/more#{location.search}&offset=#{@offset}"
 
   activate_more: =>
     $('.more_link').on 'ajax:success', (e,data) =>
