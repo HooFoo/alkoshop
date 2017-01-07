@@ -857,6 +857,20 @@ body {
           width: 19px;
           height: 25px;
           margin-top: 10px;
+          cursor: pointer;
+          opacity: 0.8;
+          transition: opacity 0.3s;
+          &:hover {
+            opacity: 1;
+          }
+        }
+        .filter {
+          margin-left: 22px;
+          width: 0px;
+          transition: width 0.3s ease-in-out;
+        }
+        .opened {
+          width: calc(100% - 22px);
         }
       }
     }

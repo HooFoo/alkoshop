@@ -11,6 +11,7 @@ class Shop
     @handle_filters()
     @activate_more()
     @update_more()
+    @close_search()
 
   add_location: (url) =>
     type = url.split('?')[1]
@@ -66,6 +67,10 @@ class Shop
       @handle_links()
       @offset += 24
       @update_more()
+
+  close_search: () =>
+    $('.input-field > .prefix').click =>
+      $('input.filter').toggleClass('opened')
 
   handle_links: =>
     $('.about').on 'ajax:success', (e, data) =>
