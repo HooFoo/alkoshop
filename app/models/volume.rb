@@ -1,5 +1,6 @@
 class Volume < ApplicationRecord
-  has_and_belongs_to_many :items
+  has_many :items_volumes
+  has_many :items, through: :items_volumes
 
   def to_s
     ml

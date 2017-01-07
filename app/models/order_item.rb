@@ -17,10 +17,16 @@ class OrderItem < ApplicationRecord
   end
 
   def unit_price
+
     if persisted?
-      self[:unit_price]
+      price = self[:unit_price]
     else
-      item.price
+      price = item.price
+    end
+    if price.modulo(1) == 0
+      price.to_i
+    else
+      price
     end
   end
 

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170102150415) do
+ActiveRecord::Schema.define(version: 20170106190912) do
 
   create_table "active_admin_comments", force: :cascade do |t|
     t.string   "namespace"
@@ -80,9 +80,11 @@ ActiveRecord::Schema.define(version: 20170102150415) do
     t.index ["type_id"], name: "index_items_on_type_id"
   end
 
-  create_table "items_volumes", id: false, force: :cascade do |t|
+  create_table "items_volumes", force: :cascade do |t|
     t.integer "volume_id"
     t.integer "item_id"
+    t.float   "price"
+    t.index ["id"], name: "index_items_volumes_on_id"
     t.index ["item_id"], name: "index_items_volumes_on_item_id"
     t.index ["volume_id"], name: "index_items_volumes_on_volume_id"
   end

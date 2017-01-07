@@ -12,6 +12,9 @@ class CartController < ApplicationController
     else
       @order_item.quantity = params[:quantity].to_i
     end
+    begin
+      @order_item.unit_price = ItemsVolume.find(params[:price_id]).price
+    end
     @order_item.save
     session[:order_id] = @order.id
     @order_items = current_order.order_items
@@ -27,6 +30,10 @@ class CartController < ApplicationController
   end
 
   def show
+  end
+
+  def complete
+    
   end
 
   private

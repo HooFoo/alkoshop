@@ -1004,6 +1004,19 @@ body {
               margin-left: 10px;
               letter-spacing: 1px;
             }
+            .volumes {
+              display: flex;
+              .volume {
+                color: #ebad71;
+                text-decoration: underline;
+                cursor: pointer;
+                margin:  0px 10px;
+                .active {
+                  color: black;
+                  text-decoration: none !important;
+                }
+              }
+            }
           }
         }
 

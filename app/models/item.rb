@@ -2,8 +2,9 @@ class Item < ApplicationRecord
   belongs_to :brand
   belongs_to :type
   belongs_to :country
-
-  has_and_belongs_to_many :volumes
+  has_many :items_volumes
+  has_many :volumes, through: :items_volumes
+  accepts_nested_attributes_for :items_volumes, allow_destroy: true
 
   mount_uploader :image, ImagesUploader
 
@@ -48,10 +49,15 @@ class Item < ApplicationRecord
   end
 
   def show_price
-    if price.modulo(1) == 0
-      price.to_i
+    if items_volumes.first.nil?
+      real_price = price
     else
-      price
+      real_price = items_volumes.first.price
+    end
+    if real_price.modulo(1) == 0
+      real_price.to_i
+    else
+      real_price
     end
   end
 end

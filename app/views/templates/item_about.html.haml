@@ -54,9 +54,9 @@
           %div.name
             = "Объем:"
           %div.string.volumes
-            -@item.volumes.each do |volume|
-              %a
-                ="#{volume.ml} ml"
+            -@item.items_volumes.each do |iv|
+              %p.volume{volume: iv.id, price: iv.price}
+                ="#{iv.volume.ml} ml"
         %div.extra
           %div.name
             = "Компоненты:"

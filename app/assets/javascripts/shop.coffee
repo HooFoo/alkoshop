@@ -34,11 +34,19 @@ class Shop
       url = "#{base}?#{params[0]}&quantity=#{e.target.value}"
       button.href = url
     $('.close_button').click =>
-      console.log('Тута')
       remove_params()
       $('.overlay').remove()
     $('.buy').on 'ajax:success', (e, data) =>
       ui.updateCart(data)
+    $('.volumes').click (e) =>
+      console.log($('.buy')[0].href)
+      $('.item_price').html($(e.target).attr('price')+' Р')
+      old = $('.buy').attr('href')
+      if old.match(/&price_id=\d+/) != null
+        href = old.replace(/&price_id=\d+/,"&price_id=#{$(e.target).attr('volume')}")
+      else
+        href = "#{old}&price_id=#{$(e.target).attr('volume')}"
+      $('.buy').attr('href',href)
     $('.overlay').find('.about').on 'ajax:success', (e,data) =>
       @activate_overlay(e,data)
 
@@ -47,6 +55,7 @@ class Shop
     $('.overlay').remove()
     $('.brands_screen, .catalog_screen').append(data)
     @add_location(e.target['href'])
+
 
   update_more: =>
     $('.more_link')[0 ].href = "/shop/more#{location.search}&offset=#{@offset}"

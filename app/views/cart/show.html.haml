@@ -11,7 +11,7 @@
               %p.name
                 = item.name
               %p.price
-                = "#{item.show_price} Р"
+                = "#{cart_item.unit_price} Р"
               %div.control_box
                 =select_tag 'quantity', options_for_select((1..item.in_stock).to_a, cart_item.quantity), class: 'cart-count'
                 = link_to 'удалить',"/cart/remove?id=#{cart_item.id}", remote: true, class: 'remove'
@@ -23,6 +23,6 @@
         = "#{@order.show_price} Р"
 
     %div.sbutton
-      = link_to('/cart/complete', remote: true, class:'make_order') do
+      = link_to('/cart/complete', class:'make_order') do
         %p.sbutton_text
           оформить заказ
