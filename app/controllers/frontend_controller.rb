@@ -18,6 +18,6 @@ class FrontendController < ApplicationController
   end
 
   def orders
-
+    @orders = current_user.orders.joins(:order_state).where('order_states.name':'Finished')
   end
 end

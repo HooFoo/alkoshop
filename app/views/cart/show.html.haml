@@ -1,6 +1,6 @@
 %div.cart_wrapper
   %div.cart_close
-  =render partial: 'shared/cart_items'
+  =render partial: 'shared/cart_items', object: @order_items, locals: {removable: true}
   %div.order_box
     %div.order_price
       %p.text

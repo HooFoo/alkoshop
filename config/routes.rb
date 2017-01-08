@@ -18,6 +18,7 @@ Rails.application.routes.draw do
 
   get '/', controller: 'frontend', action: :index
   get '/profile', controller: 'frontend', action: :profile
+  get '/profile/orders', controller: 'frontend', action: :orders
   get '/shop', controller: 'frontend', action: :shop
   get '/template/:name', controller: 'frontend', action: 'template'
 

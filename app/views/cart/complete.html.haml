@@ -14,7 +14,7 @@
           = radio_button_tag :delivery, :courier, checked: true
           = label_tag :delivery_courier,'Доставка курьером по Вашему адресу'
         %p.old_address
-          =text_field_tag :adress, '197373, Россия, Москва, Большеозтинский проспект, 43, к 2, кв 345. (300 р)'
+          =text_field_tag :adress, @address
         = submit_tag 'Оформить заказ', class: 'submit sbutton'
     %div.panel.right_panel
-      = render partial: 'shared/cart_items'
+      = render partial: 'shared/cart_items', object: @order_items, locals: {removable: true}

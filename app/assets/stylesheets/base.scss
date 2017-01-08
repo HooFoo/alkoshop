@@ -162,27 +162,32 @@ body {
   overflow-y: auto;
   height: calc(100vh - 343px);
   .item {
+    margin-top: 70px;
     .item_small {
       display: flex;
-      .item_image {
-        width: 152px;
-        height: 152px;
-        margin-right: 34px;
+      .cart_item_link {
+        .item_image {
+          width: 152px;
+          height: 152px;
+          margin-right: 34px;
+        }
       }
       .short_info {
-        .name {
-          color: #350905;
-          font-family: "PT Serif";
-          font-size: 18px;
-          font-weight: 700;
-          margin: 0;
-        }
-        .price {
-          color: #350905;
-          font-family: Circe;
-          font-size: 23px;
-          font-weight: 300;
-          margin: 0.5em 0;
+        .cart_item_link {
+          .name {
+            color: #350905;
+            font-family: "PT Serif";
+            font-size: 18px;
+            font-weight: 700;
+            margin: 0;
+          }
+          .price {
+            color: #350905;
+            font-family: Circe;
+            font-size: 23px;
+            font-weight: 300;
+            margin: 0.5em 0;
+          }
         }
         .control_box {
           display: flex;
@@ -1270,3 +1275,58 @@ body {
   }
 }
 
+.orders_screen {
+  width: 100vw;
+  height: 100vh;
+  text-align: center;
+  overflow: auto;
+  .orders {
+    .order_box {
+      border-bottom: 1px solid #c2c2c2;
+      display: flex;
+      width: 1082px;
+      margin: auto;
+      padding: 67px 0px;
+      .panel{
+
+      }
+      .lefts {
+        width: 377px;
+        .info {
+          .date {
+            color: #240604;
+            font-family: Circe;
+            font-size: 18px;
+            font-weight: 400;
+            line-height: 36px;
+            margin: 0;
+            text-align: left;
+          }
+          .number {
+            color: #240604;
+            font-family: Circe;
+            font-size: 47px;
+            font-weight: 700;
+            font-variant: small-caps;
+            text-align: left;
+          }
+        }
+        .sbutton {
+          width: 377px;
+          border-top: 1px solid #350905;
+          border-bottom: 1px solid #350905;
+          cursor: pointer;
+          a .sbutton_text {
+            color: #350905;
+          }
+        }
+      }
+      .rights {
+        .order_items {
+          text-align: left;
+        }
+      }
+    }
+  }
+
+}

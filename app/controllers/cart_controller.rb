@@ -36,7 +36,7 @@ class CartController < ApplicationController
 
   def complete
     if (user = current_user)
-      @adress = user.orders.last.adress
+      @address = user.orders.last.address
     end
     render 'complete', layout: 'application'
   end
