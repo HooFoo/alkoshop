@@ -55,7 +55,7 @@ class Item < ApplicationRecord
     else
       real_price = items_volumes.first.price
     end
-    if real_price.modulo(1) == 0
+    if real_price.to_f.modulo(1) == 0
       real_price.to_i
     else
       real_price
