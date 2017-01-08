@@ -15,6 +15,7 @@ class Ui
     $('.cart-icon').click () =>
       @toggleCart()
     @activateCart()
+    @activateBack()
 
   toggleSidenav: ->
     $('.sidenav').toggleClass('open')
@@ -36,7 +37,7 @@ class Ui
   updateCart: (data) =>
     $('.cart_wrapper').remove()
     $('.cart_board').append(data)
-    $('.cart_board .cart-items').html($('.cart_board .cart_items > .item').length)
+    $('.cart-items').html($('.cart_board .cart_items > .item').length)
     $('.cart_board .cart-count').material_select();
     @activateCart()
 
@@ -49,9 +50,11 @@ class Ui
     $('.cart_close').click () =>
       @toggleCart()
     if $('.cart_items > .item').length > 0
-      $('.cart-items').html($('.cart_items > .item').length)
+      $('.cart-items').html($('.cart_board .cart_items > .item').length)
     $('.remove').on 'ajax:success', (e,data) =>
+      $(e.target).closest('.item').remove()
       @updateCart(data)
+
     $('.cart-count').change  (e) =>
       id = e.target.attributes['data-item'].value
       value = e.target.value
@@ -60,6 +63,13 @@ class Ui
 
   updateTop: (data) ->
     $('.top').html(data)
+
+  activateBack: () =>
+    element = $('.close.back')
+    if element.length > 0
+      $('.burger').hide()
+      element.click =>
+        history.back()
 
 ready = ->
   window.ui = new Ui()
