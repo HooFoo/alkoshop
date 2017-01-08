@@ -8,6 +8,7 @@ class FrontendController < ApplicationController
   def profile
 
   end
+
   def shop
     @item = Item.promoted
   end
@@ -16,4 +17,7 @@ class FrontendController < ApplicationController
     super
   end
 
+  def orders
+
+  end
 end
