@@ -2,9 +2,9 @@ class Item < ApplicationRecord
   belongs_to :brand
   belongs_to :type
   belongs_to :country
-  has_many :items_volumes, dependent: destroy
+  has_many :items_volumes, dependent: :destroy
   has_many :volumes, through: :items_volumes
-  has_many :order_items, dependent: destroy
+  has_many :order_items, dependent: :destroy
   accepts_nested_attributes_for :items_volumes, allow_destroy: true
 
   mount_uploader :image, ImagesUploader
