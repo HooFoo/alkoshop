@@ -4,7 +4,7 @@ class ItemsVolume < ApplicationRecord
   validates :price, numericality: { greater_than_or_equal_to: 1}
 
   def price
-    sprice = super
+    sprice = self[:price]
     if sprice.modulo(1) == 0
       sprice.to_i
     else
