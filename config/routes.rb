@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+
   scope '/cart' do
     get '/add', controller: 'cart', action: :add
     get '/remove', controller: 'cart', action: :remove
@@ -20,7 +21,10 @@ Rails.application.routes.draw do
   get '/profile', controller: 'frontend', action: :profile
   get '/profile/orders', controller: 'frontend', action: :orders
   get '/shop', controller: 'frontend', action: :shop
+  get '/contacts', controller: 'frontend', action: :contacts
   get '/template/:name', controller: 'frontend', action: 'template'
+
+  post 'support/add'
 
   devise_for :users, controllers: {
       sessions: 'users/sessions',

@@ -25,10 +25,8 @@
         = "#{@item.show_price} Р"
       %div.cart_section
         =select_tag 'quantity', options_for_select((1..@item.in_stock).to_a, 1), class: 'count'
-        %div.sbutton
-          =link_to("/cart/add?id=#{@item.id}&quantity=1", remote:true, class: 'buy') do
-            %p.sbutton_text
-              В корзину
+        = render partial: 'shared/sbutton', object: ' В корзину',
+               locals: {extra_class: '', link_class: 'buy', link: "/cart/add?id=#{@item.id}&quantity=1", remote: true}
       %div.item_extra
         %div.extra
           %div.name

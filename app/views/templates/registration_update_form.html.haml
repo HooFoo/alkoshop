@@ -1,6 +1,6 @@
 %div.overlay
   %div.close_button
-  = simple_form_for @user, url: user_registration_path, method: 'put', remote: true, html: {class: 'sign_up' } do |f|
+  = simple_form_for @user, url: user_registration_path, method: 'put', remote: true, html: {class: 'login_form sign_up' } do |f|
     %div.errors
     %div.input       
       = f.input_field :name

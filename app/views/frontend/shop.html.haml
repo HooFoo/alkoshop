@@ -2,10 +2,8 @@
   %div.column.left
     %div.text
       Мы будем варить турецкий кофе в медных турках на песке со специями. И радовать вас медитативным развлечением - рисованием на песке.
-    %div.sbutton
-      =link_to '/shop/catalog' do
-        %p.sbutton_text
-          Каталог
+    = render partial: 'shared/sbutton', object: 'Каталог',
+             locals: {extra_class: '', link_class: '', link: "/shop/catalog", remote: false}
   %div.column.center
     %div.name
       = @item.name
@@ -17,12 +15,9 @@
       %img.img{src: @item.image.promo_box}
     %div.price
       = @item.show_price
-    %div.sbutton
-      =link_to("/cart/add?id=#{@item.id}&quantity=1", remote:true, class: 'buy') do
-        %p.sbutton_text
-          В корзину
+    = render partial: 'shared/sbutton', object: 'В корзину',
+             locals: {extra_class: '', link_class: 'buy', link: "/cart/add?id=#{@item.id}&quantity=1", remote: true}
+
   %div.column.right
-    %div.sbutton
-      =link_to '/shop/brands' do
-        %p.sbutton_text
-          Бренды
+    = render partial: 'shared/sbutton', object: 'Бренды',
+             locals: {extra_class: '', link_class: '', link: "/shop/brands", remote: false}

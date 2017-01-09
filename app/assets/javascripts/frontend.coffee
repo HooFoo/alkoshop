@@ -12,6 +12,7 @@ class Ui
 
     )
     @loginScreen()
+    @contactsScreen()
     $('.cart-icon').click () =>
       @toggleCart()
     @activateCart()
@@ -26,7 +27,7 @@ class Ui
       @updateTop(data)
       $('.close_button').click (e) =>
         @updateTop(old_top)
-      $('.overlay > form').on( "ajax:success", (e, data) =>
+      $('.overlay > .login_form').on( "ajax:success", (e, data) =>
         @updateTop(data)
       ).on "ajax:error", (e, data) ->
         console.log('Error')
@@ -34,6 +35,16 @@ class Ui
     $('.sign-out').on "ajax:success", (e, data) =>
       @updateTop(data)
 
+  contactsScreen: =>
+    $('.contacts_link').on 'ajax:success', (e,data) =>
+      $('.contacts_screen').append(data)
+      $('.small_overlay > .close_button').click =>
+        $('.small_overlay').remove()
+      $('.submit_message').on("ajax:success", (ev,edata) =>
+        console.log data
+        $('.support_form').remove()
+        $('.small_overlay').append(edata)
+      )
   updateCart: (data) =>
     $('.cart_wrapper').remove()
     $('.cart_board').append(data)

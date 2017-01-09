@@ -2,11 +2,8 @@
   %div.front
     %img.brand_image{src:brand_box.image.brand}
   %div.back
-    %div.sbutton
-      =link_to "/shop/template/brand_about?brand=#{brand_box.name}", remote: true ,class: 'show_brand about'do
-        %p.sbutton_text
-          О бренде
-    %div.sbutton
-      =link_to"/shop/catalog?brand=#{brand_box.name}" do
-        %p.sbutton_text
-          Продукция
+    = render partial: 'shared/sbutton', object: 'О бренде',
+             locals: {extra_class: '', link_class: 'show_brand about', link: "/shop/template/brand_about?brand=#{brand_box.name}", remote: true}
+
+    = render partial: 'shared/sbutton', object: 'Продукция',
+         locals: {extra_class: '', link_class: '', link: "/shop/catalog?brand=#{brand_box.name}", remote: false}

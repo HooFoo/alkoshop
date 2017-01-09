@@ -1,6 +1,6 @@
 %div.overlay
   %div.close_button
-  = simple_form_for @user, url: new_user_session_path, remote: true do |f|
+  = simple_form_for @user, url: new_user_session_path, remote: true, html: {class: 'login_form' }  do |f|
     %div.errors
     %div.input
       = f.input_field :email, required: true

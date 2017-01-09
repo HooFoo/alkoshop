@@ -10,7 +10,6 @@
       %img.img{src: item_box.image.item_box}
     %div.price
       = item_box.show_price
-  %div.sbutton
-    =link_to("/cart/add?id=#{item_box.id}&quantity=1", remote:true, class: 'buy') do
-      %p.sbutton_text
-        В корзину
+  = render partial: 'shared/sbutton', object: 'В корзину',
+     locals: {extra_class: '', link_class: 'buy', link: "/cart/add?id=#{item_box.id}&quantity=1", remote: true}
+    

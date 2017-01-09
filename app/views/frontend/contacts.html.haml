@@ -1,0 +1,26 @@
+%div.contacts_screen
+  %div.panels
+    %div.contact_panel.left_panel
+      %div.text_wrap
+        %h2.heading
+          Контакты
+        =link_to 'mailto:info@wandlstash.ru', class: 'contacts_link email' do
+          %p.link_text
+            e-mail: info@wandlstash.ru
+
+        =link_to 'tel://8800723760073', class: 'contacts_link phone' do
+          %p.link_text
+            8 800 723 76 00 73
+      = render partial: 'shared/sbutton', object: 'обратная связь',
+               locals: {extra_class: '', link_class: 'contacts_link', link: '/template/support', remote: true}
+    %div.contact_panel.right_panel
+      %div.text_wrap
+        %img.address_pointer{src: '/images/address.svg'}
+        %h2.heading
+          Адрес
+        %p.address
+          Москва, Звонарский пер., д.7, стр.1.
+          %br
+          Время работы ПН-ПТ с 10:00 до 19:00.
+      = render partial: 'shared/sbutton', object: 'оплата и доставка',
+                 locals: {extra_class: '', link_class: 'contacts_link', link: '/template/delivery', remote: true}

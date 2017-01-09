@@ -21,7 +21,6 @@
         = @brand.name
       %div.brand_description
         = @brand.description
-      %div.sbutton
-        =link_to("/shop/catalog?brand=#{@brand.name}") do
-          %p.sbutton_text
-            Продукция
+      = render partial: 'shared/sbutton', object: 'Продукция',
+               locals: {extra_class: '', link_class: '', link: "/shop/catalog?brand=#{@brand.name}", remote: false}
+

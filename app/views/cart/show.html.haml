@@ -7,8 +7,5 @@
         итого без учета доставки
       %p.text.subtotal
         = "#{@order.show_price} Р"
-
-    %div.sbutton
-      = link_to('/cart/complete', class:'make_order') do
-        %p.sbutton_text
-          оформить заказ
+    = render partial: 'shared/sbutton', object: 'оформить заказ',
+             locals: {extra_class: '', link_class: 'make_order', link: '/cart/complete', remote: false}

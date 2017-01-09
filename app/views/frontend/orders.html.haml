@@ -8,10 +8,8 @@
               = order.updated_at.strftime('%d/%m/%y')
             %p.number
               = "Заказ ##{order.id}"
-          %div.sbutton
-            = link_to("/cart/repeat?id=#{order.id}") do
-              %p.sbutton_text
-                повторить заказ
+          = render partial: 'shared/sbutton', object: 'повторить заказ',
+             locals: {extra_class: '', link_class: '', link: "/cart/repeat?id=#{order.id}", remote: false}
         %div.panel.rights
           %div.order_items
             = render partial: 'shared/cart_items', object: order.order_items, locals: {removable: false}
