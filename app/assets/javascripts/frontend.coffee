@@ -40,10 +40,10 @@ class Ui
       $('.contacts_screen').append(data)
       $('.small_overlay > .close_button').click =>
         $('.small_overlay').remove()
-      $('.submit_message').on("ajax:success", (ev,edata) =>
-        console.log data
+
+      $('.support_form').on("ajax:complete", (ev,edata) =>
         $('.support_form').remove()
-        $('.small_overlay').append(edata)
+        $('.small_overlay').append(edata.responseText)
       )
   updateCart: (data) =>
     $('.cart_wrapper').remove()
