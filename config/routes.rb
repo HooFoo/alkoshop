@@ -22,6 +22,7 @@ Rails.application.routes.draw do
   get '/profile/orders', controller: 'frontend', action: :orders
   get '/shop', controller: 'frontend', action: :shop
   get '/contacts', controller: 'frontend', action: :contacts
+  get '/news', controller: 'frontend', action: :news
   get '/template/:name', controller: 'frontend', action: 'template'
 
   post 'support/add'

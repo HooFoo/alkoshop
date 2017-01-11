@@ -48,6 +48,9 @@ class ImagesUploader < CarrierWave::Uploader::Base
   version :promo_box do
     process :resize_to_fit => [450, 450]
   end
+  version :news do
+    process :resize_to_fit => [500, 300]
+  end
 
   # Add a white list of extensions which are allowed to be uploaded.
   # For images you might use something like this:

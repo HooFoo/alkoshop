@@ -1,0 +1,16 @@
+%div.overlay
+  %div.close_button
+  %div.columns
+    %div.column_right
+      %p.date
+        = @news.updated_at.strftime '%d %B'
+      %h1.title
+        = @news.title
+      %div.media
+        - if @news.media.empty?
+          %img.image{src: @news.image.news}
+        - else
+          = @news.media
+
+    %div.column_left
+      = @news.description

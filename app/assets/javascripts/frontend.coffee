@@ -17,6 +17,7 @@ class Ui
       @toggleCart()
     @activateCart()
     @activateBack()
+    @activateNews()
 
   toggleSidenav: ->
     $('.sidenav').toggleClass('open')
@@ -71,6 +72,22 @@ class Ui
       value = e.target.value
       $.ajax("/cart/add?id=#{id}&quantity=#{value}").success (data) =>
         @updateCart(data)
+
+  activateNews: () =>
+    @offset = 0
+    $('.left').click =>
+      if @offset < 0
+        @offset += 1474
+        console.log @offset
+        $('.news_slider').animate({left: @offset })
+    $('.right').click =>
+      @offset -= 1474
+      console.log @offset
+      $('.news_slider').animate({left: @offset })
+    $('.news_link').on 'ajax:success', (e,data) =>
+      $('.news_screen').append(data)
+      $('.close_button').click =>
+        $('.overlay').remove()
 
   updateTop: (data) ->
     $('.top').html(data)

@@ -14,6 +14,9 @@ class FrontendController < ApplicationController
   end
 
   def template
+    if params[:news]
+      @news = News.find params[:news]
+    end
     super
   end
 
@@ -23,5 +26,9 @@ class FrontendController < ApplicationController
 
   def contacts
 
+  end
+
+  def news
+    @news = News.all
   end
 end

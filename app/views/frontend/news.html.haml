@@ -1,0 +1,38 @@
+%div.news_screen
+  %div.news_wrapper
+    %div.news_slider
+      %div.news_box_wrapper
+        %div.news_box.first
+          = link_to "/template/news?news=#{@news[0].id}", class: 'news_link', remote: true do
+            %p.date
+              = @news[0].updated_at.strftime('%d %B')
+            %p.header
+              = @news[0].title
+            %div.short_description
+              = @news[0].short_description 530
+          = render partial: 'shared/sbutton', object: 'подробнее',
+                     locals: {extra_class: '', link_class: 'news_link', link: "/template/news?news=#{@news[0].id}", remote: true}
+
+      -(2..@news.size).step(2) do |i|
+        %div.news_box_wrapper
+          %div.news_box
+            = link_to "/template/news?news=#{@news[i-1].id}", class: 'news_link', remote: true do
+              %p.date
+                = @news[i-1].updated_at.strftime('%d %B')
+              %p.header
+                = @news[i-1].title
+              %div.short_description
+                = @news[i-1].short_description
+          -unless @news[i].nil?
+            %div.news_box
+              = link_to "/template/news?news=#{@news[i].id}", class: 'news_link', remote: true do
+                %p.date
+                  = @news[i].updated_at.strftime('%d %B')
+                %p.header
+                  = @news[i].title
+                %div.short_description
+                  = @news[i].short_description
+
+  %div.navigation
+    %div.left
+    %div.right

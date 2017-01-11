@@ -40,6 +40,6 @@ class Order < ApplicationRecord
 
 
 
-  scope :in_progress, ->{joins(:order_state).where('order_states.name': 'Completed')}
-  scope :complete, -> {joins(:order_state).where('order_states.name': 'In progress')}
+  scope :in_progress, ->{joins(:order_state).where('order_states.name': 'In progress')}
+  scope :complete, -> {joins(:order_state).where('order_states.name': 'Finished')}
 end
