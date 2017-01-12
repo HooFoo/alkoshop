@@ -116,6 +116,8 @@ body {
         text-transform: uppercase;
         /* Text style for "." */
         font-variant: small-caps;
+        max-height: 28px;
+        overflow: hidden;
       }
       .short_description {
         color: #ebad71;
@@ -1052,8 +1054,6 @@ input[type="submit"] {
       display: flex;
       .item_logo {
         padding: 0px 17px;
-        border-left: 1px solid #ebad71;
-        border-right: 1px solid #ebad71;
         margin-right: 126px;
         margin-left: 11%;
         width: 746px;
@@ -1119,12 +1119,15 @@ input[type="submit"] {
             text-align-last:center;
           }
           .sbutton {
-            border-top: 2px solid black;
-            border-bottom: 2px solid black;
-            a .sbutton_text {
-              color: black;
+            border-top: 1px solid #350905;
+            border-bottom: 1px solid #350905;
+            color: #350905;
+            .sbutton_text {
+              color: #350905;
             }
+
           }
+
         }
         .item_extra {
           /* Style for "Вино: Бело" */
