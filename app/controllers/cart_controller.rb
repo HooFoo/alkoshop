@@ -52,6 +52,16 @@ class CartController < ApplicationController
     end
   end
 
+  def repeat
+    @order = Order.find(params[:id]).dup
+    @order.order_items = Order.find(params[:id]).order_items
+    @order.order_state  = OrderState.where(name: 'In progress').first_or_create!
+    if @order.save
+      session[:order_id] = @order.id
+    end
+    redirect_to '/cart/complete'
+  end
+
   private
 
   def order_item_params
