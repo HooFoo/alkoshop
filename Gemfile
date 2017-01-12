@@ -42,6 +42,8 @@ gem 'materialize-sass'
 gem 'carrierwave'
 gem 'rmagick', '~> 2.13.1'
 gem 'bootstrap'
+gem 'ckeditor'
+
 
 
 gem 'inherited_resources', github: 'activeadmin/inherited_resources'

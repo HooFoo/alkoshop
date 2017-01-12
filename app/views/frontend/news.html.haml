@@ -9,7 +9,7 @@
             %p.header
               = @news[0].title
             %div.short_description
-              = @news[0].short_description 530
+              = strip_tags @news[0].short_description 530
           = render partial: 'shared/sbutton', object: 'подробнее',
                      locals: {extra_class: '', link_class: 'news_link', link: "/template/news?news=#{@news[0].id}", remote: true}
 
@@ -22,7 +22,7 @@
               %p.header
                 = @news[i-1].title
               %div.short_description
-                = @news[i-1].short_description
+                = strip_tags @news[i-1].short_description
           -unless @news[i].nil?
             %div.news_box
               = link_to "/template/news?news=#{@news[i].id}", class: 'news_link', remote: true do
@@ -31,7 +31,7 @@
                 %p.header
                   = @news[i].title
                 %div.short_description
-                  = @news[i].short_description
+                  = strip_tags @news[i].short_description
 
   %div.navigation
     %div.left
