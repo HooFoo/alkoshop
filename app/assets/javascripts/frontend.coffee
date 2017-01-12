@@ -6,9 +6,11 @@ class Ui
   constructor: ->
     $('.sidenav').hover( =>
         $('.burger').hide()
+        $('.cart-icon').hide()
       ,
       =>
         $('.burger').show(300)
+        $('.cart-icon').show(300)
 
     )
     @loginScreen()
@@ -61,8 +63,7 @@ class Ui
   activateCart: () =>
     $('.cart_close').click () =>
       @toggleCart()
-    if $('.cart_items > .item').length > 0
-      $('.cart-items').html($('.cart_board .cart_items > .item').length)
+    $('.cart-items').html($('.cart_board .cart_items > .item').length)
     $('.remove').on 'ajax:success', (e,data) =>
       $(e.target).closest('.item').remove()
       @updateCart(data)
