@@ -11,7 +11,6 @@ class Ui
       =>
         $('.burger').show(300)
         $('.cart-icon').show(300)
-
     )
     @loginScreen()
     @contactsScreen()

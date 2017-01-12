@@ -649,6 +649,13 @@ input[type="submit"] {
   .column {
     height: 100vh;
     text-align: center;
+    .sbutton {
+      width: 224px;
+      height: 59px;
+      .sbutton_text {
+        line-height: 59px;
+      }
+    }
   }
   .left {
     width: 45vw;
@@ -706,6 +713,8 @@ input[type="submit"] {
       text-transform: uppercase;
       /* Text style for "." */
       font-variant: small-caps;
+      max-height: 29px;
+      overflow: hidden;
     }
     .short_description {
       color: #ebad71;
@@ -986,25 +995,37 @@ input[type="submit"] {
 
   .overlay {
     background: #fcfcfc;
+    .close_button {
+      background: url('/images/close_black.png');
+    }
     .breadcrumb {
       display: flex;
       margin-top: 57px;
       margin-left: 97px;
 
       .breadcrumb-item {
+        margin-left: 3em;
         &:before {
           content: "\2192 \0020";
           border-width: 0.35em 0 0.35em 0.45em;
           display: block;
           height: 0;
           width: 0;
-          left: -1em;
+          left: -1.5em;
           position: relative;
-          color: black;
+          color: #ebad71;
+          font-size: 40px;
+          line-height: 20px;
+        }
+        &:first-child {
+          margin-left: 0px;
+          &:before{
+            display: none;
+          }
 
         }
-        &:first-child:before {
-          display: none;
+        &:last-child:before {
+          color: black;
         }
         a > p  {
           margin: 0;

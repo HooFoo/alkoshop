@@ -16,27 +16,13 @@
   font-family: 'Circe';
   src:font-url('Circe-Bold.otf');
   src:font-url('Circe-ExtraBold.otf');
-  font-weight: normal;
-  font-style: normal;
-}
-@font-face {
-  font-family: 'CRC25';
+  src:font-url('CRC55.otf');
+  src:font-url('CRC35.otf');
   src:font-url('CRC25.otf');
   font-weight: normal;
   font-style: normal;
 }
-@font-face {
-  font-family: 'CRC35';
-  src:font-url('CRC35.otf');
-  font-weight: normal;
-  font-style: normal;
-}
-@font-face {
-  font-family: 'CRC55';
-  src:font-url('CRC55.otf');
-  font-weight: normal;
-  font-style: normal;
-}
+
 @font-face {
   font-family: 'PT Serif';
   src:font-url('PTSerifBold.ttf');
