@@ -2,7 +2,8 @@ class FrontendController < ApplicationController
   layout proc{|c| c.request.xhr? ? false : 'application' }
 
   def index
-
+    @item = Item.promoted
+    @news = News.all
   end
 
   def profile
@@ -10,7 +11,13 @@ class FrontendController < ApplicationController
   end
 
   def shop
-    @item = Item.promoted
+
+  end
+  def contacts
+
+  end
+
+  def news
   end
 
   def template
@@ -28,12 +35,4 @@ class FrontendController < ApplicationController
     end
   end
 
-
-  def contacts
-
-  end
-
-  def news
-    @news = News.all
-  end
 end

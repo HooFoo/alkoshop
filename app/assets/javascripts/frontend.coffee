@@ -19,6 +19,8 @@ class Ui
     @activateCart()
     @activateBack()
     @activateNews()
+    @smoothScroll()
+    @alton()
 
   toggleSidenav: ->
     $('.sidenav').toggleClass('open')
@@ -98,6 +100,28 @@ class Ui
       $('.burger').hide()
       element.click =>
         history.back()
+
+  smoothScroll: =>
+    $ ->
+      $('a[href*="#"]:not([href="#"])').click ->
+        if location.pathname.replace(/^\//, '') == @pathname.replace(/^\//, '') and location.hostname == @hostname
+          target = $(@hash)
+          target = if target.length then target else $('[name=' + @hash.slice(1) + ']')
+          if target.length
+            $('html, body').animate { scrollTop: target.offset().top }, 1000
+            return false
+        return
+      return
+
+  alton: =>
+    if('.screen').length > 0
+      $(document).alton
+        fullSlideContainer: 'screens'
+        singleSlideClass: 'screen'
+        useSlideNumbers: true
+        slideNumbersBorderColor: '#fff'
+        slideNumbersColor: 'transparent'
+        bodyContainer: 'main-screen'
 
 ready = ->
   window.ui = new Ui()

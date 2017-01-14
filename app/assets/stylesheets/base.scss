@@ -1,5 +1,6 @@
 body {
   margin: 0px;
+  overflow-x: hidden;
 }
 
 .sbutton {
@@ -36,7 +37,7 @@ body {
 }
 
 .overlay {
-  position: absolute;
+  position: fixed;
   left: 0;
   top: 0;
   width: 100vw;
@@ -293,9 +294,6 @@ input[type="submit"] {
 .main-screen {
   width: 100vw;
   height: 100vh;
-  position: fixed;
-  top: 0;
-  left: 0;
   z-index: 0;
   transition: width 0.3s ease-in-out;
 
@@ -358,37 +356,47 @@ input[type="submit"] {
     }
   }
 
-  .quads {
+  #slide-numbers {
     width: 13px;
-    height: auto;
+    height: 220px !important;
     position: fixed;
-    top: 305px;
-    left: 24px;
+    top: 298px !important;
+    left: 31px !important;
+    bottom: auto !important;
     opacity: 0.9;
     transition: opacity 0.3s;
 
     &:hover {
       opacity: 1;
     }
+    > ul {
+      transform: none !important;
+      top: initial !important;
+      position: inherit !important;
+      .paginate {
+        width: 9px !important;
+        height: 9px !important;
+        background-color: #ebad71 !important;
+        border-radius: 0px !important;
+        -webkit-transition: opacity 0.3s;
+        transition: opacity 0.3s;
+        opacity: 0.14;
+        margin-bottom: 76px !important;
+        cursor: pointer;
+        border-color: rgb(235, 173, 113) !important;
 
-    .quad {
-      /* Style for "Rounded Re" */
-      width: 6px;
-      height: 6px;
-      background-color: rgb(235, 173, 113);
-      transition: opacity 0.3s;
-      opacity: 0.14;
-      margin-bottom: 37px;
-      cursor: pointer;
+        &:hover {
+          border: 1px solid rgb(235, 173, 113) !important;
+          opacity: 0.48;
+        }
 
-      &:hover {
-        border: 1px solid rgb(235, 173, 113);
-        opacity: 0.48;
       }
       .active {
         opacity: 0.58;
+        background: transparent !important;
       }
     }
+
   }
 
   .sidenav {
@@ -455,7 +463,7 @@ input[type="submit"] {
       background-image: url('/images/shop_left_column.png');
       background-size: cover;
     }
-    .profile {
+    .profile_screen {
       background-image: url('/images/profile_background.png');
       background-size: cover;
     }
@@ -524,8 +532,8 @@ input[type="submit"] {
 }
 
 .index-bg {
-  height: 100%;
-  width: 100%;
+  height: 100vh;
+  width: 100vw;
   background: url("/images/index_background.png");
   background-size: 100% 100%;
 
@@ -561,22 +569,20 @@ input[type="submit"] {
   }
 }
 
-.profile {
-  height: 100%;
-  width: 100%;
+.profile_screen {
+  height: 100vh;
+  width: 100vw;
   background: url("/images/profile_background.png");
   background-size: 100% 100%;
+  padding-top: 391px;
+  text-align: center;
 
   .top {
-    position: absolute;
-    top: 39%;
-    left: 50%;
-    transform: translate(-50%);
     text-align: center;
     z-index: 2;
+    margin: auto;
 
     .overlay {
-      transform: translate(-50%, -39%);
       background-color: #004a80;
       .sign_up {
         top: 20px !important;
@@ -634,9 +640,8 @@ input[type="submit"] {
   }
 
   .sbuttons {
-    position: absolute;
-    top: 54%;
-    left: 50%;
+    margin-top: 4%;
+    margin-left: 50%;
     transform: translateX(-50%);
     display: flex;
     width: 527px;
@@ -1418,13 +1423,14 @@ input[type="submit"] {
   background: url('/images/contacts_background.png');
   background-size: cover;
   text-align: center;
-  position: absolute;
+  padding-top: calc((100vh - 609px) / 2);
+
+  //position: absolute;
   .panels {
     width: 1111px;
     margin: auto;
     height: 609px;
     border: 1px solid rgba(235, 173, 113, 0.36);
-    margin-top: calc((100vh - 609px) / 2);
     display: flex;
     color: #ebad71;
 
@@ -1508,7 +1514,7 @@ input[type="submit"] {
     height: 873px;
     background-color: #004a80;
     padding: 20px;
-    position: absolute;
+    position: fixed;
     top: calc((100vh - 873px) / 2);
     left: calc((100vw - 1270px) / 2);
     min-height: 873px;
@@ -1583,15 +1589,14 @@ input[type="submit"] {
   background: url('/images/news_background.png');
   background-size: cover;
   text-align: center;
-  position: absolute;
+  padding-left: 133px;
+  padding-right: 255px;
+  padding-top: calc((100vh - 560px ) / 2);
+
 
   .news_wrapper {
     overflow: hidden;
     height: 560px;
-    margin-left: 133px;
-    margin-right: 255px;
-
-    margin-top: calc((100vh - 560px ) / 2);
 
     .news_slider {
       height: 560px;
@@ -1662,7 +1667,7 @@ input[type="submit"] {
   .navigation {
     display: flex;
     margin-top: 138px;
-    margin-left: 1740px;
+    margin-left: 1376px;
 
     .left {
       width: 34px;
@@ -1736,6 +1741,8 @@ input[type="submit"] {
         font-weight: 400;
         line-height: 29px;
         font-variant: small-caps;
+        overflow: auto;
+
       }
     }
   }

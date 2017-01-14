@@ -7,11 +7,12 @@
     = csrf_meta_tags
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
+    = javascript_include_tag '/javascripts/jquery.alton.min.js'
   %body
     %div.main-screen
       = render partial: 'shared/burger'
       = render partial: 'shared/sidenav'
       = render partial: 'shared/cart'
       = render partial: 'shared/cart_board'
-      = render partial: 'shared/quads'
-      = yield
+      %section.screens
+        = yield
