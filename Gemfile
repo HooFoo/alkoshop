@@ -43,7 +43,7 @@ gem 'carrierwave'
 gem 'rmagick', '~> 2.13.1'
 gem 'bootstrap'
 gem 'ckeditor'
-
+gem 'non-stupid-digest-assets', '~> 1.0.4'
 
 
 gem 'inherited_resources', github: 'activeadmin/inherited_resources'
