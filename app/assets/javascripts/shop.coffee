@@ -12,6 +12,7 @@ class Shop
     @activate_more()
     @update_more()
     @close_search()
+    @hide_burger()
 
   add_location: (url) =>
     type = url.split('?')[1]
@@ -73,6 +74,10 @@ class Shop
   close_search: () =>
     $('.input-field > .prefix').click =>
       $('input.filter').toggleClass('opened')
+
+  hide_burger: =>
+    if $('.catalog_screen').length > 0
+      $('.burger').hide()
 
   handle_links: =>
     $('.about').on 'ajax:success', (e, data) =>

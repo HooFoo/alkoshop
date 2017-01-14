@@ -949,6 +949,19 @@ input[type="submit"] {
     line-height: 20px;
     font-variant: small-caps;
     letter-spacing: 8px;
+    .close {
+      width: 24px;
+      float: left;
+      margin-left: 30px;
+      .spacer {
+        width: 24px;
+        height: 24px;
+        background: url('/images/close_black.png');
+        z-index: 1;
+        background-color: #fff;
+        background-size: cover;
+      }
+    }
   }
   .filters {
     background: #ffffff;
@@ -982,6 +995,28 @@ input[type="submit"] {
             border-bottom: none;
             text-align: center;
             margin-bottom: -9px;
+          }
+          .dropdown-content{
+            border: 1px solid #ebad71;
+            box-shadow: none;
+            padding: 7px;
+            text-align: left;
+            > li{
+              min-height: 20px;
+              &:first-child {
+                border-bottom: 2px solid rgba(203, 186, 185, 0.49);
+                margin-bottom: 5px;
+                background: white;
+              }
+              > span {
+                padding: 8px 3px;
+                color: black;
+                font-family: Circe;
+                font-weight: 700;
+                font-size: 17px;
+                line-height: 17px;
+              }
+            }
           }
         }
       }
