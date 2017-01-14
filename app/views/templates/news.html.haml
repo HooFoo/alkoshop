@@ -10,7 +10,7 @@
         - if @news.media.empty?
           %img.image{src: @news.image.news}
         - else
-          = @news.media
+          = @news.media.html_safe
 
     %div.column_left
       = @news.description.html_safe
