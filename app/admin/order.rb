@@ -18,6 +18,7 @@ ActiveAdmin.register Order do
       table_for order do
         column :price
         column :address
+        column :delivery
         column 'User' do
           order.user.email unless order.user.nil?
         end
@@ -30,6 +31,7 @@ ActiveAdmin.register Order do
         column "name" do |order_item|
           order_item.item.name
         end
+        column :volume
         column :quantity
         column :unit_price
         column :total_price

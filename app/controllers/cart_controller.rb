@@ -13,9 +13,12 @@ class CartController < ApplicationController
       @order_item.quantity = params[:quantity].to_i
     end
     begin
-      @order_item.unit_price = ItemsVolume.find(params[:price_id]).price
+      item_volume = ItemsVolume.find(params[:price_id])
     rescue ActiveRecord::RecordNotFound => e
-      #do nothing
+      item_volume = @order_item.item.items_volumes.first
+    ensure
+      @order_item.unit_price = item_volume.price
+      @order_item.volume = item_volume.volume
     end
     @order_item.save
     session[:order_id] = @order.id
@@ -43,8 +46,7 @@ class CartController < ApplicationController
 
   def finish
     if @order.complete! params[:adress], params[:delivery]
-      @order = Order.new
-      @order.save
+      @order = Order.create
       session[:order_id] = @order.id
       redirect_to '/profile/orders'
     else

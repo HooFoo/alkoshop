@@ -21,8 +21,13 @@ class FrontendController < ApplicationController
   end
 
   def orders
-    @orders = current_user.orders.joins(:order_state).where('order_states.name':'Finished')
+    if current_user
+      @orders = current_user.orders.joins(:order_state).where('order_states.name':'Finished')
+    else
+      redirect_to '/profile'
+    end
   end
+
 
   def contacts
 
