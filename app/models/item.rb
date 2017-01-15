@@ -7,7 +7,7 @@ class Item < ApplicationRecord
   has_many :order_items, dependent: :destroy
   accepts_nested_attributes_for :items_volumes, allow_destroy: true
 
-  validates :volumes, presence: true
+  validates :items_volumes, presence: true
 
   mount_uploader :image, ImagesUploader
 
