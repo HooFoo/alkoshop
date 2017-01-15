@@ -36,6 +36,6 @@
 @import "base";
 @import "materialize";
 
-@media screen and (min-width: 1366px) {
+@media screen and (max-width: 1366px) {
   @import "sizes/1366x768";
 }

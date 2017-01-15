@@ -43,7 +43,7 @@ class Ui
     $('.contacts_link').on 'ajax:success', (e,data) =>
       $('.contacts_screen').append(data)
       $('.small_overlay > .close_button').click =>
-        $('.small_overlay').remove()
+        $('.overlay').remove()
 
       $('.support_form').on("ajax:complete", (ev,edata) =>
         $('.support_form').remove()
@@ -79,11 +79,11 @@ class Ui
     @offset = 0
     $('.left').click =>
       if @offset < 0
-        @offset += 1474
+        @offset += newsWidth()
         console.log @offset
         $('.news_slider').animate({left: @offset })
     $('.right').click =>
-      @offset -= 1474
+      @offset -= newsWidth()
       console.log @offset
       $('.news_slider').animate({left: @offset })
     $('.news_link').on 'ajax:success', (e,data) =>
@@ -123,6 +123,12 @@ class Ui
         slideNumbersBorderColor: '#fff'
         slideNumbersColor: 'transparent'
         bodyContainer: 'main-screen'
+
+  newsWidth = () =>
+    scrollWidth = 1474
+    if window.innerWidth <=1366
+      scrollWidth = 994
+    return scrollWidth
 
 ready = ->
   window.ui = new Ui()

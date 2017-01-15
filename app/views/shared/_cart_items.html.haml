@@ -9,7 +9,7 @@
           %div.short_info
             %a.cart_item_link{href:item_link(item)}
               %p.name
-                = item.name
+                = "#{item.name}, #{1000/cart_item.volume.ml}л"
               %p.price
                 = "#{cart_item.unit_price} Р"
             %div.control_box

@@ -1512,14 +1512,15 @@ input[type="submit"] {
     // Style for "Rectangle"
     width: 1270px;
     height: 873px;
-    background-color: #004a80;
+    background: url('/images/small_overlay_bg.png');
+    background-size: cover;
     padding: 20px;
     position: fixed;
     top: calc((100vh - 873px) / 2);
     left: calc((100vw - 1270px) / 2);
     min-height: 873px;
     box-shadow: inset 0px 0px 0px 1px rgba(199, 178, 153, 0.29);
-    outline: 10px solid #004a80;
+    outline: 10px solid #110909;
     color: #ebad71;
     font-family: Circe;
     font-size: 50px;

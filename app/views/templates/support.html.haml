@@ -1,17 +1,18 @@
-%div.overlay.small_overlay
-  %div.close_button
-  %h1.support
-    Обратная связь
-  = form_tag '/support/add', class: 'support_form', remote: true, method: :post do
-    %div.upper_inputs
+%div.overlay
+  %div.small_overlay
+    %div.close_button
+    %h1.support
+      Обратная связь
+    = form_tag '/support/add', class: 'support_form', remote: true, method: :post do
+      %div.upper_inputs
+        %div.input
+          = text_field_tag :name, @user.name, required: true
+          = label_tag :name, 'Имя'
+        %div.input
+          = text_field_tag :email, @user.email, required: true
+          = label_tag :email, 'Email'
       %div.input
-        = text_field_tag :name, @user.name, required: true
-        = label_tag :name, 'Имя'
-      %div.input
-        = text_field_tag :email, @user.email, required: true
-        = label_tag :email, 'Email'
-    %div.input
-      = text_area_tag :text,'', required: true, class: 'materialize-textarea', rows:3
-      = label_tag :text, 'Ваше сообщение'
+        = text_area_tag :text,'', required: true, class: 'materialize-textarea', rows:3
+        = label_tag :text, 'Ваше сообщение'
 
-    = submit_tag 'Сохранить', class: 'submit_message sbutton'
+      = submit_tag 'Сохранить', class: 'submit_message sbutton'
