@@ -114,7 +114,8 @@ class Ui
       return
 
   alton: =>
-    if('.screen').length > 0
+    if $('.screen').length > 0
+      console.log('Alton')
       $(document).alton
         fullSlideContainer: 'screens'
         singleSlideClass: 'screen'
