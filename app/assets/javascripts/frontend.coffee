@@ -128,6 +128,8 @@ class Ui
     scrollWidth = 1474
     if window.innerWidth <=1366
       scrollWidth = 994
+    if window.innerWidth <=1024
+      scrollWidth = 780
     return scrollWidth
 
 ready = ->

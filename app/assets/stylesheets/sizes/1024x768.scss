@@ -1,0 +1,265 @@
+.index-bg {
+  .logo {
+    width: 536px;
+    height: 204px;
+  }
+  .text {
+    top: 481px;
+  }
+}
+.shop_screen {
+  .left {
+    width: 446px;
+  }
+  .center {
+    width: 282px;
+    .image {
+      margin-top: 6%;
+      .img {
+        height: 451px;
+        width: 70%;
+      }
+    }
+    .sbutton {
+      width: 121px;
+      height: 39px;
+      .sbutton_text {
+        font-size: 16px;
+        line-height: 39px;
+      }
+    }
+  }
+  .right {
+    width: calc(100vw - 446px - 282px);
+  }
+}
+.news_screen {
+  padding-left: 92px;
+  padding-right: 152px;
+  .news_wrapper {
+    height: 431px;
+    .news_slider {
+      height: 431px;
+      padding: 0px 21px;
+      .news_box_wrapper {
+        padding-left: 20px;
+
+        margin-right: 25px;
+
+        .news_box {
+          max-height: 250px;
+          width: 334px;
+          padding-right: 20px;
+          margin-bottom: 20px;
+          padding-bottom: 12px;
+          .date {
+            line-height: 16px;
+          }
+          .header {
+            line-height: 30px;
+            margin-top: 5px;
+          }
+          .short_description {
+            max-height: 210px;
+            overflow: hidden;
+            font-size: 16px;
+            margin-top: 7px;
+          }
+        }
+      }
+    }
+    .first {
+      max-height: 431px  !important;
+      height: 431px;
+      .sbutton {
+        width: 92px;
+        height: 31px;
+        .sbutton_text {
+          line-height: 31px;
+          font-size: 12px;
+        }
+      }
+    }
+  }
+  .navigation {
+    margin-left: 680px;
+  }
+  .overlay {
+    .columns {
+      padding: 95px 37px;
+      .column_right {
+        .date {
+          font-size: 16px;
+        }
+        .title {
+          margin-top: 34px;
+          font-size: 72px;
+        }
+        .media {
+          margin-top: 48px;
+          height: 298px;
+          width: 384px;
+        }
+      }
+    }
+  }
+}
+.contacts_screen {
+  .panels {
+    width: 844px;
+  }
+  .small_overlay {
+    height: 708px;
+    min-height: 708px;
+    top: calc((100vh - 708px) / 2);
+    width: 924px;
+    left: calc((100vw - 924px) / 2);
+    .close_button {
+      left: 860px;
+    }
+    .support {
+      margin-bottom: 40px;
+    }
+    .support_form {
+      padding: 30px 223px;
+    }
+    .delivery {
+      max-height: 528px;
+    }
+  }
+}
+.profile_screen {
+  padding-top: 280px;
+}
+.catalog_screen {
+  .items {
+    .item_box {
+      width: 319px;
+      height: 619px;
+      &:last-child {
+        display: none;
+      }
+      .item_about_link {
+        .name {
+          font-size: 14px;
+        }
+        .heading {
+          display: none;
+        }
+        .short_description {
+          font-size: 12px;
+        }
+        .image {
+          .img {
+            height: 340px;
+            width: 195px;
+          }
+        }
+      }
+
+    }
+  }
+  .filters {
+    .filters_list {
+      .filter_item {
+        .select-wrapper {
+          width: 138px;
+          .select-dropdown {
+          }
+        }
+      }
+      .input-field {
+        .opened {
+          width: 900px;
+          left: -1000px;
+        }
+      }
+    }
+  }
+  .overlay {
+    .breadcrumb {
+      .breadcrumb-item {
+        &:before {
+          font-size: 36px;
+          line-height: 16px;
+        }
+        a > p, p {
+          font-size: 14px;
+        }
+      }
+    }
+    .item_info {
+      .item_logo {
+        width: 435px;
+        height: 574px;
+        margin-left: 20px;
+        margin-right: 20px;
+        .item_img {
+          height: 547px;
+          width: 149px;
+        }
+      }
+      .item_text {
+        max-width: calc(100% - 41% - 149px)
+      }
+    }
+    .same_box {
+      .same {
+        .items {
+          height: 640px;
+        }
+        .same_head {
+          padding: 59px 0;
+        }
+      }
+    }
+  }
+}
+.cart_complete_screen {
+  .panels {
+    .panel {
+      padding: 0px 40px;
+    }
+    .left_panel {
+      padding-top: 149px;
+      .subprice {
+        font-size: 72px;
+      }
+      .delivery_form {
+        margin-top: 80px;
+        .submit{
+          margin-top: 20px;
+        }
+      }
+    }
+    .right_panel {
+
+      .cart_items {
+        margin-top: 149px;
+      }
+    }
+  }
+}
+.brands_screen {
+  .overlay {
+    .brand_info {
+      .brand_logo {
+        .brand_img {
+          width: 384px;
+          height: 271px;
+        }
+      }
+      .brand_text {
+        max-width: calc(100% - 31% - 384px);
+        margin-right: 7%;
+      }
+    }
+  }
+}
+.orders_screen {
+  .orders {
+    .order_box {
+      width: 800px;
+    }
+  }
+}

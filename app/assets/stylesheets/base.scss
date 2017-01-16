@@ -548,7 +548,7 @@ input[type="submit"] {
 
     background: url("/images/logo.svg");
     background-repeat: no-repeat;
-    background-size: cover;
+    background-size: contain;
 
   }
 
@@ -1696,7 +1696,8 @@ input[type="submit"] {
   }
 
   .overlay {
-    background-color: #004a80;
+    background: url('/images/small_overlay_bg.png');
+    background-size: cover;
     color: #daa36c;
     font-family: Circe;
     .columns {
@@ -1705,7 +1706,7 @@ input[type="submit"] {
       text-align: left;
       .column_right {
         width: 519px;
-        margin-right: 80px;
+        margin-right: 60px;
         .date {
           color: #ebad71;
           font-family: Circe;
@@ -1743,7 +1744,8 @@ input[type="submit"] {
         line-height: 29px;
         font-variant: small-caps;
         overflow-y: auto;
-
+        max-height: calc(100vh - 107px);
+        overflow-x: visible;
       }
     }
   }
