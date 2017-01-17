@@ -136,9 +136,6 @@
     .item_box {
       width: 319px;
       height: 619px;
-      &:last-child {
-        display: none;
-      }
       .item_about_link {
         .name {
           font-size: 14px;
@@ -207,6 +204,11 @@
       .same {
         .items {
           height: 640px;
+          .item_box {
+            &:last-child {
+              display: none;
+            }
+          }
         }
         .same_head {
           padding: 59px 0;
