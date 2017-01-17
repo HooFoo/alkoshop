@@ -3,7 +3,7 @@ class Volume < ApplicationRecord
   has_many :items, through: :items_volumes
 
   def to_s
-    ml
+    ml.to_s
   end
 
 end
