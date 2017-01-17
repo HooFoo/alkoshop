@@ -1,0 +1,460 @@
+.index-bg {
+  .logo {
+    top: 41%;
+    width: 83%;
+    height: 204px;
+  }
+  .text {
+    top: 72%;
+    font-size: 24px;
+  }
+}
+.shop_screen {
+  display: block;
+  .left {
+    width: 100%;
+    height: 80%;
+  }
+  .center {
+    display: none;
+    width: 282px;
+    .image {
+      margin-top: 6%;
+      .img {
+        height: 451px;
+        width: 70%;
+      }
+    }
+    .sbutton {
+      width: 121px;
+      height: 39px;
+      .sbutton_text {
+        font-size: 16px;
+        line-height: 39px;
+      }
+    }
+  }
+  .right {
+    height: 20%;
+    width: 100%;
+    .sbutton {
+      top: 50%;
+      transform: translate(-50%, -50%);
+    }
+  }
+}
+.news_screen {
+  padding-left: 9%;
+  padding-right: 9%;
+  .news_wrapper {
+    height: 80%;
+    .news_slider {
+      height: 80%;
+      padding: 0px 21px;
+      .news_box_wrapper {
+        padding-left: 20px;
+
+        margin-right: 25px;
+
+        .news_box {
+          max-height: 250px;
+          width: 66vw;
+          padding-right: 20px;
+          margin-bottom: 20px;
+          padding-bottom: 12px;
+          .date {
+            line-height: 16px;
+          }
+          .header {
+            line-height: 30px;
+            margin-top: 5px;
+          }
+          .short_description {
+            max-height: 210px;
+            overflow: hidden;
+            font-size: 16px;
+            margin-top: 7px;
+          }
+        }
+      }
+    }
+    .first {
+      max-height: 80%  !important;
+      height: 100% !important;
+      .sbutton {
+        margin-top: 5px;
+        width: 92px;
+        height: 31px;
+        .sbutton_text {
+          line-height: 31px;
+          font-size: 12px;
+        }
+      }
+    }
+  }
+  .navigation {
+    margin-left: 66%;
+    margin-top: 10%;
+  }
+  .overlay {
+    .columns {
+      padding: 95px 37px;
+      display: block;
+
+      .column_right {
+        .date {
+          font-size: 16px;
+        }
+        .title {
+          margin-top: 34px;
+          font-size: 72px;
+        }
+        .media {
+          margin-top: 48px;
+          height: 100%;
+          width: 100%;
+        }
+      }
+      .column_left {
+        overflow-y: inherit;
+        max-height: inherit;
+      }
+    }
+  }
+}
+.contacts_screen {
+  padding-top: 5%;
+  .panels {
+    height: 90%;
+    width: 80%;
+    display: block;
+    .contact_panel {
+      height: 50%;
+      width: 100%;
+      .heading {
+        margin-top: 10%;
+      }
+      .sbutton {
+        margin-top: 5%;
+      }
+    }
+    .right_panel {
+      .text_wrap {
+        padding-top: 12%;
+        height: 65%;
+      }
+      .sbutton {
+        margin-top: 8%;
+      }
+    }
+  }
+  .small_overlay {
+    height: 708px;
+    min-height: 708px;
+    top: calc((100vh - 708px) / 2);
+    width: 90%;
+    left: calc((100vw - 90%) / 2);
+    .close_button {
+      left: 83%;
+    }
+    .support {
+      margin-bottom: 40px;
+    }
+    .support_form {
+      padding: 10px 15%;
+      .upper_inputs {
+       display: block;
+        .input {
+          width: 100%;
+        }
+      }
+    }
+    .delivery {
+      max-height: 528px;
+    }
+  }
+}
+.profile_screen {
+  padding-top: 50%;
+  .top {
+    .overlay {
+      .sign_up {
+        padding-top: 120px;
+        left: 0;
+      }
+    }
+  }
+  .sbuttons {
+    display: block;
+    .sbutton {
+      float: none !important;
+      margin: auto;
+      &:first-child {
+        margin-bottom: 8%;
+      }
+    }
+  }
+}
+.catalog_screen {
+  .header {
+    .close {
+      transform: translateY(-45px);
+    }
+  }
+  .items {
+    .item_box {
+      width: 48.4vw;
+      height: 400px;
+      .item_about_link {
+        .name {
+          font-size: 12px;
+        }
+        .heading {
+          display: none;
+        }
+        .short_description {
+          font-size: 12px;
+        }
+        .image {
+          .img {
+            height: auto;
+            width: 100%;
+          }
+        }
+      }
+
+    }
+  }
+  .filters {
+    .filters_list {
+      display: block;
+      .filter_item {
+        margin-right: 0;
+        &:last-child {
+          border-bottom: 0px;
+          > .prefix {
+            margin-left: 50%;
+            transform: translateX(-50%);
+          }
+        }
+        .select-wrapper {
+          width: 100%;
+          .select-dropdown {
+          }
+        }
+      }
+      .input-field {
+        .opened {
+          width: 100%;
+          left: 0;
+          margin-left: 0;
+        }
+      }
+    }
+  }
+  .whitespace {
+    padding: 65px;
+  }
+  .overlay {
+    .close_button {
+      top: 20px;
+    }
+    .breadcrumb {
+      margin-left: 0px;
+      .breadcrumb-item {
+        &:before {
+          font-size: 36px;
+          line-height: 16px;
+        }
+        a > p, p {
+          font-size: 14px;
+        }
+        &:last-child {
+          display: none;
+        }
+      }
+    }
+    .item_info {
+      .item_logo {
+        position: absolute;
+        width: 100%;
+        height: auto;
+        top: 211px;
+        margin: 0;
+        .item_img {
+          height: auto;
+          width: 100%;
+        }
+      }
+      .item_text {
+        max-width: 100%;
+        width: 80%;
+        margin-left: 10%;
+        .item_price {
+          padding-top: calc(100% + 40px);
+        }
+        .item_name {
+          width: 100%;
+          font-size: 46px;
+        }
+        .cart_section {
+          .count {
+            position: absolute;
+            transform: translate(56vw, -100px)
+          }
+          .sbutton {
+            width: 100%;
+          }
+        }
+      }
+    }
+    .same_box {
+      .same {
+        .items {
+          height: 640px;
+          .item_box {
+            &:last-child {
+              display: block;
+            }
+          }
+        }
+        .same_head {
+          padding: 59px 0;
+        }
+      }
+    }
+  }
+}
+.cart_complete_screen {
+  .close {
+    top: 25px;
+  }
+  .panels {
+    display: block;
+    .panel {
+      margin: 0;
+      padding: 0px 40px;
+      width: 100%;
+    }
+    .left_panel {
+      padding-top: 106px;
+      .subprice {
+        font-size: 72px;
+      }
+      .delivery_form {
+        margin-top: 80px;
+        .submit{
+          margin-top: 20px;
+        }
+      }
+    }
+    .right_panel {
+
+      .cart_items {
+        margin-top: 0px;
+        .item{
+          .item_small {
+            .cart_item_link {
+              .item_image {
+                margin-right: 0px;
+              }
+            }
+            .short_info {
+              .control_box {
+                .remove {
+                  margin-right: 0px;
+                }
+                .cart-count {
+                  width: 90px;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+.brands_screen {
+  .header {
+    font-size: 72px;
+  }
+  .brands {
+    .brand_box {
+      width: 46.4vw;
+      height: 46.4vw;
+      .back {
+        outline: 1px solid rgba(26, 6, 2, 0.95);
+        .sbutton {
+          margin-top: 20%;
+        }
+      }
+    }
+  }
+  .overlay {
+    .close_button {
+      top: 25px;
+    }
+    .breadcrumb {
+      margin: 5px;
+      font-size: 12px;
+      margin-top: 60px;
+      .breadcrumb-item{
+        a > p, p {
+          font-size: 12px;
+        }
+      }
+    }
+    .brand_info {
+      .brand_logo {
+        text-align: center;
+        margin-left: 10%;
+        width: 80%;
+        margin-bottom: 10px;
+        .brand_img {
+          width: 80%;
+          height: auto;
+          margin: auto;
+        }
+      }
+      .brand_text {
+        max-width: 80%;
+        margin: 10px 10%;
+        float: inherit;
+      }
+      .sbutton {
+        width: 100%;
+      }
+    }
+  }
+}
+.orders_screen {
+
+  .orders {
+    .order_box {
+      width: 100%;
+      display: block;
+      .panel {
+        width: 100%;
+        padding: 10%;
+      }
+      .lefts {
+        width: 100%;
+        .sbutton {
+          width: 100%;
+        }
+      }
+    }
+  }
+}
+.main-screen {
+  .opened {
+    width: 100%;
+    .cart_wrapper {
+      width: 100%;
+    }
+  }
+  .replaced {
+    right: 90%;
+  }
+}

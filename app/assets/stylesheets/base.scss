@@ -463,7 +463,7 @@ input[type="submit"] {
       background-image: url('/images/shop_left_column.png');
       background-size: cover;
     }
-    .profile_screen {
+    .profile {
       background-image: url('/images/profile_background.png');
       background-size: cover;
     }
@@ -617,7 +617,6 @@ input[type="submit"] {
     .text {
       /* Style for "Здравствуй" */
       width: 100vw;
-      height: 57px;
       color: #ebad71;
       font-family: Circe;
       font-size: 50px;
