@@ -21,6 +21,7 @@ class Ui
     @activateNews()
     @smoothScroll()
     @alton()
+    @confirmation()
 
   toggleSidenav: ->
     $('.sidenav').toggleClass('open')
@@ -133,6 +134,15 @@ class Ui
     if window.innerWidth <=640
       scrollWidth = window.innerWidth * 0.80
     return scrollWidth
+
+  confirmation: =>
+    if localStorage.getItem('confirmed') != null
+      $('.confirmation').remove()
+    $('.confirmation_close').click =>
+      history.back()
+    $('.confirmation_button').click =>
+      localStorage.setItem('confirmed','true')
+      $('.confirmation').remove()
 
 ready = ->
   window.ui = new Ui()
