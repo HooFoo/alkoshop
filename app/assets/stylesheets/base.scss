@@ -448,23 +448,23 @@ input[type="submit"] {
     }
 
     .index {
-      background-image: url('/images/index_background.png');
+      background-image: url('/images/index_background.jpg');
       background-size: cover;
     }
     .contacts {
-      background-image: url('/images/contacts_background.png');
+      background-image: url('/images/contacts_background.jpg');
       background-size: cover;
     }
     .news {
-      background-image: url('/images/news_background.png');
+      background-image: url('/images/news_background.jpg');
       background-size: cover;
     }
     .shop {
-      background-image: url('/images/shop_left_column.png');
+      background-image: url('/images/shop_background.jpg');
       background-size: cover;
     }
     .profile {
-      background-image: url('/images/profile_background.png');
+      background-image: url('/images/profile_background.jpg');
       background-size: cover;
     }
     .odd {
@@ -534,7 +534,7 @@ input[type="submit"] {
 .index-bg {
   height: 100vh;
   width: 100vw;
-  background: url("/images/index_background.png");
+  background: url("/images/index_background.jpg");
   background-size: 100% 100%;
 
   .logo {
@@ -572,7 +572,7 @@ input[type="submit"] {
 .profile_screen {
   height: 100vh;
   width: 100vw;
-  background: url("/images/profile_background.png");
+  background: url("/images/profile_background.jpg");
   background-size: 100% 100%;
   padding-top: 391px;
   text-align: center;
@@ -583,7 +583,7 @@ input[type="submit"] {
     margin: auto;
 
     .overlay {
-      background-color: #004a80;
+      background: url("/images/small_overlay_bg.jpg");
       .sign_up {
         top: 20px !important;
         .input {
@@ -657,6 +657,8 @@ input[type="submit"] {
   height: 100%;
   width: 100%;
   display: flex;
+  background: url("/images/shop_background.jpg");
+  background-size: cover;
 
   .column {
     height: 100vh;
@@ -671,8 +673,6 @@ input[type="submit"] {
   }
   .left {
     width: 45vw;
-    background: url("/images/shop_left_column.png");
-    background-size: cover;
 
     .column {
       height: 100%;
@@ -708,6 +708,7 @@ input[type="submit"] {
   .center {
     width: 510px;
     padding: 0px 20px;
+    background: white;
     .name {
       width: 100%;
       font-family: Circe;
@@ -763,9 +764,6 @@ input[type="submit"] {
   }
   .right {
     width: calc(55vw - 510px);
-    background: url("/images/shop_right_column.png");
-    background-size: 100% 100%;
-
     .sbutton {
       position: relative;
       top: 53%;
@@ -1419,7 +1417,7 @@ input[type="submit"] {
 .contacts_screen {
   width: 100vw;
   height: 100vh;
-  background: url('/images/contacts_background.png');
+  background: url('/images/contacts_background.jpg');
   background-size: cover;
   text-align: center;
   padding-top: calc((100vh - 609px) / 2);
@@ -1511,7 +1509,7 @@ input[type="submit"] {
     // Style for "Rectangle"
     width: 1270px;
     height: 873px;
-    background: url('/images/small_overlay_bg.png');
+    background: url('/images/support_bg.jpg');
     background-size: cover;
     padding: 20px;
     position: fixed;
@@ -1586,7 +1584,7 @@ input[type="submit"] {
 .news_screen {
   width: 100vw;
   height: 100vh;
-  background: url('/images/news_background.png');
+  background: url('/images/news_background.jpg');
   background-size: cover;
   text-align: center;
   padding-left: 133px;
@@ -1695,7 +1693,7 @@ input[type="submit"] {
   }
 
   .overlay {
-    background: url('/images/small_overlay_bg.png');
+    background: url('/images/small_overlay_bg.jpg');
     background-size: cover;
     color: #daa36c;
     font-family: Circe;
