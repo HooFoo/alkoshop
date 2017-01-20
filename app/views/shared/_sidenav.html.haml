@@ -13,4 +13,7 @@
       %p.nav-text Контакты
   %li.nav-item.profile
     = link_to('/#profile' , class: 'nav-nav') do
-      %p.nav-text Ваш профиль
+      - if @user.new_record?
+        %p.nav-text Вход/Регистрация
+      -else
+        %p.nav-text Ваш профиль
