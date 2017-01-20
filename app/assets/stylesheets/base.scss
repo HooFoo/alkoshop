@@ -124,9 +124,12 @@ body {
         color: #ebad71;
         font-size: 16px;
         font-weight: 400;
+        margin-top: 10px;
+        height: 48px;
       }
       .image {
         margin-top: 8%;
+        height: 480px;
         .img {
           height: 420px;
           width: 240px;
@@ -146,14 +149,14 @@ body {
     .sbutton {
       margin: auto;
       margin-top: 10%;
-      border-top: 1px solid #350905;
-      border-bottom: 1px solid #350905;
+      border-top: 3px solid #350905;
+      border-bottom: 3px solid #350905;
       color: #350905;
       width: 119px;
       height: 41px;
       .sbutton_text {
         color: #350905;
-        line-height: 41px;
+        line-height: 38px;
       }
 
     }
@@ -296,7 +299,7 @@ input[type="submit"] {
   height: 100vh;
   z-index: 0;
   transition: width 0.3s ease-in-out;
-
+  letter-spacing: 1px;
   .burger {
     /* Base style */
     width: 30px;
@@ -709,58 +712,63 @@ input[type="submit"] {
     width: 510px;
     padding: 0px 20px;
     background: white;
-    .name {
-      width: 100%;
-      font-family: Circe;
-      /* Text style for "Вино Chate" */
-      color: #350905;
-      font-size: 18px;
-      font-weight: 700;
-      text-transform: uppercase;
-      margin-top: 10%;
-    }
-    .heading{
-      color: #350905;
-      font-size: 18px;
-      font-weight: 700;
-      text-transform: uppercase;
-      /* Text style for "." */
-      font-variant: small-caps;
-      max-height: 29px;
-      overflow: hidden;
-    }
-    .short_description {
-      color: #ebad71;
-      font-size: 16px;
-      font-weight: 400;
-    }
-    .image {
-      margin-top: 8%;
-      .img {
-        height: 580px;
-        width: 70%;
+    .about_promo {
+      .name {
+        width: 100%;
+        font-family: Circe;
+        /* Text style for "Вино Chate" */
+        color: #350905;
+        font-size: 18px;
+        font-weight: 700;
+        text-transform: uppercase;
+        margin-top: 16%;
       }
-    }
-    .price {
-      height: 24px;
-      color: #350905;
-      font-family: "PT Serif";
-      font-size: 34px;
-      font-weight: 700;
-      line-height: 41px;
-      margin-top: 8%;
+      .heading{
+        font-family: Circe;
+        color: #350905;
+        font-size: 18px;
+        font-weight: 700;
+        text-transform: uppercase;
+        /* Text style for "." */
+        font-variant: small-caps;
+        max-height: 29px;
+        overflow: hidden;
+      }
+      .short_description {
+        font-family: Circe;
+        color: #ebad71;
+        font-size: 16px;
+        font-weight: 400;
+        margin-top: 10px;
+      }
+      .image {
+        margin-top: 10%;
+        .img {
+          height: 520px;
+          width: 70%;
+        }
+      }
+      .price {
+        height: 24px;
+        color: #350905;
+        font-family: "PT Serif";
+        font-size: 34px;
+        font-weight: 700;
+        line-height: 41px;
+        margin-top: 8%;
 
+      }
     }
     .sbutton {
       margin: auto;
-      margin-top: 10%;
-      border-top: 1px solid #350905;
-      border-bottom: 1px solid #350905;
+      margin-top: 12%;
+      border-top: 3px solid #350905;
+      border-bottom: 3px solid #350905;
       .sbutton_text {
         color: #350905;
+        font-variant: small-caps;
       }
     }
-
   }
   .right {
     width: calc(55vw - 510px);
@@ -1610,11 +1618,10 @@ input[type="submit"] {
       position: relative;
 
       .news_box_wrapper {
-        border-left: 1px solid rgba(235, 173, 113, 0.34);
         padding-left: 57px;
         margin-right: 60px;
         .news_box {
-          max-height: 266px;
+          max-height: 256px;
           width: 561px;
           padding-right: 40px;
           text-align: left;
@@ -1659,8 +1666,17 @@ input[type="submit"] {
       .first {
         max-height: 560px  !important;
         height: 560px;
+        border-bottom: 0px !important;
         .sbutton {
           margin-top: 50px;
+          width: 120px;
+          height: 40px;
+          border-top: 3px solid #ebad71;
+          border-bottom: 3px solid #ebad71;
+          .sbutton_text {
+            font-size: 16px;
+            line-height: 36px;
+          }
         }
       }
     }
@@ -1681,6 +1697,8 @@ input[type="submit"] {
       cursor: pointer;
       opacity: 0.9;
       transition: 0.3s ease-in-out;
+      display: none;
+
       &:hover {
         opacity: 1;
       }
@@ -1760,6 +1778,7 @@ input[type="submit"] {
   height: 100vh;
   z-index: 1000;
   background: rgba(0,0,0,0.7);
+  display: none;
 
   .confirmation_bg {
 
@@ -1788,10 +1807,10 @@ input[type="submit"] {
       }
       .confirmation_heading {
         margin: auto;
-        margin-top: 5%;
+        margin-top: 10%;
         color: #ebad71;
         font-family: Circe;
-        font-size: 56px;
+        font-size: 45px;
         font-weight: 700;
         line-height: 72px;
         text-transform: uppercase;
@@ -1803,10 +1822,9 @@ input[type="submit"] {
         margin-top: 5%;
         color: #ebad71;
         font-family: Circe;
-        font-size: 24px;
-        font-weight: 700;
-        line-height: 56px;
-        text-transform: uppercase;
+        font-size: 18px;
+        font-weight: 400;
+        line-height: 34px;
         width: 70%;
 
       }

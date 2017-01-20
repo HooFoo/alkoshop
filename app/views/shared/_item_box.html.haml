@@ -2,14 +2,12 @@
   =link_to("/shop/template/item_about?item=#{item_box.id}", remote: true, class: 'item_about_link about') do
     %div.name
       = item_box.name
-    %div.heading
-      = item_box.heading
     %div.short_description
       = item_box.short_description
     %div.image
       %img.img{src: item_box.image.item_box}
     %div.price
-      = item_box.show_price
+      = "#{item_box.show_price} Р"
   = render partial: 'shared/sbutton', object: 'В корзину',
      locals: {extra_class: '', link_class: 'buy', link: "/cart/add?id=#{item_box.id}&quantity=1", remote: true}
     

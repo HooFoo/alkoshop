@@ -14,19 +14,61 @@
  */
 @font-face {
   font-family: 'Circe';
-  src:font-url('Circe-Bold.otf');
-  src:font-url('Circe-ExtraBold.otf');
-  src:font-url('CRC55.otf');
-  src:font-url('CRC35.otf');
   src:font-url('CRC25.otf');
+  font-weight: 200;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Circe';
+  src:font-url('CRC35.otf');
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Circe';
+  src:font-url('CRC55.otf');
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Circe';
+  src:font-url('Circe-Bold.otf');
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Circe';
+  src:font-url('Circe-ExtraBold.otf');
+  font-weight: 900;
+  font-style: normal;
 }
 
 @font-face {
   font-family: 'PT Serif';
   src:font-url('PTSerifBold.ttf');
+  font-weight: bold;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'PT Serif';
   src:font-url('PTSerifBoldItalic.ttf');
+  font-weight: bold;
+  font-style: italic;
+
+}
+@font-face {
+  font-family: 'PT Serif';
   src:font-url('PTSerifItalic.ttf');
+  font-style: italic;
+}
+@font-face {
+  font-family: 'PT Serif';
   src:font-url('PTSerifRegular.ttf');
+  font-style: normal;
 }
 @import "animations";
 @import "base";

@@ -78,15 +78,19 @@ class Ui
 
   activateNews: () =>
     @offset = 0
-    $('.left').click =>
+    $('.navigation > .left').click =>
       if @offset < 0
         @offset += newsWidth()
-        console.log @offset
         $('.news_slider').animate({left: @offset })
-    $('.right').click =>
+      if @offset >= 0
+        $('.navigation > .left').css('display': 'none')
+    $('.navigation > .right').click =>
       @offset -= newsWidth()
-      console.log @offset
       $('.news_slider').animate({left: @offset })
+      console.log @offset, newsWidth()
+      if @offset <= (-1 * newsWidth())
+        $('.navigation > .left').css('display': 'block')
+
     $('.news_link').on 'ajax:success', (e,data) =>
       $('.news_screen').append(data)
       $('.close_button').click =>
@@ -136,8 +140,8 @@ class Ui
     return scrollWidth
 
   confirmation: =>
-    if localStorage.getItem('confirmed') != null
-      $('.confirmation').remove()
+    if localStorage.getItem('confirmed') == null
+      $('.confirmation').css({'display':'block'})
     $('.confirmation_close').click =>
       history.back()
     $('.confirmation_button').click =>

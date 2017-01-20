@@ -5,16 +5,18 @@
     = render partial: 'shared/sbutton', object: 'Каталог',
              locals: {extra_class: '', link_class: '', link: "/shop/catalog", remote: false}
   %div.column.center
-    %div.name
-      = @item.name
+    =link_to("/shop/template/item_about?item=#{@item.id}", remote: true, class: 'about_promo') do
+      %div.name
+        = @item.name
 
-    %div.short_description
-      = @item.short_description
-    %div.image
-      %img.img{src: @item.image.promo_box}
-    %div.price
-      = @item.show_price
-    = render partial: 'shared/sbutton', object: 'В корзину',
+      %div.short_description
+        = @item.short_description
+      %div.image
+        %img.img{src: @item.image.promo_box}
+      %div.price
+        = @item.show_price
+
+    = render partial: 'shared/sbutton', object: 'добавить',
              locals: {extra_class: '', link_class: 'buy', link: "/cart/add?id=#{@item.id}&quantity=1", remote: true}
 
   %div.column.right
