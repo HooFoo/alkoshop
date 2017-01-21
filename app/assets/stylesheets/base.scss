@@ -6,8 +6,7 @@ body {
 .sbutton {
   width: 224px;
   height: 63px;
-  border-top: 1px solid #ebad71;
-  border-bottom: 1px solid #ebad71;
+
   opacity: 0.9;
   transition: opacity 0.3s;
   text-align: center;
@@ -30,9 +29,22 @@ body {
       margin: 0px;
     }
   }
-
+  .borders {
+    transform: translateY(-100%);
+    width: 100%;
+    height: 100%;
+    display: block;
+    top: 0;
+    border-top: 2px solid #ebad71;
+    border-bottom: 2px solid #ebad71;
+    margin: auto;
+    transition: width 0.3s ease-in-out;
+  }
   &:hover {
     opacity: 1;
+    .borders{
+      width: 0;
+    }
   }
 }
 
@@ -149,8 +161,6 @@ body {
     .sbutton {
       margin: auto;
       margin-top: 10%;
-      border-top: 3px solid #350905;
-      border-bottom: 3px solid #350905;
       color: #350905;
       width: 119px;
       height: 41px;
@@ -158,7 +168,10 @@ body {
         color: #350905;
         line-height: 38px;
       }
-
+      .borders {
+        border-top: 2px solid #350905;
+        border-bottom: 2px solid #350905;
+      }
     }
   }
 }
@@ -762,11 +775,13 @@ input[type="submit"] {
     .sbutton {
       margin: auto;
       margin-top: 12%;
-      border-top: 3px solid #350905;
-      border-bottom: 3px solid #350905;
       .sbutton_text {
         color: #350905;
         font-variant: small-caps;
+      }
+      .borders {
+        border-top: 2px solid #350905;
+        border-bottom: 2px solid #350905;
       }
     }
   }
@@ -1187,13 +1202,15 @@ input[type="submit"] {
             text-align-last:center;
           }
           .sbutton {
-            border-top: 1px solid #350905;
-            border-bottom: 1px solid #350905;
+
             color: #350905;
             .sbutton_text {
               color: #350905;
             }
-
+            .borders {
+              border-top: 2px solid #350905;
+              border-bottom: 2px solid #350905;
+            }
           }
 
         }
@@ -1350,8 +1367,8 @@ input[type="submit"] {
           background: none;
           margin: 0px;
           border: none;
-          border-top: 1px solid #350905;
-          border-bottom: 1px solid #350905;
+          border-top: 2px solid #350905;
+          border-bottom: 2px solid #350905;
           width: 100%;
           margin-top: 112px;
         }
@@ -1407,11 +1424,14 @@ input[type="submit"] {
         }
         .sbutton {
           width: 377px;
-          border-top: 1px solid #350905;
-          border-bottom: 1px solid #350905;
+
           cursor: pointer;
           a .sbutton_text {
             color: #350905;
+          }
+          .borders {
+            border-top: 2px solid #350905;
+            border-bottom: 2px solid #350905;
           }
         }
       }
@@ -1671,11 +1691,14 @@ input[type="submit"] {
           margin-top: 50px;
           width: 120px;
           height: 40px;
-          border-top: 3px solid #ebad71;
-          border-bottom: 3px solid #ebad71;
+
           .sbutton_text {
             font-size: 16px;
             line-height: 36px;
+          }
+          .borders {
+            border-top: 2px solid #ebad71;
+            border-bottom: 2px solid #ebad71;
           }
         }
       }

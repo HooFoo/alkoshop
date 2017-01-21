@@ -5,7 +5,7 @@
     = render partial: 'shared/sbutton', object: 'Каталог',
              locals: {extra_class: '', link_class: '', link: "/shop/catalog", remote: false}
   %div.column.center
-    =link_to("/shop/template/item_about?item=#{@item.id}", remote: true, class: 'about_promo') do
+    =link_to("/shop/catalog?brand=#{@item.brand}&country=#{@item.country}&type=#{@item.type}#item=#{@item.id}", remote: false, class: 'about_promo') do
       %div.name
         = @item.name
 
