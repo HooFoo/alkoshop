@@ -117,7 +117,6 @@ class Ui
 #      return
 
   alton: =>
-    console.log(window.ui)
     if $('.screen').length > 0
       $('.screens').fullpage(
         sectionSelector: '.screen'
@@ -128,6 +127,8 @@ class Ui
           $(".nav_items > .nav_quad:eq(#{index-1})").removeClass('active')
           $(".nav_items > .nav_quad:eq(#{nextIndex-1})").addClass('active')
       )
+    else
+      $('.nav_items').remove()
 
   newsWidth = () =>
     scrollWidth = 1474
