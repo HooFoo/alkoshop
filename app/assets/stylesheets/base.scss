@@ -27,10 +27,11 @@ body {
       line-height: 64px;
       font-variant: small-caps;
       margin: 0px;
+      transform: translateY(-100%);
+
     }
   }
   .borders {
-    transform: translateY(-100%);
     width: 100%;
     height: 100%;
     display: block;
@@ -69,6 +70,172 @@ body {
     background: url('/images/close.png');
     cursor: pointer;
     z-index: 1;
+  }
+}
+
+.news_overlay {
+  background: url('/images/small_overlay_bg.jpg');
+  background-size: cover;
+  color: #daa36c;
+  font-family: Circe;
+  .columns {
+    display: flex;
+    padding: 115px 443px;
+    text-align: left;
+    .column_right {
+      width: 519px;
+      margin-right: 60px;
+      .date {
+        color: #ebad71;
+        font-family: Circe;
+        font-size: 20px;
+        font-weight: 400;
+        line-height: 26px;
+      }
+      .title{
+        margin-top: 46px;
+        color: #ebad71;
+        font-family: Circe;
+        font-size: 90px;
+        font-weight: 700;
+        text-transform: uppercase;
+      }
+      .media {
+        margin-top: 64px;
+        padding: 13px;
+        border-bottom: 1px solid #ebad71;
+        border-top: 1px solid #ebad71;
+        width: 510px;
+        height: 324px;
+        > iframe {
+          max-width: 100%;
+          max-height: 100%;
+        }
+      }
+
+    }
+    .column_left {
+      color: #daa36c;
+      font-family: Circe;
+      font-size: 21px;
+      font-weight: 400;
+      line-height: 29px;
+      font-variant: small-caps;
+      overflow-y: auto;
+      max-height: calc(100vh - 107px);
+      overflow-x: visible;
+    }
+  }
+}
+
+.contacts_overlay{
+  background: rgba(0,0,0,0.70);
+  .small_overlay {
+    // Style for "Rectangle"
+    width: 1270px;
+    height: 873px;
+    background: url('/images/support_bg.jpg');
+    background-size: cover;
+    padding: 20px;
+    position: fixed;
+    top: calc((100vh - 873px) / 2);
+    left: calc((100vw - 1270px) / 2);
+    min-height: 873px;
+    box-shadow: inset 0px 0px 0px 1px rgba(199, 178, 153, 0.29);
+    outline: 10px solid #110909;
+    color: #ebad71;
+    font-family: Circe;
+    font-size: 50px;
+    font-weight: 300;
+    line-height: 26px;
+
+    .close_button {
+      left: 1200px;
+      top: 46px;
+    }
+    .support {
+      color: #ebad71;
+      font-family: Circe;
+      font-size: 50px;
+      font-weight: 300;
+      line-height: 26px;
+      margin-top: 75px;
+      margin-bottom: 90px;
+    }
+    .support_form {
+      width: 100%;
+      padding: 79px 223px;
+
+      .upper_inputs {
+        display: flex;
+        .input {
+          width: 371px;
+          margin-right: 30px;
+        }
+      }
+      .input {
+        .materialize-textarea {
+          height: 205px;
+          line-height: 70px;
+          font-size: 35px;
+          color: #ebad71;
+          margin: 0;
+        }
+      }
+    }
+    .delivery {
+      max-height: 630px;
+      overflow-y: auto;
+      text-align: left;
+      color: #ebad71;
+      .small_heading {
+        color: #ebad71;
+        font-family: Circe;
+        // Text style for "Москва и М"
+        font-size: 23px;
+        font-weight: 700;
+        line-height: 57px;
+        text-transform: uppercase;
+      }
+      .text {
+        font-size: 18px;
+        font-weight: 400;
+        line-height: 31px;
+      }
+    }
+  }
+}
+
+.profile_overlay {
+  background: url("/images/small_overlay_bg.jpg");
+  .sign_up {
+    top: 20px !important;
+    .input {
+      margin-bottom: 0px !important;
+
+      input {
+        padding: 5px 10px 5px 5px !important;
+      }
+      select{
+        margin-bottom: 20px;
+        margin-right: 0px;
+      }
+    }
+  }
+  form {
+    position: absolute;
+    left: 50%;
+    top: 39%;
+    font-family: Circe;
+
+    .errors {
+      font-size: 18px;
+      color: #ebad71;
+      .ul {
+        text-align: left;
+      }
+    }
+
   }
 }
 
@@ -372,45 +539,43 @@ input[type="submit"] {
     }
   }
 
-  #slide-numbers {
+  .nav_items {
     width: 13px;
-    height: 220px !important;
+    height: 220px ;
     position: fixed;
-    top: 298px !important;
-    left: 31px !important;
-    bottom: auto !important;
+    top: 298px ;
+    left: 31px ;
+    bottom: auto ;
     opacity: 0.9;
     transition: opacity 0.3s;
+    z-index: 2;
 
     &:hover {
       opacity: 1;
     }
-    > ul {
-      transform: none !important;
-      top: initial !important;
-      position: inherit !important;
-      .paginate {
-        width: 9px !important;
-        height: 9px !important;
-        background-color: #ebad71 !important;
-        border-radius: 0px !important;
-        -webkit-transition: opacity 0.3s;
-        transition: opacity 0.3s;
-        opacity: 0.14;
-        margin-bottom: 76px !important;
-        cursor: pointer;
-        border-color: rgb(235, 173, 113) !important;
+    > .nav_quad {
+      transform: none;
+      width: 9px;
+      height: 9px;
+      background-color: #ebad71;
+      border-radius: 0px;
+      -webkit-transition: opacity 0.3s;
+      transition: opacity 0.3s;
+      opacity: 0.14;
+      margin-bottom: 76px;
+      cursor: pointer;
+      border: 1px solid rgb(235, 173, 113);
 
-        &:hover {
-          border: 1px solid rgb(235, 173, 113) !important;
-          opacity: 0.48;
-        }
+      &:hover {
+        border: 1px solid rgb(235, 173, 113);
+        opacity: 0.48;
+      }
 
-      }
-      .active {
-        opacity: 0.58;
-        background: transparent !important;
-      }
+
+    }
+    .active {
+      opacity: 0.58;
+      background: transparent;
     }
 
   }
@@ -598,38 +763,7 @@ input[type="submit"] {
     z-index: 2;
     margin: auto;
 
-    .overlay {
-      background: url("/images/small_overlay_bg.jpg");
-      .sign_up {
-        top: 20px !important;
-        .input {
-          margin-bottom: 0px !important;
 
-          input {
-            padding: 5px 10px 5px 5px !important;
-          }
-          select{
-            margin-bottom: 20px;
-            margin-right: 0px;
-          }
-        }
-      }
-      form {
-        position: absolute;
-        left: 50%;
-        top: 39%;
-        font-family: Circe;
-
-        .errors {
-          font-size: 18px;
-          color: #ebad71;
-          .ul {
-            text-align: left;
-          }
-        }
-
-      }
-    }
     .text {
       /* Style for "Здравствуй" */
       width: 100vw;
@@ -672,131 +806,136 @@ input[type="submit"] {
 .shop_screen {
   height: 100%;
   width: 100%;
-  display: flex;
   background: url("/images/shop_background.jpg");
   background-size: cover;
-
-  .column {
-    height: 100vh;
-    text-align: center;
-    .sbutton {
-      width: 224px;
-      height: 59px;
-      .sbutton_text {
-        line-height: 59px;
-      }
-    }
-  }
-  .left {
-    width: 45vw;
+  > div {
+    height: 100%;
+    width: 100%;
+    display: flex;
 
     .column {
-      height: 100%;
-    }
-    .text {
-      position: relative;
-      top: 37.4%;
-      left: 50%;
-      transform: translateX(-50%);
+      height: 100vh;
       text-align: center;
-      width: 496px;
-      max-width: 100%;
-      height: 93px;
-      color: #ebad71;
-      font-family: "PT Serif";
-      font-size: 20px;
-      font-weight: 700;
-      line-height: 26px;
-    }
-    .sbutton {
-      position: relative;
-      top: 41%;
-      left: 50%;
-      transform: translateX(-50%);
-      font-family: Circe;
-      font-size: 20px;
-      font-weight: 700;
-      line-height: 26px;
-      font-variant: small-caps;
-
-    }
-  }
-  .center {
-    width: 510px;
-    padding: 0px 20px;
-    background: white;
-    .about_promo {
-      .name {
-        width: 100%;
-        font-family: Circe;
-        /* Text style for "Вино Chate" */
-        color: #350905;
-        font-size: 18px;
-        font-weight: 700;
-        text-transform: uppercase;
-        margin-top: 16%;
-      }
-      .heading{
-        font-family: Circe;
-        color: #350905;
-        font-size: 18px;
-        font-weight: 700;
-        text-transform: uppercase;
-        /* Text style for "." */
-        font-variant: small-caps;
-        max-height: 29px;
-        overflow: hidden;
-      }
-      .short_description {
-        font-family: Circe;
-        color: #ebad71;
-        font-size: 16px;
-        font-weight: 400;
-        margin-top: 10px;
-      }
-      .image {
-        margin-top: 10%;
-        .img {
-          height: 520px;
-          width: 70%;
+      .sbutton {
+        width: 224px;
+        height: 59px;
+        .sbutton_text {
+          line-height: 59px;
         }
       }
-      .price {
-        height: 24px;
-        color: #350905;
+    }
+    .left {
+      width: 45vw;
+
+      .column {
+        height: 100%;
+      }
+      .text {
+        position: relative;
+        top: 37.4%;
+        left: 50%;
+        transform: translateX(-50%);
+        text-align: center;
+        width: 496px;
+        max-width: 100%;
+        height: 93px;
+        color: #ebad71;
         font-family: "PT Serif";
-        font-size: 34px;
+        font-size: 20px;
         font-weight: 700;
-        line-height: 41px;
-        margin-top: 8%;
-
+        line-height: 26px;
       }
-    }
-    .sbutton {
-      margin: auto;
-      margin-top: 12%;
-      .sbutton_text {
-        color: #350905;
+      .sbutton {
+        position: relative;
+        top: 41%;
+        left: 50%;
+        transform: translateX(-50%);
+        font-family: Circe;
+        font-size: 20px;
+        font-weight: 700;
+        line-height: 26px;
         font-variant: small-caps;
-      }
-      .borders {
-        border-top: 2px solid #350905;
-        border-bottom: 2px solid #350905;
-      }
-    }
-  }
-  .right {
-    width: calc(55vw - 510px);
-    background: url("/images/shop_right_column.png");
-    background-size: 100% 100%;
 
-    .sbutton {
-      position: relative;
-      top: 53%;
-      left: 50%;
-      transform: translateX(-50%);
+      }
+    }
+    .center {
+      width: 510px;
+      padding: 0px 20px;
+      background: white;
+      .about_promo {
+        .name {
+          width: 100%;
+          font-family: Circe;
+          /* Text style for "Вино Chate" */
+          color: #350905;
+          font-size: 18px;
+          font-weight: 700;
+          text-transform: uppercase;
+          margin-top: 16%;
+        }
+        .heading{
+          font-family: Circe;
+          color: #350905;
+          font-size: 18px;
+          font-weight: 700;
+          text-transform: uppercase;
+          /* Text style for "." */
+          font-variant: small-caps;
+          max-height: 29px;
+          overflow: hidden;
+        }
+        .short_description {
+          font-family: Circe;
+          color: #ebad71;
+          font-size: 16px;
+          font-weight: 400;
+          margin-top: 10px;
+        }
+        .image {
+          margin-top: 10%;
+          .img {
+            height: 520px;
+            width: 70%;
+          }
+        }
+        .price {
+          height: 24px;
+          color: #350905;
+          font-family: "PT Serif";
+          font-size: 34px;
+          font-weight: 700;
+          line-height: 41px;
+          margin-top: 8%;
+
+        }
+      }
+      .sbutton {
+        margin: auto;
+        margin-top: 12%;
+        .sbutton_text {
+          color: #350905;
+          font-variant: small-caps;
+        }
+        .borders {
+          border-top: 2px solid #350905;
+          border-bottom: 2px solid #350905;
+        }
+      }
+    }
+    .right {
+      width: calc(55vw - 510px);
+      background: url("/images/shop_right_column.png");
+      background-size: 100% 100%;
+
+      .sbutton {
+        position: relative;
+        top: 53%;
+        left: 50%;
+        transform: translateX(-50%);
+      }
     }
   }
+
 
 }
 
@@ -1536,83 +1675,7 @@ input[type="submit"] {
     }
 
   }
-  .overlay{
-    background: rgba(0,0,0,0.70);
-    .small_overlay {
-      // Style for "Rectangle"
-      width: 1270px;
-      height: 873px;
-      background: url('/images/support_bg.jpg');
-      background-size: cover;
-      padding: 20px;
-      position: fixed;
-      top: calc((100vh - 873px) / 2);
-      left: calc((100vw - 1270px) / 2);
-      min-height: 873px;
-      box-shadow: inset 0px 0px 0px 1px rgba(199, 178, 153, 0.29);
-      outline: 10px solid #110909;
-      color: #ebad71;
-      font-family: Circe;
-      font-size: 50px;
-      font-weight: 300;
-      line-height: 26px;
 
-      .close_button {
-        left: 1200px;
-        top: 46px;
-      }
-      .support {
-        color: #ebad71;
-        font-family: Circe;
-        font-size: 50px;
-        font-weight: 300;
-        line-height: 26px;
-        margin-top: 75px;
-        margin-bottom: 90px;
-      }
-      .support_form {
-        width: 100%;
-        padding: 79px 223px;
-
-        .upper_inputs {
-          display: flex;
-          .input {
-            width: 371px;
-            margin-right: 30px;
-          }
-        }
-        .input {
-          .materialize-textarea {
-            height: 205px;
-            line-height: 70px;
-            font-size: 35px;
-            color: #ebad71;
-            margin: 0;
-          }
-        }
-      }
-      .delivery {
-        max-height: 630px;
-        overflow-y: auto;
-        text-align: left;
-        color: #ebad71;
-        .small_heading {
-          color: #ebad71;
-          font-family: Circe;
-          // Text style for "Москва и М"
-          font-size: 23px;
-          font-weight: 700;
-          line-height: 57px;
-          text-transform: uppercase;
-        }
-        .text {
-          font-size: 18px;
-          font-weight: 400;
-          line-height: 31px;
-        }
-      }
-    }
-  }
 }
 
 .news_screen {
@@ -1739,7 +1802,7 @@ input[type="submit"] {
     }
   }
 
-  .overlay {
+  .news_overlay {
     background: url('/images/small_overlay_bg.jpg');
     background-size: cover;
     color: #daa36c;

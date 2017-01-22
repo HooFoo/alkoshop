@@ -19,7 +19,6 @@ class Ui
     @activateCart()
     @activateBack()
     @activateNews()
-    @smoothScroll()
     @alton()
     @confirmation()
 
@@ -29,20 +28,20 @@ class Ui
   loginScreen: () ->
     old_top = $('.top').html()
     $('.login_link').on "ajax:success", (e, data) =>
-      @updateTop(data)
+      $('.main-screen').append(data)
       $('.close_button').click (e) =>
-        @updateTop(old_top)
+        $('.overlay').remove()
       $('.overlay > .login_form').on( "ajax:success", (e, data) =>
+        $('.overlay').remove()
         @updateTop(data)
       ).on "ajax:error", (e, data) ->
-        console.log('Error')
         $('.errors').html(data.responseText)
     $('.sign-out').on "ajax:success", (e, data) =>
       @updateTop(data)
 
   contactsScreen: =>
     $('.contacts_link').on 'ajax:success', (e,data) =>
-      $('.contacts_screen').append(data)
+      $('.main-screen').append(data)
       $('.small_overlay > .close_button').click =>
         $('.overlay').remove()
 
@@ -87,12 +86,11 @@ class Ui
     $('.navigation > .right').click =>
       @offset -= newsWidth()
       $('.news_slider').animate({left: @offset })
-      console.log @offset, newsWidth()
       if @offset <= (-1 * newsWidth())
         $('.navigation > .left').css('display': 'block')
 
     $('.news_link').on 'ajax:success', (e,data) =>
-      $('.news_screen').append(data)
+      $('.main-screen').append(data)
       $('.close_button').click =>
         $('.overlay').remove()
 
@@ -106,28 +104,30 @@ class Ui
       element.click =>
         history.back()
 
-  smoothScroll: =>
-    $ ->
-      $('a[href*="#"]:not([href="#"])').click ->
-        if location.pathname.replace(/^\//, '') == @pathname.replace(/^\//, '') and location.hostname == @hostname
-          target = $(@hash)
-          target = if target.length then target else $('[name=' + @hash.slice(1) + ']')
-          if target.length
-            $('html, body').animate { scrollTop: target.offset().top }, 1000
-            return false
-        return
-      return
+#  smoothScroll: =>
+#    $ ->
+#      $('a[href*="#"]:not([href="#"])').click ->
+#        if location.pathname.replace(/^\//, '') == @pathname.replace(/^\//, '') and location.hostname == @hostname
+#          target = $(@hash)
+#          target = if target.length then target else $('[name=' + @hash.slice(1) + ']')
+#          if target.length
+#            $('html, body').animate { scrollTop: target.offset().top }, 1000
+#            return false
+#        return
+#      return
 
   alton: =>
+    console.log(window.ui)
     if $('.screen').length > 0
-      console.log('Alton')
-      $(document).alton
-        fullSlideContainer: 'screens'
-        singleSlideClass: 'screen'
-        useSlideNumbers: true
-        slideNumbersBorderColor: '#fff'
-        slideNumbersColor: 'transparent'
-        bodyContainer: 'main-screen'
+      $('.screens').fullpage(
+        sectionSelector: '.screen'
+        slideSelector: '.slide'
+        menu: '.sidenav'
+        anchors: ['one','two','three', 'four', 'five']
+        onLeave: (index, nextIndex, direction) =>
+          $(".nav_items > .nav_quad:eq(#{index-1})").removeClass('active')
+          $(".nav_items > .nav_quad:eq(#{nextIndex-1})").addClass('active')
+      )
 
   newsWidth = () =>
     scrollWidth = 1474

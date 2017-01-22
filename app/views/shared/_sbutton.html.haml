@@ -1,5 +1,5 @@
 %div.sbutton{class: extra_class}
-  = link_to(link, class: link_class, remote: remote) do
+  %div.borders
+  = link_to(link, class: link_class, remote: remote, data: local_assigns.fetch(:data,{})) do
     %p.sbutton_text
       = sbutton
-  %div.borders

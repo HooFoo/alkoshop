@@ -1,3 +1,71 @@
+.contacts_overlay {
+  .small_overlay {
+    height: 90%;
+    min-height: 90%;
+    top: calc((100vh - 90%) / 2);
+    width: 90%;
+    left: calc((100vw - 90%) / 2);
+    .close_button {
+      left: 83%;
+    }
+    .support {
+      margin-bottom: 40px;
+    }
+    .support_form {
+      padding: 10px 15%;
+      .upper_inputs {
+        display: block;
+        .input {
+          width: 100%;
+        }
+      }
+      .input {
+        .text {
+          height: auto;
+        }
+      }
+    }
+    .delivery {
+      max-height: 528px;
+    }
+  }
+}
+.profile_overlay {
+  .sign_up {
+    padding-top: 120px;
+    left: 0;
+    width: 66%;
+  }
+  .login_form {
+    left: 14%;
+    top: 20%;
+  }
+}
+.news_overlay {
+  .columns {
+    padding: 95px 37px;
+    display: block;
+
+    .column_right {
+      .date {
+        font-size: 16px;
+      }
+      .title {
+        margin-top: 34px;
+        font-size: 72px;
+      }
+      .media {
+        margin-top: 48px;
+        height: 100%;
+        width: 100%;
+      }
+    }
+    .column_left {
+      overflow-y: inherit;
+      max-height: inherit;
+    }
+  }
+}
 .index-bg {
   .logo {
     top: 41%;
@@ -7,39 +75,46 @@
   .text {
     top: 72%;
     font-size: 24px;
+    width: 90%;
   }
 }
 .shop_screen {
   display: block;
-  .left {
-    width: 100%;
-    height: 80%;
-  }
-  .center {
-    display: none;
-    width: 282px;
-    .image {
-      margin-top: 6%;
-      .img {
-        height: 451px;
-        width: 70%;
+  > div {
+    display: block;
+    .left {
+      width: 100%;
+      height: 80%;
+      .text {
+        top: 25.5%
       }
     }
-    .sbutton {
-      width: 121px;
-      height: 39px;
-      .sbutton_text {
-        font-size: 16px;
-        line-height: 39px;
+    .center {
+      display: none;
+      width: 282px;
+      .image {
+        margin-top: 6%;
+        .img {
+          height: 451px;
+          width: 70%;
+        }
+      }
+      .sbutton {
+        width: 121px;
+        height: 39px;
+        .sbutton_text {
+          font-size: 16px;
+          line-height: 39px;
+        }
       }
     }
-  }
-  .right {
-    height: 20%;
-    width: 100%;
-    .sbutton {
-      top: 50%;
-      transform: translate(-50%, -50%);
+    .right {
+      height: 20%;
+      width: 100%;
+      .sbutton {
+        top: 50%;
+        transform: translate(-50%, -50%);
+      }
     }
   }
 }
@@ -48,6 +123,7 @@
   padding-right: 9%;
   .news_wrapper {
     height: 80%;
+    margin-top: 15%;
     .news_slider {
       height: 80%;
       padding: 0px 21px;
@@ -96,31 +172,7 @@
     margin-left: 66%;
     margin-top: 10%;
   }
-  .overlay {
-    .columns {
-      padding: 95px 37px;
-      display: block;
 
-      .column_right {
-        .date {
-          font-size: 16px;
-        }
-        .title {
-          margin-top: 34px;
-          font-size: 72px;
-        }
-        .media {
-          margin-top: 48px;
-          height: 100%;
-          width: 100%;
-        }
-      }
-      .column_left {
-        overflow-y: inherit;
-        max-height: inherit;
-      }
-    }
-  }
 }
 .contacts_screen {
   padding-top: 5%;
@@ -148,41 +200,12 @@
       }
     }
   }
-  .small_overlay {
-    height: 708px;
-    min-height: 708px;
-    top: calc((100vh - 708px) / 2);
-    width: 90%;
-    left: calc((100vw - 90%) / 2);
-    .close_button {
-      left: 83%;
-    }
-    .support {
-      margin-bottom: 40px;
-    }
-    .support_form {
-      padding: 10px 15%;
-      .upper_inputs {
-       display: block;
-        .input {
-          width: 100%;
-        }
-      }
-    }
-    .delivery {
-      max-height: 528px;
-    }
-  }
+
 }
 .profile_screen {
   padding-top: 50%;
   .top {
-    .overlay {
-      .sign_up {
-        padding-top: 120px;
-        left: 0;
-      }
-    }
+
   }
   .sbuttons {
     display: block;
@@ -216,6 +239,7 @@
           font-size: 12px;
         }
         .image {
+          height: 40%;
           .img {
             height: auto;
             width: 100%;
@@ -456,5 +480,25 @@
   }
   .replaced {
     right: 90%;
+  }
+}
+
+.confirmation {
+  .confirmation_bg {
+    .confirmation_container {
+      .confirmation_heading{
+        font-size: 15px;
+        line-height: 20px;
+        margin-top: 25%;
+      }
+      .confirmation_text {
+        font-size: 12px;
+        line-height: 15px;
+        margin-top: 35%;
+      }
+      .sbutton {
+        margin-top: 35%;
+      }
+    }
   }
 }

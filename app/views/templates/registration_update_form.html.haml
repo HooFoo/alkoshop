@@ -1,4 +1,4 @@
-%div.overlay
+%div.profile_overlay.overlay
   %div.close_button
   = simple_form_for @user, url: user_registration_path, method: 'put', remote: true, html: {class: 'login_form sign_up' } do |f|
     %div.errors

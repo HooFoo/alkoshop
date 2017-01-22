@@ -1,18 +1,18 @@
 %ul.sidenav
-  %li.nav-item.index
-    = link_to('/' , class: 'nav-nav') do
+  %li.nav-item.index{data: {menuanchor: 'one'}}
+    = link_to('/#one' , class: 'nav-nav', data: { turbolinks: false, no_turbolink: true}) do
       %p.nav-text Главная
-  %li.nav-item.shop
-    = link_to('/#shop' , class: 'nav-nav') do
+  %li.nav-item.shop{data: {menuanchor: 'two'}}
+    = link_to('/#two' , class: 'nav-nav', data: { turbolinks: false, no_turbolink: true}) do
       %p.nav-text Магазин
-  %li.nav-item.news
-    = link_to('/#news' , class: 'nav-nav') do
+  %li.nav-item.news{data: {menuanchor: 'three'}}
+    = link_to('/#three' , class: 'nav-nav', data: { turbolinks: false, no_turbolink: true}) do
       %p.nav-text Новости
-  %li.nav-item.contacts
-    = link_to('/#contacts' , class: 'nav-nav') do
+  %li.nav-item.contacts{data: {menuanchor: 'four'}}
+    = link_to('/#four' , class: 'nav-nav', data: { turbolinks: false, no_turbolink: true}) do
       %p.nav-text Контакты
-  %li.nav-item.profile
-    = link_to('/#profile' , class: 'nav-nav') do
+  %li.nav-item.profile{data: {menuanchor: 'five'}}
+    = link_to('/#five' , class: 'nav-nav', data: { turbolinks: false, no_turbolink: true}) do
       - if @user.new_record?
         %p.nav-text Вход/Регистрация
       -else
