@@ -1228,7 +1228,7 @@ input[type="submit"] {
       margin-left: 97px;
 
       .breadcrumb-item {
-        margin-left: 3em;
+        margin-left: 2.3em;
         &:before {
           content: "\2192 \0020";
           border-width: 0.35em 0 0.35em 0.45em;
@@ -1238,8 +1238,8 @@ input[type="submit"] {
           left: -1.5em;
           position: relative;
           color: #ebad71;
-          font-size: 40px;
-          line-height: 20px;
+          font-size: 30px;
+          line-height: 25px;
         }
         &:first-child {
           margin-left: 0px;
@@ -1327,8 +1327,8 @@ input[type="submit"] {
           display: flex;
           margin: 30px 0px;
           .count {
-            width: 100px;
-            height: 61px;
+            width: 60px;
+            height: 54px;
             text-align: center;
             border: 1px solid #ebad71;
             color: #ebad71;
@@ -1341,7 +1341,8 @@ input[type="submit"] {
             text-align-last:center;
           }
           .sbutton {
-
+            width: 120px;
+            height: 60px;
             color: #350905;
             .sbutton_text {
               color: #350905;
