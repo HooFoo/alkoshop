@@ -21,6 +21,7 @@ Rails.application.routes.draw do
   get '/', controller: 'frontend', action: :index
   get '/profile', controller: 'frontend', action: :profile
   get '/profile/orders', controller: 'frontend', action: :orders
+  get '/profile/registration', controller: 'frontend', action: :registration
   get '/shop', controller: 'frontend', action: :shop
   get '/contacts', controller: 'frontend', action: :contacts
   get '/news', controller: 'frontend', action: :news

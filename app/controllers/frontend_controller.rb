@@ -35,4 +35,9 @@ class FrontendController < ApplicationController
     end
   end
 
+  def registration
+    if current_user
+      redirect_to '/profile'
+    end
+  end
 end
