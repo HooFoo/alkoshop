@@ -10,15 +10,24 @@
 .shop_screen {
   > div {
     .left {
-      width: 446px;
+      width: 43%;
+      .text {
+        width: 90%;
+        height: auto;
+      }
     }
     .center {
       width: 282px;
       .image {
         margin-top: 6%;
         .img {
-          height: 451px;
-          width: 70%;
+          height: 437px;
+          width: 250px;
+        }
+      }
+      .about_promo {
+        .price {
+          margin-top: 30%;
         }
       }
       .sbutton {
@@ -31,7 +40,10 @@
       }
     }
     .right {
-      width: calc(100vw - 446px - 282px);
+      width: calc(100vw - 43% - 282px);
+      .sbutton {
+        max-width: 100%;
+      }
     }
   }
 }
@@ -66,25 +78,29 @@
             overflow: hidden;
             font-size: 16px;
             margin-top: 7px;
+            line-height: 20px;
+          }
+        }
+        .first {
+
+          .short_description {
+            max-height: 240px;
+          }
+          .sbutton {
+            width: 92px;
+            height: 31px;
+            .sbutton_text {
+              line-height: 31px;
+              font-size: 12px;
+            }
           }
         }
       }
     }
-    .first {
-      max-height: 431px  !important;
-      height: 431px;
-      .sbutton {
-        width: 92px;
-        height: 31px;
-        .sbutton_text {
-          line-height: 31px;
-          font-size: 12px;
-        }
-      }
-    }
+
   }
   .navigation {
-    margin-left: 680px;
+    margin-left: 80%;
   }
   .overlay {
     .columns {
@@ -108,27 +124,9 @@
 }
 .contacts_screen {
   .panels {
-    width: 844px;
+    width: 82%;
   }
-  .small_overlay {
-    height: 708px;
-    min-height: 708px;
-    top: calc((100vh - 708px) / 2);
-    width: 924px;
-    left: calc((100vw - 924px) / 2);
-    .close_button {
-      left: 860px;
-    }
-    .support {
-      margin-bottom: 40px;
-    }
-    .support_form {
-      padding: 30px 223px;
-    }
-    .delivery {
-      max-height: 528px;
-    }
-  }
+
 }
 .profile_screen {
   padding-top: 280px;
@@ -163,9 +161,11 @@
   .filters {
     .filters_list {
       .filter_item {
+        margin-right: 75px;
         .select-wrapper {
           width: 138px;
           .select-dropdown {
+            width: 9em;
           }
         }
       }
@@ -191,17 +191,18 @@
     }
     .item_info {
       .item_logo {
-        width: 435px;
-        height: 574px;
+        width: 420px;
+        height: 860px;
         margin-left: 20px;
         margin-right: 20px;
         .item_img {
-          height: 547px;
-          width: 149px;
+          height: 262px;
+          width: 150px;
         }
       }
       .item_text {
-        max-width: calc(100% - 41% - 149px)
+        max-width: calc(100% - 41% - 149px);
+        width: calc(100% - 41% - 149px);
       }
     }
     .same_box {
@@ -251,12 +252,12 @@
     .brand_info {
       .brand_logo {
         .brand_img {
-          width: 384px;
+          width: 271px;
           height: 271px;
         }
       }
       .brand_text {
-        max-width: calc(100% - 31% - 384px);
+        max-width: calc(100% - 20% - 384px);
         margin-right: 7%;
       }
     }
@@ -266,6 +267,29 @@
   .orders {
     .order_box {
       width: 800px;
+    }
+  }
+}
+
+.contacts_overlay{
+  .small_overlay {
+    height: 92%;
+    min-height: 92%;
+    top: calc((100vh - 92%) / 2);
+    width: 90%;
+    left: calc((100vw - 90%) / 2);
+    .close_button {
+      left: 90%;
+    }
+    .support {
+      margin-bottom: 40px;
+      margin-left: 10%;
+    }
+    .support_form {
+      padding: 30px 10%;
+    }
+    .delivery {
+      max-height: 85%;
     }
   }
 }

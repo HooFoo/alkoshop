@@ -1132,11 +1132,11 @@ input[type="submit"] {
   .filters {
     background: #ffffff;
     width: 100%;
+    text-align: center;
+
     .filters_list {
       display: inline-flex;
       margin: auto;
-      margin-left: 50%;
-      transform: translateX(-50%);
 
       .filter_item {
         margin-right: 100px;
