@@ -184,16 +184,35 @@
       height: 50%;
       width: 100%;
       .heading {
-        margin-top: 10%;
+        margin-top: 8%;
+      }
+      .contacts_link {
+        .link_text {
+          margin: auto 5%;
+        }
       }
       .sbutton {
         margin-top: 5%;
+        height: 10%;
+        .sbutton_text {
+          line-height: 100%;
+        }
       }
     }
     .right_panel {
       .text_wrap {
-        padding-top: 12%;
+        padding-top: 2%;
         height: 65%;
+        .heading {
+          font-size: 32px;
+          line-height: 32px;
+          margin-bottom: 1%;
+        }
+        .address {
+          font-size: 18px;
+          line-height: 18px;
+          margin: auto 1%;
+        }
       }
       .sbutton {
         margin-top: 8%;
