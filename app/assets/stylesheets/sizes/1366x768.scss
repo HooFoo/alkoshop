@@ -109,8 +109,11 @@
         }
         .short_description {
           font-size: 12px;
+          height: 24px;
         }
         .image {
+          height: 360px;
+          margin-top: 6%;
           .img {
             height: 340px;
             width: 195px;
@@ -124,7 +127,7 @@
     .filters_list {
       .filter_item {
         .select-wrapper {
-          width: 138px;
+          width: auto;
           .select-dropdown {
           }
         }
