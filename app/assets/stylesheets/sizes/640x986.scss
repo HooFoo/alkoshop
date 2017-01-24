@@ -250,6 +250,7 @@
       .item_about_link {
         .name {
           font-size: 12px;
+          margin-top: 9px;
         }
         .heading {
           display: none;
@@ -258,9 +259,9 @@
           font-size: 12px;
         }
         .image {
-          height: 40%;
+          height: auto;
           .img {
-            height: auto;
+            height: 210px;
             width: 100%;
           }
         }
@@ -269,8 +270,11 @@
     }
   }
   .filters {
+    text-align: center;
     .filters_list {
       display: block;
+      margin: auto;
+      width: 10em;
       .filter_item {
         margin-right: 0;
         &:last-child {
