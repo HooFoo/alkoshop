@@ -43,7 +43,7 @@ class ImagesUploader < CarrierWave::Uploader::Base
     process :resize_to_fit => [500, 500]
   end
   version :item_box do
-    process :resize_to_fit => [400, 400]
+    process :resize_to_fit => [420, 240]
   end
   version :promo_box do
     process :resize_to_fit => [450, 450]
