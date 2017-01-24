@@ -8,6 +8,6 @@
       %img.img{src: item_box.image.item_box}
     %div.price
       = "#{item_box.show_price} Р"
-  = render partial: 'shared/sbutton', object: 'В корзину',
+  = render partial: 'shared/sbutton', object: 'в корзину',
      locals: {extra_class: '', link_class: 'buy', link: "/cart/add?id=#{item_box.id}&quantity=1", remote: true}
     

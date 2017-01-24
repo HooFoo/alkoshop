@@ -8,6 +8,9 @@ class Item < ApplicationRecord
   accepts_nested_attributes_for :items_volumes, allow_destroy: true
 
   validates :items_volumes, presence: true
+  validates :brand, presence: true
+  validates :type, presence: true
+  validates :country, presence: true
 
   mount_uploader :image, ImagesUploader
 
