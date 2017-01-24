@@ -41,10 +41,11 @@ class Item < ApplicationRecord
       end
     end
     if wheres.size > 0
-      Item.joins(*names).where(wheres.join(' AND ')).order(filters[:sort][:current])
+      all = Item.joins(*names).where(wheres.join(' AND '))
     else
-      Item.all
+      all = Item.all
     end
+    all.order(filters[:sort][:current])
   end
 
 
