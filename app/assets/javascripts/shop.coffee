@@ -55,7 +55,6 @@ class Shop
 
   handle_close: =>
     window.onpopstate = (event) =>
-      console.log window.location,event
       if window.location.hash == ''
         $('.overlay').remove()
 
