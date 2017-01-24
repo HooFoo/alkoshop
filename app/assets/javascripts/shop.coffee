@@ -13,6 +13,7 @@ class Shop
     @update_more()
     @close_search()
     @hide_burger()
+    @handle_close()
 
   add_location: (url) =>
     type = url.split('?')[1]
@@ -52,12 +53,16 @@ class Shop
     $('.overlay').find('.about').on 'ajax:success', (e,data) =>
       @activate_overlay(e,data)
 
+  handle_close: =>
+    window.onpopstate = (event) =>
+      console.log window.location,event
+      if window.location.hash == ''
+        $('.overlay').remove()
 
   activate_overlay: (e,data) =>
     $('.overlay').remove()
     $('.brands_screen, .catalog_screen').append(data)
     @add_location(e.target['href'])
-
 
   update_more: =>
     link = $('.more_link')[0]
