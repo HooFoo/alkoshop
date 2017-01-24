@@ -8,26 +8,32 @@
   }
 }
 .shop_screen {
-  .left {
-    width: 595px;
-  }
-  .center {
-    width: 365px;
-    .image {
-      margin-top: 6%;
-      .img {
-        height: 451px;
-        width: 70%;
+  > div {
+    .left {
+      width: 595px;
+    }
+    .center {
+      width: 365px;
+      .about_promo {
+        .image {
+          margin-top: 6%;
+          .img {
+            height: 460px;
+            width: 255px;
+          }
+        }
+      }
+
+      .sbutton {
+        width: 157px;
+        height: 50px;
       }
     }
-    .sbutton {
-      width: 157px;
-      height: 50px;
+    .right {
+      width: calc(100vw - 595px - 365px);
     }
   }
-  .right {
-    width: calc(100vw - 595px - 365px);
-  }
+
 }
 .news_screen {
   padding-left: 133px;
@@ -42,38 +48,47 @@
         margin-right: 25px;
 
         .news_box {
-          max-height: 250px;
+          max-height: 210px;
           width: 431px;
           padding-right: 20px;
-          margin-bottom: 36px;
+          margin-bottom: 10px;
 
           .date {
             line-height: 16px;
           }
           .header {
             line-height: 34px;
-            margin-top: 20px;
+            margin-top: 10px;
           }
           .short_description {
             max-height: 210px;
             overflow: hidden;
             font-size: 16px;
+            margin-top: 16px;
+            line-height: 22px;
+          }
+        }
+      }
+
+      .first {
+        max-height: 431px  !important;
+        height: 431px;
+        .news_link {
+          .short_description {
+            max-height: 220px;
+          }
+        }
+        .sbutton {
+          width: 92px;
+          height: 31px;
+          .sbutton_text {
+            line-height: 31px;
+            font-size: 12px;
           }
         }
       }
     }
-    .first {
-      max-height: 431px  !important;
-      height: 431px;
-      .sbutton {
-        width: 92px;
-        height: 31px;
-        .sbutton_text {
-          line-height: 31px;
-          font-size: 12px;
-        }
-      }
-    }
+
   }
   .navigation {
     margin-left: 883px;
