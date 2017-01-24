@@ -11,11 +11,13 @@ class Item < ApplicationRecord
   validates :brand, presence: true
   validates :type, presence: true
   validates :country, presence: true
+  
+  before_save :set_price
 
   mount_uploader :image, ImagesUploader
 
   default_scope { where('in_stock > 0') }
-
+  
 
   def self.promoted
     where(promote: true).sample
@@ -65,5 +67,11 @@ class Item < ApplicationRecord
     else
       real_price
     end
+  end
+
+  private
+
+  def set_price
+    self.price = items_volumes.first.price
   end
 end
