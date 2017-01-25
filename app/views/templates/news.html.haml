@@ -7,10 +7,11 @@
       %h1.title
         = @news.title
       %div.media
-        - if @news.media.empty?
+        - if @news.media.nil? || @news.media.empty?
           %img.image{src: @news.image.news}
         - else
           = @news.media.html_safe
 
     %div.column_left
-      = @news.description.html_safe
+      %div.scrollable
+        = @news.description.html_safe

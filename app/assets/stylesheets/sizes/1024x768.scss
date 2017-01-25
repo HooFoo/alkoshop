@@ -102,25 +102,7 @@
   .navigation {
     margin-left: 80%;
   }
-  .overlay {
-    .columns {
-      padding: 95px 37px;
-      .column_right {
-        .date {
-          font-size: 16px;
-        }
-        .title {
-          margin-top: 34px;
-          font-size: 72px;
-        }
-        .media {
-          margin-top: 48px;
-          height: 298px;
-          width: 384px;
-        }
-      }
-    }
-  }
+
 }
 .contacts_screen {
   .panels {
@@ -248,20 +230,7 @@
   }
 }
 .brands_screen {
-  .overlay {
-    .brand_info {
-      .brand_logo {
-        .brand_img {
-          width: 271px;
-          height: 271px;
-        }
-      }
-      .brand_text {
-        max-width: calc(100% - 20% - 384px);
-        margin-right: 7%;
-      }
-    }
-  }
+
 }
 .orders_screen {
   .orders {
@@ -290,6 +259,43 @@
     }
     .delivery {
       max-height: 85%;
+    }
+  }
+}
+
+.news_overlay {
+  .columns {
+    padding: 95px 37px;
+    .column_right {
+      margin-right: 10px;
+      width: 480px;
+      .date {
+        font-size: 16px;
+      }
+      .title {
+        margin-top: 34px;
+        font-size: 72px;
+      }
+      .media {
+        margin-top: 48px;
+        height: 298px;
+        width: 384px;
+      }
+    }
+  }
+}
+
+.brands_overlay {
+  .brand_info {
+    .brand_logo {
+      .brand_img {
+        width: 271px;
+        height: 271px;
+      }
+    }
+    .brand_text {
+      max-width: calc(100% - 20% - 384px);
+      margin-right: 7%;
     }
   }
 }

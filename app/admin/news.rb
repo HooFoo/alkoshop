@@ -3,7 +3,7 @@ ActiveAdmin.register News do
 # See permitted parameters documentation:
 # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
 #
- permit_params :title, :description, :media, :image
+ permit_params :title, :description, :media, :image, :updated_at
 #
 # or
 #
@@ -16,6 +16,7 @@ ActiveAdmin.register News do
  form do |f|
   f.inputs do
    f.input :title
+   f.input :updated_at, as: :datepicker
    f.input :image
    f.input :media, :as => :text
    f.input :description, :as => :ckeditor

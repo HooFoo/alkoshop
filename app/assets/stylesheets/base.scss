@@ -78,6 +78,7 @@ body {
   background-size: cover;
   color: #daa36c;
   font-family: Circe;
+  z-index: 2;
   .columns {
     display: flex;
     padding: 115px 443px;
@@ -99,6 +100,7 @@ body {
         font-size: 90px;
         font-weight: 700;
         text-transform: uppercase;
+        word-wrap: break-word;
       }
       .media {
         margin-top: 64px;
@@ -116,14 +118,21 @@ body {
     }
     .column_left {
       color: #daa36c;
-      font-family: Circe;
-      font-size: 21px;
+      font-family: "PT Serif";
+      font-size: 16px;
       font-weight: 400;
-      line-height: 29px;
+      line-height: 22px;
       font-variant: small-caps;
-      overflow-y: auto;
+      overflow: hidden;
       max-height: calc(100vh - 107px);
-      overflow-x: visible;
+
+      .scrollable {
+        width: calc(100% + 17px);
+        height: 100%;
+        overflow-y: scroll;
+        padding-right: 17px;
+        overflow-x: hidden;
+      }
     }
   }
 }
@@ -1704,6 +1713,8 @@ input[type="submit"] {
       .news_box_wrapper {
         padding-left: 57px;
         margin-right: 60px;
+        border-left: 1px solid rgba(235, 173, 113, 0.34);
+
         .news_box {
           max-height: 256px;
           width: 561px;
@@ -1712,7 +1723,7 @@ input[type="submit"] {
           padding-bottom: 43px;
           border-bottom: 1px solid rgba(235, 173, 113, 0.34);
           margin-bottom: 46px;
-
+          overflow: hidden;
           .date {
             // Style for "26 сентябр"
             width: 90px;
@@ -1803,60 +1814,7 @@ input[type="submit"] {
     }
   }
 
-  .news_overlay {
-    background: url('/images/small_overlay_bg.jpg');
-    background-size: cover;
-    color: #daa36c;
-    font-family: Circe;
-    .columns {
-      display: flex;
-      padding: 115px 443px;
-      text-align: left;
-      .column_right {
-        width: 519px;
-        margin-right: 60px;
-        .date {
-          color: #ebad71;
-          font-family: Circe;
-          font-size: 20px;
-          font-weight: 400;
-          line-height: 26px;
-        }
-        .title{
-          margin-top: 46px;
-          color: #ebad71;
-          font-family: Circe;
-          font-size: 90px;
-          font-weight: 700;
-          text-transform: uppercase;
-        }
-        .media {
-          margin-top: 64px;
-          padding: 13px;
-          border-bottom: 1px solid #ebad71;
-          border-top: 1px solid #ebad71;
-          width: 510px;
-          height: 324px;
-          > iframe {
-            max-width: 100%;
-            max-height: 100%;
-          }
-        }
 
-      }
-      .column_left {
-        color: #daa36c;
-        font-family: Circe;
-        font-size: 21px;
-        font-weight: 400;
-        line-height: 29px;
-        font-variant: small-caps;
-        overflow-y: auto;
-        max-height: calc(100vh - 107px);
-        overflow-x: visible;
-      }
-    }
-  }
 }
 
 .confirmation {
