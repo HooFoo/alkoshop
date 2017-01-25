@@ -95,17 +95,7 @@
   }
 }
 .contacts_screen {
-  .small_overlay {
-    height: 708px;
-    min-height: 708px;
-    top: calc((100vh - 708px) / 2);
-    .support {
-      margin-bottom: 40px;
-    }
-    .support_form {
-      padding: 30px 223px;
-    }
-  }
+
 }
 .profile_screen {
   padding-top: 280px;
@@ -225,6 +215,27 @@
         max-width: calc(100% - 31% - 384px);
         margin-right: 7%;
       }
+    }
+  }
+}
+.contacts_overlay{
+  .small_overlay {
+    height: 90vh;
+    min-height: 90vh;
+    top: calc((100vh - 90vh) / 2);
+    .support {
+      margin-bottom: 40px;
+    }
+    .support_form {
+      padding: 30px 223px;
+      .input {
+        .materialize-textarea {
+          height: 3em;
+        }
+      }
+    }
+    .delivery {
+      max-height: 65vh;
     }
   }
 }
