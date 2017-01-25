@@ -15,12 +15,21 @@
     .center {
       width: 365px;
       .about_promo {
+        .name {
+          margin-top: 3vh;
+        }
         .image {
-          margin-top: 6%;
+          margin-top: 4%;
           .img {
             height: 460px;
             width: 255px;
           }
+        }
+        .price {
+          margin-top: 1%;
+        }
+        .sbutton {
+          margin-top: 4%;
         }
       }
 
