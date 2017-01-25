@@ -4,13 +4,13 @@
       %div.text_wrap
         %h2.heading
           Контакты
-        =link_to 'mailto:info@wandlstash.ru', class: 'contacts_link email' do
+        =link_to 'mailto:stash@mbev-rus.ru', class: 'contacts_link email' do
           %p.link_text
-            e-mail: info@wandlstash.ru
+            e-mail: stash@mbev-rus.ru
 
-        =link_to 'tel://8800723760073', class: 'contacts_link phone' do
+        =link_to 'tel://+74952320003', class: 'contacts_link phone' do
           %p.link_text
-            8 800 723 76 00 73
+            +7(495)232-00-03
       = render partial: 'shared/sbutton', object: 'обратная связь',
                locals: {extra_class: '', link_class: 'contacts_link', link: '/template/support', remote: true}
     %div.contact_panel.right_panel
