@@ -123,6 +123,7 @@ class Ui
         slideSelector: '.slide'
         menu: '.sidenav'
         anchors: ['one','two','three', 'four', 'five']
+        normalScrollElements: '.overlay'
         onLeave: (index, nextIndex, direction) =>
           $(".nav_items > .nav_quad:eq(#{index-1})").removeClass('active')
           $(".nav_items > .nav_quad:eq(#{nextIndex-1})").addClass('active')
