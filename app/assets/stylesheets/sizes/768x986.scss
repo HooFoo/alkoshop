@@ -1,3 +1,16 @@
+.cart_items {
+  .item {
+    .item_small {
+      .short_info {
+        .control_box {
+          .cart-count {
+            width: 66px;
+          }
+        }
+      }
+    }
+  }
+}
 .contacts_overlay {
   .small_overlay {
     height: 90%;
@@ -195,9 +208,10 @@
       }
       .sbutton {
         margin-top: 5%;
-        height: 10%;
+        height: 10vh;
+        max-height: 90px;
         .sbutton_text {
-          line-height: 100%;
+          line-height: 10vh;
         }
       }
     }
@@ -512,6 +526,25 @@
   }
   .replaced {
     right: 90%;
+  }
+  .cart_board {
+    .cart_wrapper {
+      width: 100%;
+      .cart_items {
+        height: calc(100vh - 183px);
+      }
+      .order_box {
+        height: auto;
+        height: 153px;
+        .order_price {
+          padding-top: 5px;
+          .text {
+            margin: 0 0 0.2em 0;
+            line-height: 30px;
+          }
+        }
+      }
+    }
   }
 }
 .confirmation {

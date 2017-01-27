@@ -359,15 +359,16 @@ body {
 .cart_items {
   margin: 0;
   overflow-y: auto;
-  height: calc(100vh - 343px);
+  height: calc(100vh - 233px);
   .item {
     margin-top: 70px;
     .item_small {
       display: flex;
       .cart_item_link {
         .item_image {
-          width: 152px;
-          height: 152px;
+          width: auto;
+          height: 100%;
+          min-height: 152px;
           margin-right: 34px;
         }
       }
@@ -670,7 +671,7 @@ input[type="submit"] {
     background: white;
     z-index: 2;
     .cart_wrapper {
-      padding-top: 140px;
+      padding-top: 30px;
       width: 499px;
       .cart_close {
         position: absolute;
