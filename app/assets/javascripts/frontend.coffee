@@ -21,6 +21,7 @@ class Ui
     @activateNews()
     @alton()
     @confirmation()
+    @hideNav()
 
   toggleSidenav: ->
     $('.sidenav').toggleClass('open')
@@ -104,6 +105,10 @@ class Ui
       element.click =>
         history.back()
 
+  hideNav: () =>
+    if window.innerWidth <= 760
+      $('.sidenav').click () ->
+        $('.sidenav').removeClass('hover')
 #  smoothScroll: =>
 #    $ ->
 #      $('a[href*="#"]:not([href="#"])').click ->
@@ -137,7 +142,7 @@ class Ui
       scrollWidth = 994
     if window.innerWidth <=1024
       scrollWidth = 780
-    if window.innerWidth <=640
+    if window.innerWidth <=760
       scrollWidth = window.innerWidth * 0.80
     return scrollWidth
 

@@ -637,6 +637,10 @@ input[type="submit"] {
       }
     }
 
+    .close {
+      display: none;
+    }
+
     .index {
       background-image: url('/images/index_background.jpg');
       background-size: cover;

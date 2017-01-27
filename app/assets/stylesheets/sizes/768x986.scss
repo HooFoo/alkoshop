@@ -546,6 +546,22 @@
       }
     }
   }
+  .sidenav {
+    display: block;
+    &:hover {
+      height: 100vh;
+    }
+    .close {
+      display: block;
+      font-size: 72px;
+    }
+    .burger {
+      &:hover ~ .sidenav {
+        height: 100vh;
+      }
+    }
+  }
+
 }
 .confirmation {
   .confirmation_bg {
