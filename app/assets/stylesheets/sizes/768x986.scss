@@ -47,12 +47,12 @@
     display: block;
 
     .column_right {
+      width: calc(100% - 10px);
       .date {
         font-size: 16px;
       }
       .title {
         margin-top: 34px;
-        font-size: 72px;
       }
       .media {
         margin-top: 48px;

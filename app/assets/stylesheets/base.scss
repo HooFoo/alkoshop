@@ -1830,8 +1830,8 @@ input[type="submit"] {
     background: url('/images/support_bg.jpg');
     background-size: cover;
     padding: 20px;
-    width: 80%;
-    height: 80%;
+    width: 80vw;
+    height: 80vh;
     margin: auto;
     margin-top: 5%;
 
@@ -1852,7 +1852,7 @@ input[type="submit"] {
       }
       .confirmation_heading {
         margin: auto;
-        margin-top: 10%;
+        margin-top: 10vh;
         color: #ebad71;
         font-family: Circe;
         font-size: 45px;
@@ -1864,7 +1864,7 @@ input[type="submit"] {
       }
       .confirmation_text {
         margin: auto;
-        margin-top: 5%;
+        margin-top: 5vh;
         color: #ebad71;
         font-family: Circe;
         font-size: 18px;
@@ -1875,7 +1875,7 @@ input[type="submit"] {
       }
       .confirmation_button {
         margin: auto;
-        margin-top: 5%;
+        margin-top: 5vh;
 
       }
     }
