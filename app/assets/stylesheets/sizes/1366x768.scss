@@ -174,11 +174,16 @@
         margin-right: 20px;
         .item_img {
           height: 547px;
-          width: 208px;
+          width: auto;
         }
       }
       .item_text {
-        width: calc(100% - 41% - 216px)
+        width: calc(100% - 41% - 216px);
+        .cart_section {
+          .count {
+
+          }
+        }
       }
     }
     .same_box {
