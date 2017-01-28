@@ -42,14 +42,13 @@ class Shop
     $('.buy').on 'ajax:success', (e, data) =>
       ui.updateCart(data)
     $('.volumes').click (e) =>
-      console.log($('.buy')[0].href)
       $('.item_price').html($(e.target).attr('price')+' Р')
-      old = $('.buy').attr('href')
+      old = $('.big_buy').attr('href')
       if old.match(/&price_id=\d+/) != null
         href = old.replace(/&price_id=\d+/,"&price_id=#{$(e.target).attr('volume')}")
       else
         href = "#{old}&price_id=#{$(e.target).attr('volume')}"
-      $('.buy').attr('href',href)
+      $('.big_buy').attr('href',href)
     $('.overlay').find('.about').on 'ajax:success', (e,data) =>
       @activate_overlay(e,data)
 
@@ -99,7 +98,6 @@ class Shop
       filters = $.makeArray($('select.filter, input.filter').map( (index,element) =>
         "#{element.id}=#{element.value}"
       ))
-      console.log(filters)
 
       location.href = "#{url}?#{filters.join('&')}"
 

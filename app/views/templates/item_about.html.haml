@@ -26,7 +26,7 @@
       %div.cart_section
         =select_tag 'quantity', options_for_select((1..@item.in_stock).to_a, 1), class: 'count'
         = render partial: 'shared/sbutton', object: 'в корзину',
-               locals: {extra_class: '', link_class: 'buy', link: "/cart/add?id=#{@item.id}&quantity=1", remote: true}
+               locals: {extra_class: '', link_class: 'buy big_buy', link: "/cart/add?id=#{@item.id}&quantity=1", remote: true}
       %div.item_extra
         %div.extra
           %div.name
