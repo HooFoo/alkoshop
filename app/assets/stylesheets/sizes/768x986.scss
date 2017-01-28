@@ -576,7 +576,9 @@
       height: 100vh;
     }
   }
-
+  .nav_items {
+    top: calc((100vh - 349px) / 2);
+  }
 }
 .confirmation {
   .confirmation_bg {
