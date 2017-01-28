@@ -549,16 +549,31 @@
   .sidenav {
     display: block;
     &:hover {
-      height: 100vh;
+      height: 0vh;
+    }
+    .nav-item {
+      height: calc((100vh - 36px) / 5);
+      .nav-nav {
+        .nav-text {
+        }
+      }
     }
     .close {
       display: block;
-      font-size: 72px;
-    }
-    .burger {
-      &:hover ~ .sidenav {
-        height: 100vh;
+      background-color: #0d0b0b;
+      height: 36px;
+      .nav-nav {
+        .nav-text {
+          line-height: 36px;
+
+          font-size: 36px;
+        }
       }
+    }
+  }
+  .burger {
+    &:hover ~ .sidenav {
+      height: 100vh;
     }
   }
 
