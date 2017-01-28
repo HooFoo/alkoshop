@@ -1,12 +1,44 @@
 %div.profile_overlay.overlay
-  %div.close_button
-  = simple_form_for @user, url: new_user_session_path, remote: true, html: {class: 'login_form' }  do |f|
-    %div.errors
-    %div.input
-      = f.input_field :email, required: true
-      = f.label :email
-    %div.input
-      = f.input_field :password, required: true
-      = f.label 'Пароль'
+  %div.small_overlay
+    %div.close_button
+    %div.tabulated
+      %div.tabs
+        %div.tab_item.registration_tab
+          регистрация
+        %div.tab_item.login_tab.tab_active
+          войти
+      %div.forms_container
+        %div.form_wrapper.log.form_active
+          = simple_form_for @user, url: new_user_session_path, remote: true, html: {class: 'login_form' }  do |f|
+            %div.errors
+            %div.inputs
+              %div.input
+                = f.input_field :email, required: true
+                = f.label :email
+              %div.input
+                = f.input_field :password, required: true
+                = f.label 'Пароль'
 
-    = f.submit 'Войти', class: 'sbutton'
+            = f.submit 'Войти', class: 'sbutton'
+        %div.form_wrapper.reg
+          = simple_form_for @user, url: user_registration_path, remote: true, html: {class: 'login_form sign_up' } do |f|
+            %div.errors
+            %div.inputs
+              %div.input
+                = f.input_field :name, required: true
+                = f.label :name, "ф. и. о."
+              %div.input
+                = f.phone_field :phone, required: true
+                = f.label 'Телефон'
+              %div.input
+                = f.input_field :email, required: true
+                = f.label 'Email'
+            %div.inputs
+              %div.input
+                = f.input_field :password, required: true
+                = f.label 'Пароль'
+              %div.input
+                = f.input_field :password_confirmation, required: true
+                = f.label 'Подтверждение пароля'
+
+            =f.submit 'Зарегистрироваться', class: 'sbutton'

@@ -1,7 +1,7 @@
 %div.top
   %div.text
     = "Здравствуйте, #{@user.name}!"
-  = link_to 'Выход', '/users/sign_out', remote: true, method: :delete, class: 'sign_out'
+  = link_to 'Выход', '/users/sign_out', remote: false, method: :delete, class: 'sign_out'
 %div.sbuttons
   %div.sbutton.left
     %div.borders

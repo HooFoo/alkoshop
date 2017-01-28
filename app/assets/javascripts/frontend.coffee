@@ -32,6 +32,18 @@ class Ui
       $('.main-screen').append(data)
       $('.close_button').click (e) =>
         $('.overlay').remove()
+      $('.tab_item').click (e) ->
+        if $(e.target).hasClass('registration_tab')
+          $('.reg').addClass('form_active')
+          $('.log').removeClass('form_active')
+          $('.registration_tab').addClass('tab_active')
+          $('.login_tab').removeClass('tab_active')
+        else
+          $('.log').addClass('form_active')
+          $('.reg').removeClass('form_active')
+
+          $('.login_tab').addClass('tab_active')
+          $('.registration_tab').removeClass('tab_active')
       $('.overlay > .login_form').on( "ajax:success", (e, data) =>
         $('.overlay').remove()
         @updateTop(data)

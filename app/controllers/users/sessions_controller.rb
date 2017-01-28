@@ -11,21 +11,18 @@ class Users::SessionsController < Devise::SessionsController
     @order.user = current_user
     @order.save
   end
+
   protected
 
   def after_sign_in_path_for(resource)
-    '/#profile'
+    '/#five'
   end
 
   def  after_sign_out_path_for(resource)
-    '/#profile'
+    '/#five'
   end
 
-  # DELETE /resource/sign_out
-  def destroy
-    super
-    redirect_to '/#profile'
-  end
+
 
   # protected
 

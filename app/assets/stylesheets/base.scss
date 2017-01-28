@@ -216,36 +216,112 @@ body {
 }
 
 .profile_overlay {
-  background: url("/images/small_overlay_bg.jpg");
-  .sign_up {
-    top: 20px !important;
-    .input {
-      margin-bottom: 0px !important;
+  background: rgba(0,0,0,0.70);
 
-      input {
-        padding: 5px 10px 5px 5px !important;
+  .small_overlay {
+    background: url("/images/support_bg.jpg");
+    height: 90vh;
+    min-height: 90vh;
+    margin-top: calc((100vh - 90vh) / 2);
+    width: 90vw;
+    margin-left: calc((100vw - 90vw) / 2);
+    .close_button {
+      left: 12vh;
+    }
+    .tabulated {
+      padding: 8vh 0;
+
+      .tabs {
+        height: 52px;
+        text-align: center;
+        display: flex;
+        background: none;
+        .tab_item {
+          height: 52px;
+          font-family: "Open Sans";
+          font-size: 45px;
+          font-weight: 700;
+          line-height: 50px;
+          text-transform: uppercase;
+          color: #5c412b;
+          border-bottom: 2px solid  #ebad71;
+          margin: auto;
+          transition: 0.3s;
+        }
+        .registration_tab {
+          margin-right: 0px;
+        }
+        .login_tab {
+          margin-left: 0px;
+        }
+        .tab_active {
+          color: #ebad71;
+        }
       }
-      select{
-        margin-bottom: 20px;
-        margin-right: 0px;
+      .forms_container {
+        .form_wrapper {
+          padding-top: 25vh;
+          text-align: center;
+          transition: 0.3s;
+          display: none;
+          opacity: 0;
+          .sign_up {
+            .input {
+              margin-bottom: 0px !important;
+
+              input {
+                padding: 5px 10px 5px 5px !important;
+              }
+              select{
+                margin-bottom: 20px;
+                margin-right: 0px;
+              }
+            }
+          }
+          form {
+            margin: auto;
+            width: auto;
+            max-width: 70vw;
+            font-family: Circe;
+            text-align: center;
+            .errors {
+              font-size: 18px;
+              color: #ebad71;
+              .ul {
+                text-align: left;
+              }
+            }
+            .inputs {
+              display: flex;
+              width: calc(526px + 5vh);
+              margin: auto;
+              max-width: 70vw;
+              .input {
+                margin-left: auto;
+                margin-right: 5vh;
+                width: 263px;
+                max-width: 30vw;
+                &:last-child {
+                  margin-right: 0;
+                }
+              }
+
+            }
+            .sbutton {
+              margin-top: 17vh;
+            }
+          }
+        }
+        .form_active {
+          display: block;
+          opacity: 1;
+        }
       }
     }
   }
-  form {
-    position: absolute;
-    left: 50%;
-    top: 39%;
-    font-family: Circe;
 
-    .errors {
-      font-size: 18px;
-      color: #ebad71;
-      .ul {
-        text-align: left;
-      }
-    }
 
-  }
+
 }
 
 .whitespace {
@@ -552,7 +628,7 @@ input[type="submit"] {
     width: 13px;
     height: 220px ;
     position: fixed;
-    top: 298px ;
+    top: calc((100vh - 349px) / 2);
     left: 31px ;
     bottom: auto ;
     opacity: 0.9;
@@ -803,15 +879,13 @@ input[type="submit"] {
 
   .sbuttons {
     margin-top: 4%;
-    margin-left: 50%;
-    transform: translateX(-50%);
+    margin-left: calc((100vw - 320px)/2);
     display: flex;
-    width: 527px;
 
-
+    .sbutton {
+      width: 320px;
+    }
     .right {
-      float: left;
-      margin-left: auto;
     }
   }
 }
