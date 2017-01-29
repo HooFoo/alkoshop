@@ -44,10 +44,44 @@
   }
 }
 .profile_overlay {
+  .small_overlay {
+    margin-top: calc((100vh - 90vh) / 2);
+    height: auto;
+    max-height: initial;
+    .close_button {
+      top: 8vh;
+      left: 9vw;
+    }
+    .tabulated {
+      .tabs {
+        height: auto;
+        display: block;
+        .tab_item {
+          font-size: 33px;
+          height: 45px;
+          line-height: 45px;
+        }
+      }
+      .forms_container {
+        .form_wrapper {
+          form {
+            .inputs {
+              display:block;
+              .input {
+                margin: 0;
+                width: 100%;
+                max-width: 100%;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
   .sign_up {
-    padding-top: 120px;
+    padding-top: 0px;
     left: 0;
-    width: 66%;
+    width: 100%;
   }
   .login_form {
     left: 14%;
@@ -247,7 +281,7 @@
     display: block;
     .sbutton {
       float: none !important;
-      margin: auto;
+      margin: 0;
       &:first-child {
         margin-bottom: 8%;
       }

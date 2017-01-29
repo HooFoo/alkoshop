@@ -221,12 +221,13 @@ body {
   .small_overlay {
     background: url("/images/support_bg.jpg");
     height: 90vh;
-    min-height: 90vh;
-    margin-top: calc((100vh - 90vh) / 2);
+    max-height: 624px;
+    margin-top: calc((100vh - 50%) / 2);
     width: 90vw;
     margin-left: calc((100vw - 90vw) / 2);
     .close_button {
-      left: 12vh;
+      left: 8vw;
+      top: 20vh;
     }
     .tabulated {
       padding: 8vh 0;
@@ -244,23 +245,26 @@ body {
           line-height: 50px;
           text-transform: uppercase;
           color: #5c412b;
-          border-bottom: 2px solid  #ebad71;
+          border-bottom: 2px solid  #5c412b;
           margin: auto;
           transition: 0.3s;
         }
         .registration_tab {
           margin-right: 0px;
+          padding-right: 10px;
         }
         .login_tab {
           margin-left: 0px;
+          padding-left: 10px;
         }
         .tab_active {
           color: #ebad71;
+          border-bottom: 2px solid  #ebad71;
         }
       }
       .forms_container {
         .form_wrapper {
-          padding-top: 25vh;
+          padding-top: 13vh;
           text-align: center;
           transition: 0.3s;
           display: none;
@@ -308,7 +312,7 @@ body {
 
             }
             .sbutton {
-              margin-top: 17vh;
+              margin-top: 120px;
             }
           }
         }
@@ -515,12 +519,13 @@ body {
     padding: 10px 10px 10px 5px;
     width: 496px;
     border: none;
-    border-bottom: 2px solid rgba(235, 173, 113, 0.37);
+    border-bottom: 2px solid rgba(235, 173, 113, 0.37) !important;
     background-color: #004a80;
-    color: #ebad71;
+    color: #ebad71 !important;
   }
   input:focus {
     outline: none;
+    box-shadow: none !important;
   }
 
   /* active state */
@@ -528,11 +533,13 @@ body {
   select:focus ~ label, select:valid ~ label{
     top: -20px;
     font-size: 14px;
-    color: #7c230b;
+    color: #5c412b !important;
   }
+
+
   /* LABEL ======================================= */
   label {
-    color: #999;
+    color: #ebad71;
     font-size: 18px;
     font-weight: normal;
     position: absolute;
@@ -878,7 +885,7 @@ input[type="submit"] {
   }
 
   .sbuttons {
-    margin-top: 4%;
+    margin-top: 10vh;
     margin-left: calc((100vw - 320px)/2);
     display: flex;
 
