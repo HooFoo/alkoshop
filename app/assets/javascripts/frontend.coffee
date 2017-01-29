@@ -163,7 +163,7 @@ class Ui
   confirmation: =>
     if localStorage.getItem('confirmed') == null
       $('.confirmation').css({'display':'block'})
-    $('.confirmation_close').click =>
+    $('.confirmation_close, .registration_screen > .profile_overlay .close_button').click =>
       history.back()
     $('.confirmation_button').click =>
       localStorage.setItem('confirmed','true')
