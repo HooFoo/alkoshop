@@ -137,6 +137,9 @@ body {
   }
 }
 
+.white_bg {
+  background: white;
+}
 .contacts_overlay{
   background: rgba(0,0,0,0.70);
   .small_overlay {
@@ -843,6 +846,13 @@ input[type="submit"] {
     left: 50%;
     transform: translateX(-50%);
     text-align: center;
+  }
+
+  .sbutton {
+    position: absolute;
+    top: 70vh;
+    left: 50%;
+    transform: translateX(-50%);
   }
 }
 

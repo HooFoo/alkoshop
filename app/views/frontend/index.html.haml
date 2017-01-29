@@ -1,6 +1,9 @@
 %div#index.index-bg.screen
   %div.logo
   %p.text Приглашаем Вас окунуться в эксклюзивный мир элитных брендов. Нам есть чем вас удивить.
+  = render partial: 'shared/sbutton', object: 'о проекте',
+                   locals: {extra_class: '', link_class: 'news_link', link: "/template/news?news=#{@about.id}", remote: true}
+
 = render template: 'frontend/shop'
 = render template: 'frontend/news'
 = render template: 'frontend/contacts'
