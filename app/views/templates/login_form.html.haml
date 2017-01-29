@@ -18,7 +18,6 @@
               %div.input
                 = f.input_field :password, required: true
                 = f.label 'Пароль'
-
             = f.submit 'Войти', class: 'sbutton'
         %div.form_wrapper.reg
           = simple_form_for @user, url: user_registration_path, remote: true, html: {class: 'login_form sign_up' } do |f|
