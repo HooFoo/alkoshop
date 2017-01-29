@@ -23,6 +23,7 @@ class Ui
     @confirmation()
     @hideNav()
 
+
   toggleSidenav: ->
     $('.sidenav').toggleClass('open')
 
@@ -49,6 +50,7 @@ class Ui
         @updateTop(data)
       ).on "ajax:error", (e, data) ->
         $('.errors').html(data.responseText)
+      @checkEmail()
     $('.sign-out').on "ajax:success", (e, data) =>
       @updateTop(data)
 
@@ -121,17 +123,15 @@ class Ui
     if window.innerWidth <= 760
       $('.sidenav').click () ->
         $('.sidenav').removeClass('hover')
-#  smoothScroll: =>
-#    $ ->
-#      $('a[href*="#"]:not([href="#"])').click ->
-#        if location.pathname.replace(/^\//, '') == @pathname.replace(/^\//, '') and location.hostname == @hostname
-#          target = $(@hash)
-#          target = if target.length then target else $('[name=' + @hash.slice(1) + ']')
-#          if target.length
-#            $('html, body').animate { scrollTop: target.offset().top }, 1000
-#            return false
-#        return
-#      return
+
+  checkEmail: () =>
+    $('.input > input[type=email]').change (e) ->
+      re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+      if not re.test e.target.value
+        console.log $('.input > input[type=email] ~ label')
+        $('.input > input[type=email] ~ label').css(color: 'red !important', top: '-20px')
+      else
+        $('.input > input[type=email] ~ label').css(color: 'red')
 
   alton: =>
     if $('.screen').length > 0
