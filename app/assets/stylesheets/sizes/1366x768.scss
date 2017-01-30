@@ -178,7 +178,8 @@
         }
       }
       .item_text {
-        width: calc(100% - 41% - 216px);
+        width: calc(100% - 50% - 216px);
+        max-width: calc(100% - 50% - 216px);
         .cart_section {
           .count {
 
