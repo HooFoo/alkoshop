@@ -22,7 +22,7 @@ class Ui
     @alton()
     @confirmation()
     @hideNav()
-
+    @enableTabs()
 
   toggleSidenav: ->
     $('.sidenav').toggleClass('open')
@@ -33,18 +33,7 @@ class Ui
       $('.main-screen').append(data)
       $('.close_button').click (e) =>
         $('.overlay').remove()
-      $('.tab_item').click (e) ->
-        if $(e.target).hasClass('registration_tab')
-          $('.reg').addClass('form_active')
-          $('.log').removeClass('form_active')
-          $('.registration_tab').addClass('tab_active')
-          $('.login_tab').removeClass('tab_active')
-        else
-          $('.log').addClass('form_active')
-          $('.reg').removeClass('form_active')
-
-          $('.login_tab').addClass('tab_active')
-          $('.registration_tab').removeClass('tab_active')
+      @enableTabs()
       $('.overlay > .login_form').on( "ajax:success", (e, data) =>
         $('.overlay').remove()
         @updateTop(data)
@@ -168,6 +157,21 @@ class Ui
     $('.confirmation_button').click =>
       localStorage.setItem('confirmed','true')
       $('.confirmation').remove()
+
+  enableTabs: =>
+    $('.tab_item').click (e) ->
+      if $(e.target).hasClass('registration_tab')
+        $('.reg').addClass('form_active')
+        $('.log').removeClass('form_active')
+        $('.registration_tab').addClass('tab_active')
+        $('.login_tab').removeClass('tab_active')
+      else
+        $('.log').addClass('form_active')
+        $('.reg').removeClass('form_active')
+
+        $('.login_tab').addClass('tab_active')
+        $('.registration_tab').removeClass('tab_active')
+
 
 ready = ->
   window.ui = new Ui()
