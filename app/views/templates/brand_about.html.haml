@@ -8,7 +8,7 @@
       =link_to('/#shop') do
         %p Магазин
     %li.breadcrumb-item
-      =link_to('/shop/brands') do
+      =link_to('/shop/brands', data: {no_turbolink: true, turbolinks: false }) do
         %p Бренды
     %li.breadcrumb-item
       %p
