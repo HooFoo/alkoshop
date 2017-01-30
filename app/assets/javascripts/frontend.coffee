@@ -24,6 +24,7 @@ class Ui
     @hideNav()
     @enableTabs()
     @activatePromo()
+    @enableSubmits()
 
   toggleSidenav: ->
     $('.sidenav').toggleClass('open')
@@ -35,11 +36,7 @@ class Ui
       $('.close_button').click (e) =>
         $('.overlay').remove()
       @enableTabs()
-      $('.overlay > .login_form').on( "ajax:success", (e, data) =>
-        $('.overlay').remove()
-        @updateTop(data)
-      ).on "ajax:error", (e, data) ->
-        $('.errors').html(data.responseText)
+      @enableSubmits()
       @checkEmail()
     $('.sign-out').on "ajax:success", (e, data) =>
       @updateTop(data)
@@ -177,6 +174,12 @@ class Ui
         $('.login_tab').addClass('tab_active')
         $('.registration_tab').removeClass('tab_active')
 
+  enableSubmits: =>
+    $('.login_form').on( "ajax:success", (e, data) =>
+      $('.overlay').remove()
+      @updateTop(data)
+    ).on "ajax:error", (e, data) ->
+      $('.errors').html(data.responseText)
 
 ready = ->
   window.ui = new Ui()

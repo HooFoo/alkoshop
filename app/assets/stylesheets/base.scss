@@ -467,6 +467,7 @@ body {
         }
       }
       .short_info {
+        width: 75%;
         .cart_item_link {
           .name {
             color: #350905;
@@ -907,13 +908,17 @@ input[type="submit"] {
 
   .sbuttons {
     margin-top: 10vh;
-    margin-left: calc((100vw - 320px)/2);
+    margin-left: 50vw;
+    transform: translateX(-50%);
     display: flex;
 
-    .sbutton {
+    .login_button {
       width: 320px;
+      margin: auto;
     }
     .right {
+      float: left;
+      margin-left: auto;
     }
   }
 }
@@ -959,10 +964,11 @@ input[type="submit"] {
         font-size: 20px;
         font-weight: 700;
         line-height: 26px;
+        display: none;
       }
       .sbutton {
         position: relative;
-        top: 41%;
+        top: 50vh;
         left: 50%;
         transform: translateX(-50%);
         font-family: Circe;
@@ -1044,7 +1050,7 @@ input[type="submit"] {
 
       .sbutton {
         position: relative;
-        top: 53%;
+        top: 50vh;
         left: 50%;
         transform: translateX(-50%);
       }
