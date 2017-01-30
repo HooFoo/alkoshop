@@ -139,6 +139,16 @@ body {
 
 .white_bg {
   background: white;
+  .columns {
+    .column_right {
+      .date, .title {
+        color: black;
+      }
+    }
+    .column_left {
+      color: black;
+    }
+  }
 }
 
 .contacts_overlay{
