@@ -16,7 +16,7 @@
         = @item.show_price
 
     = render partial: 'shared/sbutton', object: 'добавить',
-             locals: {extra_class: '', link_class: 'buy', link: "/cart/add?id=#{@item.id}&quantity=1", remote: true}
+             locals: {extra_class: '', link_class: 'buy promo_buy', link: "/cart/add?id=#{@item.id}&quantity=1", remote: true}
 
   %div.column.right
     = render partial: 'shared/sbutton', object: 'бренды',

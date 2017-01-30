@@ -23,6 +23,7 @@ class Ui
     @confirmation()
     @hideNav()
     @enableTabs()
+    @activatePromo()
 
   toggleSidenav: ->
     $('.sidenav').toggleClass('open')
@@ -107,6 +108,10 @@ class Ui
       $('.burger').hide()
       element.click =>
         history.back()
+
+  activatePromo: () =>
+    $('.promo_buy').on 'ajax:success', (e, data) =>
+      ui.updateCart(data)
 
   hideNav: () =>
     if window.innerWidth <= 760
