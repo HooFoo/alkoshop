@@ -3,8 +3,8 @@ class FrontendController < ApplicationController
 
   def index
     @item = Item.promoted
-    @news = News.all
-    @about = News.unscoped.where(title: 'О проекте').first
+    @news = News.where.not(title: 'О проекте')
+    @about = News.where(title: 'О проекте').first
   end
 
   def profile
@@ -23,7 +23,7 @@ class FrontendController < ApplicationController
 
   def template
     if params[:news]
-      @news = News.unscoped.find params[:news]
+      @news = News.find params[:news]
     end
     super
   end
