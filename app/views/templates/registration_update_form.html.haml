@@ -1,33 +1,37 @@
 %div.profile_overlay.overlay
-  %div.close_button
-  = simple_form_for @user, url: user_registration_path, method: 'put', remote: true, html: {class: 'login_form sign_up' } do |f|
-    %div.errors
-    %div.input       
-      = f.input_field :name
-      = f.label 'Имя'
-    %div.input
-      = f.input_field :surname
-      = f.label 'Фамилия'
-    %div.input
-      = f.phone_field :phone
-      = f.label 'Телефон'
-    %div.input
-      = f.input_field :email
-      = f.label 'Email'
-    %div.input.input-field
-      = f.country_select :country, ['Russia']
-      = f.label 'Страна'
-    %div.input
-      = f.input_field :district
-      = f.label 'Область'
-    %div.input
-      = f.input_field :city
-      = f.label 'Город'
-    %div.input
-      = f.input_field :password
-      = f.label 'Пароль'
-    %div.input
-      = f.input_field :password_confirmation
-      = f.label 'Подтверждение пароля'
+  %div.small_overlay
+    %div.close_button
+    %div.tabulated
+      %div.forms_container
+        %div.form_wrapper.form_active
+          = simple_form_for @user, url: user_registration_path, method: 'put', remote: true, html: {class: 'login_form sign_up' } do |f|
+            %div.errors
+            %div.inputs
+              %div.input
+                = f.input_field :name
+                = f.label 'Имя'
+              %div.input
+                = f.phone_field :phone
+                = f.label 'Телефон'
+              %div.input
+                = f.input_field :email
+                = f.label 'Email'
+            %div.inputs
+              %div.input.input-field
+                = f.country_select :country, ['Russia']
+                = f.label 'Страна'
+              %div.input
+                = f.input_field :district
+                = f.label 'Область'
+              %div.input
+                = f.input_field :city
+                = f.label 'Город'
+            %div.inputs
+              %div.input
+                = f.input_field :password
+                = f.label 'Пароль'
+              %div.input
+                = f.input_field :password_confirmation
+                = f.label 'Подтверждение пароля'
 
-    =f.submit 'Обновить', class: 'sbutton'
+            =f.submit 'Обновить', class: 'sbutton'

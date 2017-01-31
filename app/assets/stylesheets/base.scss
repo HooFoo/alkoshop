@@ -293,6 +293,7 @@ body {
               select{
                 margin-bottom: 20px;
                 margin-right: 0px;
+                width: 100%;
               }
             }
           }
@@ -535,7 +536,6 @@ body {
     width: 496px;
     border: none;
     border-bottom: 2px solid rgba(235, 173, 113, 0.37) !important;
-    background-color: #004a80;
     color: #ebad71 !important;
   }
   input:focus {
@@ -1702,6 +1702,12 @@ input[type="submit"] {
           text-align: left;
         }
       }
+    }
+    .out_of_orders {
+      margin-top: 10vh;
+      font-size: 46px;
+      font-family: Circe;
+      font-weight: 700;
     }
   }
 

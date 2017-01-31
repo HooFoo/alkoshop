@@ -1,15 +1,18 @@
 %div.orders_screen
   %div.orders
-    -@orders.each do |order|
-      %div.order_box
-        %div.panel.lefts
-          %div.info
-            %p.date
-              = order.updated_at.strftime('%d/%m/%y')
-            %p.number
-              = "Заказ ##{order.id}"
-          = render partial: 'shared/sbutton', object: 'повторить заказ',
-             locals: {extra_class: '', link_class: '', link: "/cart/repeat?id=#{order.id}", remote: false}
-        %div.panel.rights
-          %div.order_items
-            = render partial: 'shared/cart_items', object: order.order_items, locals: {removable: false}
+    - if @orders.size > 0
+      -@orders.each do |order|
+        %div.order_box
+          %div.panel.lefts
+            %div.info
+              %p.date
+                = order.updated_at.strftime('%d/%m/%y')
+              %p.number
+                = "Заказ ##{order.id}"
+            = render partial: 'shared/sbutton', object: 'повторить заказ',
+               locals: {extra_class: '', link_class: '', link: "/cart/repeat?id=#{order.id}", remote: false}
+          %div.panel.rights
+            %div.order_items
+              = render partial: 'shared/cart_items', object: order.order_items, locals: {removable: false}
+    - else
+      %h1.out_of_orders У вас нет заказов
