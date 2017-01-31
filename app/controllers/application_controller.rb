@@ -22,7 +22,7 @@ class ApplicationController < ActionController::Base
   def current_order
     if !session[:order_id].nil?
       @order = Order.find(session[:order_id])
-      if @order.user.nil? && !current_order.nil?
+      if @order.user.nil? && !current_user.nil?
         @order.user = current_user
         @order.save
       end
