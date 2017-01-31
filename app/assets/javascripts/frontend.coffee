@@ -25,6 +25,7 @@ class Ui
     @enableTabs()
     @activatePromo()
     @enableSubmits()
+    @calculateNewsWidth()
 
   toggleSidenav: ->
     $('.sidenav').toggleClass('open')
@@ -81,14 +82,14 @@ class Ui
     @offset = 0
     $('.navigation > .left').click =>
       if @offset < 0
-        @offset += newsWidth()
+        @offset += @scrollWidth
         $('.news_slider').animate({left: @offset })
       if @offset >= 0
         $('.navigation > .left').css('display': 'none')
     $('.navigation > .right').click =>
-      @offset -= newsWidth()
+      @offset -= @scrollWidth
       $('.news_slider').animate({left: @offset })
-      if @offset <= (-1 * newsWidth())
+      if @offset <= (-1 * @scrollWidth)
         $('.navigation > .left').css('display': 'block')
 
     $('.news_link').on 'ajax:success', (e,data) =>
@@ -141,15 +142,25 @@ class Ui
     else
       $('.nav_items').remove()
 
-  newsWidth = () =>
-    scrollWidth = 1474
-    if window.innerWidth <=1366
-      scrollWidth = 994
-    if window.innerWidth <=1024
-      scrollWidth = 780
-    if window.innerWidth <=760
-      scrollWidth = window.innerWidth * 0.80
-    return scrollWidth
+  calculateNewsWidth: () =>
+    newsbox = $('.news_box_wrapper')
+    news_wrapper = $('.news_wrapper')
+    console.log(news_wrapper.width(),newsbox.outerWidth())
+    if news_wrapper.width() < (newsbox.outerWidth())*2
+      news_wrapper.width(newsbox.outerWidth())
+      @scrollWidth = newsbox.outerWidth()
+    else
+      @scrollWidth = (newsbox.outerWidth())*2
+
+#  newsWidth = () =>
+#    @scrollWidth = 1474
+#    if window.innerWidth <=1366
+#      @scrollWidth = 994
+#    if window.innerWidth <=1024
+#      @scrollWidth = 780
+#    if window.innerWidth <=760
+#      @scrollWidth = window.innerWidth * 0.80
+#    return scrollWidth
 
   confirmation: =>
     if localStorage.getItem('confirmed') == null
