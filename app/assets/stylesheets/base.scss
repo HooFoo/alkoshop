@@ -1835,17 +1835,16 @@ input[type="submit"] {
         border-left: 1px solid rgba(235, 173, 113, 0.34);
 
         .news_box {
-          max-height: 256px;
+          max-height: 49%;
           width: 561px;
           padding-right: 40px;
           text-align: left;
           padding-bottom: 43px;
           border-bottom: 1px solid rgba(235, 173, 113, 0.34);
-          margin-bottom: 46px;
+          margin-bottom: 1%;
           overflow: hidden;
           .date {
             // Style for "26 сентябр"
-            width: 90px;
             color: #ebad71;
             font-family: Circe;
             font-size: 16px;
@@ -1854,7 +1853,7 @@ input[type="submit"] {
             margin: 0px;
           }
           .header {
-            margin-top: 40px;
+            margin-top: 5px;
             margin-bottom: 0px;
             color: #ebad71;
             font-family: "PT Serif";
@@ -1904,7 +1903,7 @@ input[type="submit"] {
   .navigation {
     display: flex;
     margin-top: 138px;
-    margin-left: 1376px;
+    float: right;
 
     .left {
       width: 34px;
