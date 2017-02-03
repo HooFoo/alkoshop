@@ -1,0 +1,26 @@
+%html
+  %head
+    %script{type:"text/javascript",
+            charset:"utf-8",
+            src:"https://api-maps.yandex.ru/services/constructor/1.0/js/?sid=V281QmysiHMA6o4xg8pVCEW5OrF_b3DX&width=100%&height=100%&lang=ru_RU&sourceType=constructor&scroll=true&id=map"}
+    :css
+      #map {
+        z-index: 2;
+        transition: 0.3s;
+      }
+      .img {
+        z-index: -1;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+      .image {
+        height: 90%;
+      }
+  %body
+    %div#map
+    %div.img
+      %img.image{src:"https://api-maps.yandex.ru/services/constructor/1.0/static/?sid=V281QmysiHMA6o4xg8pVCEW5OrF_b3DX&amp;width=600&amp;height=450&amp;lang=ru_RU&amp;sourceType=constructor",
+           alt:"",
+           style:"border: 0;"}

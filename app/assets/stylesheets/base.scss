@@ -226,6 +226,16 @@ body {
         line-height: 31px;
       }
     }
+    .map_container {
+      width: 100%;
+      height: 90%;
+      margin-top: 64px;
+      .map {
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+      }
+    }
   }
 }
 
@@ -1777,31 +1787,33 @@ input[type="submit"] {
       }
     }
     .right_panel {
-      .text_wrap {
-        padding-top: 70px;
-        height: 319px;
-        border: 1px solid rgba(235, 173, 113, 0.36);
-        transition: 0.3s;
-        &:hover {
-          box-shadow: inset 0 0 0 10px rgba(235, 173, 113, 0.1);
-        }
-        .heading {
-          font-family: Circe;
-          font-size: 36px;
-          font-weight: 700;
-          line-height: 42px;
-          font-variant: small-caps;
-          margin-top: 0;
-          .address_pointer{
-            margin: auto;
+      .map {
+        .text_wrap {
+          padding-top: 70px;
+          height: 319px;
+          border: 1px solid rgba(235, 173, 113, 0.36);
+          transition: 0.3s;
+          &:hover {
+            box-shadow: inset 0 0 0 10px rgba(235, 173, 113, 0.1);
           }
-        }
-        .address {
-          color: #daa36c;
-          font-family: Circe;
-          font-size: 18px;
-          font-weight: 700;
-          line-height: 26px;
+          .heading {
+            font-family: Circe;
+            font-size: 36px;
+            font-weight: 700;
+            line-height: 42px;
+            font-variant: small-caps;
+            margin-top: 0;
+            .address_pointer{
+              margin: auto;
+            }
+          }
+          .address {
+            color: #daa36c;
+            font-family: Circe;
+            font-size: 18px;
+            font-weight: 700;
+            line-height: 26px;
+          }
         }
       }
     }

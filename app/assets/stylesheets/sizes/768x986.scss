@@ -250,18 +250,20 @@
       }
     }
     .right_panel {
-      .text_wrap {
-        padding-top: 2%;
-        height: 65%;
-        .heading {
-          font-size: 32px;
-          line-height: 32px;
-          margin-bottom: 1%;
-        }
-        .address {
-          font-size: 18px;
-          line-height: 18px;
-          margin: auto 1%;
+      .map {
+        .text_wrap {
+          padding-top: 2%;
+          height: 65%;
+          .heading {
+            font-size: 32px;
+            line-height: 32px;
+            margin-bottom: 1%;
+          }
+          .address {
+            font-size: 18px;
+            line-height: 18px;
+            margin: auto 1%;
+          }
         }
       }
       .sbutton {
