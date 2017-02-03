@@ -4,14 +4,7 @@
 class Ui
 
   constructor: ->
-    $('.sidenav').hover( =>
-        $('.burger').hide()
-        $('.cart-icon').hide()
-      ,
-      =>
-        $('.burger').show(300)
-        $('.cart-icon').show(300)
-    )
+    @activateSidenav()
     @loginScreen()
     @contactsScreen()
     $('.cart-icon').click () =>
@@ -120,7 +113,6 @@ class Ui
     $('.input > input[type=email]').change (e) ->
       re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
       if not re.test e.target.value
-        console.log $('.input > input[type=email] ~ label')
         $('.input > input[type=email] ~ label').css(color: 'red !important', top: '-20px')
       else
         $('.input > input[type=email] ~ label').css(color: 'red')
@@ -145,7 +137,6 @@ class Ui
   calculateNewsWidth: () =>
     newsbox = $('.news_box_wrapper')
     news_wrapper = $('.news_wrapper')
-    console.log(news_wrapper.width(),newsbox.outerWidth())
     if news_wrapper.width() < (newsbox.outerWidth())*2
       news_wrapper.width(newsbox.outerWidth())
       @scrollWidth = newsbox.outerWidth()
@@ -192,6 +183,22 @@ class Ui
     ).on "ajax:error", (e, data) ->
       $('.errors').html(data.responseText)
 
+  activateSidenav: =>
+    sn_hide = =>
+      $('.burger').hide()
+      $('.cart-icon').hide()
+    sn_show = =>
+      $('.burger').show(300)
+      $('.cart-icon').show(300)
+    if window.innerWidth <=768
+      $('.burger').click( ->
+        $('.sidenav').css(height: '100vh')
+      )
+      $('.sidenav').click( ->
+        $('.sidenav').css(height: '0')
+      )
+    else
+      $('.sidenav').hover(sn_hide,sn_show)
 ready = ->
   window.ui = new Ui()
 
