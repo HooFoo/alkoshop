@@ -1148,9 +1148,11 @@ input[type="submit"] {
           display: block;
           height: 0;
           width: 0;
-          left: -1em;
+          left: -1.7em;
           position: relative;
-          color: black;
+          color: #ebad71;
+          font-size: 25px;
+          line-height: 25;
 
         }
         &:first-child:before {
@@ -1357,10 +1359,10 @@ input[type="submit"] {
           display: block;
           height: 0;
           width: 0;
-          left: -1.5em;
+          left: -1.7em;
           position: relative;
           color: #ebad71;
-          font-size: 30px;
+          font-size: 25px;
           line-height: 25px;
         }
         &:first-child {
@@ -1450,13 +1452,13 @@ input[type="submit"] {
           margin: 30px 0px;
           .count {
             width: 70px;
-            height: 54px;
+            height: 40px;
             text-align: center;
             border: 1px solid #ebad71;
             color: #ebad71;
             margin-right: 5%;
             margin-bottom: 0;
-            font-size: 32px;
+            font-size: 20px;
             font-family: Circe;
             box-shadow: none;
             display: block;
@@ -1464,10 +1466,11 @@ input[type="submit"] {
           }
           .sbutton {
             width: 120px;
-            height: 60px;
+            height: 40px;
             color: #350905;
             .sbutton_text {
               color: #350905;
+              line-height: 40px;
             }
             .borders {
               border-top: 2px solid #350905;
