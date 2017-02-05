@@ -1296,6 +1296,10 @@ input[type="submit"] {
             text-align: center;
             margin-bottom: -9px;
             width: 13em;
+            display: inline-block;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
           }
           .dropdown-content{
             border: 1px solid #ebad71;
