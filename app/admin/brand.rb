@@ -1,5 +1,5 @@
 ActiveAdmin.register Brand do
-  permit_params  :name, :description, :image
+  permit_params  :name, :description, :image, :sort
 
   index :as => :grid do |brand|
     a truncate(brand.name), :href => admin_brand_path(brand)
