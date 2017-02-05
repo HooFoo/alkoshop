@@ -28,6 +28,7 @@ class Ui
     $('.login_link').on "ajax:success", (e, data) =>
       $('.main-screen').append(data)
       $('.close_button').click (e) =>
+        $('.overlay').trigger('mouseleave')
         $('.overlay').remove()
       @enableTabs()
       @enableSubmits()
@@ -39,6 +40,7 @@ class Ui
     $('.contacts_link').on 'ajax:success', (e,data) =>
       $('.main-screen').append(data)
       $('.small_overlay > .close_button').click =>
+        $('.overlay').trigger('mouseleave')
         $('.overlay').remove()
 
       $('.support_form').on("ajax:complete", (ev,edata) =>
@@ -88,6 +90,7 @@ class Ui
     $('.news_link').on 'ajax:success', (e,data) =>
       $('.main-screen').append(data)
       $('.close_button').click =>
+        $('.overlay').trigger('mouseleave')
         $('.overlay').remove()
 
   updateTop: (data) ->
@@ -178,6 +181,7 @@ class Ui
 
   enableSubmits: =>
     $('.login_form').on( "ajax:success", (e, data) =>
+      $('.overlay').trigger('mouseleave')
       $('.overlay').remove()
       @updateTop(data)
     ).on "ajax:error", (e, data) ->
