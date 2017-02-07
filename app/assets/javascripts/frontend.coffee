@@ -127,7 +127,7 @@ class Ui
         slideSelector: '.slide'
         menu: '.sidenav'
         anchors: ['one','two','three', 'four', 'five']
-        normalScrollElements: '.overlay'
+        normalScrollElements: '.overlay, .cart_items'
         normalScrollElementTouchThreshold: 5
         recordHistory: false
         onLeave: (index, nextIndex, direction) =>

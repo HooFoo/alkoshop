@@ -463,8 +463,9 @@ body {
 
 .cart_items {
   margin: 0;
+  margin-top: 60px;
   overflow-y: auto;
-  height: calc(100vh - 233px);
+  height: calc(100vh - 293px);
   .item {
     margin-top: 70px;
     .item_small {
