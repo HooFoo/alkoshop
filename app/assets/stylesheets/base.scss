@@ -1158,11 +1158,11 @@ input[type="submit"] {
           display: block;
           height: 0;
           width: 0;
-          left: -1.7em;
+          left: -1.2em;
           position: relative;
           color: #ebad71;
           font-size: 25px;
-          line-height: 25;
+          line-height: 25px;
 
         }
         &:first-child:before {
@@ -1170,7 +1170,7 @@ input[type="submit"] {
         }
         a > p  {
           margin: 0;
-          margin-right: 18px;
+          margin-right: 35px;
 
           font-family: Circe;
           font-size: 18px;
