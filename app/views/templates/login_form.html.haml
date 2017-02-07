@@ -18,14 +18,14 @@
               %div.input
                 = f.input_field :password, required: true
                 = f.label 'Пароль'
-            = f.submit 'Войти', class: 'sbutton'
+            = f.submit 'войти', class: 'sbutton'
         %div.form_wrapper.reg
           = simple_form_for @user, url: user_registration_path, remote: true, html: {class: 'login_form sign_up' } do |f|
             %div.errors
             %div.inputs
               %div.input
                 = f.input_field :name, required: true
-                = f.label :name, "ф. и. о."
+                = f.label :name, "Ф.И.О."
               %div.input
                 = f.phone_field :phone, required: true
                 = f.label 'Телефон'
@@ -40,4 +40,4 @@
                 = f.input_field :password_confirmation, required: true
                 = f.label 'Подтверждение пароля'
 
-            =f.submit 'Зарегистрироваться', class: 'sbutton'
+            =f.submit 'зарегистрироваться', class: 'sbutton'
