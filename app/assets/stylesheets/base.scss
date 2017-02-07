@@ -371,7 +371,6 @@ body {
   width: 100vw;
   min-height: 80vh;
   margin: 0px;
-  padding-left: calc( ( 100% - 1600px) /2 );
   margin-top: -100px;
   z-index: 2;
 
@@ -382,8 +381,8 @@ body {
   }
   .item_box {
     /* Style for "Rectangle" */
-    width: 376px;
-    margin: 0.8%;
+    width: 23.3vw;
+    margin: auto 0.7vw;
     height: 805px;
     background-color: #fff;
     z-index: 3;
