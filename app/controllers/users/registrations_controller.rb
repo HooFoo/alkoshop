@@ -22,7 +22,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
   # PUT /resource
   def update
     user = current_user
-    if user.update(user_params)
+    if user.update_without_password(user_params)
       sign_in(:user, user)
       redirect_to after_sign_up_path_for(user)
     else

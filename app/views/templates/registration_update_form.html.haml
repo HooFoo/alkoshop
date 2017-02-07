@@ -9,7 +9,7 @@
             %div.inputs
               %div.input
                 = f.input_field :name
-                = f.label 'Имя'
+                = f.label :name, 'Ф.И.О.'
               %div.input
                 = f.phone_field :phone
                 = f.label 'Телефон'
@@ -26,12 +26,5 @@
               %div.input
                 = f.input_field :city
                 = f.label 'Город'
-            %div.inputs
-              %div.input
-                = f.input_field :password
-                = f.label 'Пароль'
-              %div.input
-                = f.input_field :password_confirmation
-                = f.label 'Подтверждение пароля'
 
-            =f.submit 'Обновить', class: 'sbutton'
+            =f.submit 'обновить', class: 'sbutton'

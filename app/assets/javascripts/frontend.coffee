@@ -27,6 +27,7 @@ class Ui
     old_top = $('.top').html()
     $('.login_link').on "ajax:success", (e, data) =>
       $('.main-screen').append(data)
+      $('#user_country').material_select();
       $('.close_button').click (e) =>
         $('.overlay').trigger('mouseleave')
         $('.overlay').remove()
