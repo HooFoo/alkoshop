@@ -528,6 +528,10 @@
       font-size: 12px;
       margin-top: 60px;
       .breadcrumb-item{
+        &:before {
+          line-height: 16px;
+
+        }
         a > p, p {
           font-size: 12px;
         }
