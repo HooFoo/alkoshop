@@ -1076,6 +1076,7 @@ input[type="submit"] {
   width: 100vw;
   overflow-y: visible;
   overflow-x: hidden;
+  -webkit-overflow-scrolling: touch;
 
   .header {
     top: 0;
