@@ -187,7 +187,11 @@ body {
       line-height: 26px;
       margin-top: 75px;
       margin-bottom: 90px;
+      margin-left: 50%;
+      transform: translateX(-50%);
+      display: inline-block;
     }
+
     .support_form {
       width: 100%;
       padding: 79px 223px;
@@ -544,7 +548,7 @@ body {
   position: relative;
   margin-bottom: 45px;
 
-  input, select {
+  input, select, textarea {
     font-size: 18px;
     padding: 10px 10px 10px 5px;
     width: 496px;
@@ -552,7 +556,7 @@ body {
     border-bottom: 2px solid rgba(235, 173, 113, 0.37) !important;
     color: #ebad71 !important;
   }
-  input:focus {
+  input:focus, textarea:focus {
     outline: none;
     box-shadow: none !important;
   }
