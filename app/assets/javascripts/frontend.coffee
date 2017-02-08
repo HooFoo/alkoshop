@@ -46,7 +46,8 @@ class Ui
 
       $('.support_form').on("ajax:complete", (ev,edata) =>
         $('.support_form').remove()
-        $('.small_overlay').append(edata.responseText)
+        $('.support').css('margin-top', '50%').html('Спасибо!')
+        $('.small_overlay').append('<div class="we_will">Мы свяжемся с вами!</div>')
       )
   updateCart: (data) =>
     $('.cart_wrapper').remove()
