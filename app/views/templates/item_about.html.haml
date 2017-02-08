@@ -56,15 +56,15 @@
               %p.volume{volume: iv.id, price: iv.price}
                 ="#{iv.volume.ml} ml"
         %div.extra
-          %div.name
-            = "Компоненты:"
-          %div.string
-            ="#{@item.source}"
+          %div.string.long
+            %div.name.in_text
+              = "Компоненты:"
+            =" #{@item.source}"
         %div.extra
-          %div.name
-            = "Описание:"
-          %div.string
-            ="#{@item.description}"
+          %div.string.long
+            %div.name.in_text
+              = "Описание:"
+            =" #{@item.description}"
 
 
 

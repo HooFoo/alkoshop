@@ -161,6 +161,7 @@
         &:before {
           font-size: 36px;
           line-height: 16px;
+          left: -1.4em;
         }
         a > p, p {
           font-size: 14px;
@@ -179,8 +180,8 @@
         }
       }
       .item_text {
-        width: calc(100% - 50% - 216px);
-        max-width: calc(100% - 50% - 216px);
+        width: calc(100% - 50% - 56px);
+        max-width: calc(100% - 50% - 56px);
         .cart_section {
           .count {
 

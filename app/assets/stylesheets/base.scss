@@ -1451,7 +1451,6 @@ input[type="submit"] {
 
         .item_name {
           /* Style for "Вино Elibo" */
-          width: 466px;
           height: 90px;
           overflow: hidden;
           color: #350905;
@@ -1528,10 +1527,16 @@ input[type="submit"] {
               line-height: 24px;
             }
             .string {
-              font-family: "PT Serif";
+              font-family: "Circe";
               color: #350905;
               margin-left: 10px;
               letter-spacing: 1px;
+              .in_text {
+                display: inline-block;
+              }
+            }
+            .long {
+              margin-left: 0;
             }
             .volumes {
               display: flex;
