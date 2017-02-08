@@ -27,7 +27,7 @@ class Shop
     if arr.length > 1
       a = arr[1].split('=')
       if a.length == 2
-        $("a.about[href*='#{decodeURIComponent(arr[1])}']")[0].click()
+        $("a.item_about_link[href*='#{decodeURIComponent(arr[1])}'], a.show_brand[href*='#{decodeURIComponent(arr[1])}']")[0].click()
 
   activate_buttons: =>
     $('.count').change (e)=>
