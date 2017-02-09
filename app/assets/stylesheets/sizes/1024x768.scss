@@ -174,7 +174,6 @@
     .item_info {
       .item_logo {
         width: 420px;
-        height: 860px;
         margin-left: 20px;
         margin-right: 20px;
         .item_img {
@@ -184,7 +183,32 @@
       .item_text {
         max-width: calc(100% - 41% - 149px);
         width: calc(100% - 41% - 149px);
+        .item_extra {
+          .extra {
+            .long {
+              height: 41px;
+              overflow: hidden;
+            }
+
+          }
+          .cut {
+            display: block;
+            text-align: right;
+            transform: translateY(calc(-100% - 0.5em));
+            background: linear-gradient(to right, rgba(0,0,0,0) 0%,#ffffff 10%);
+            width: 20ch;
+            margin-left: auto;
+            cursor: pointer;
+            > p {
+              width: 18ch;
+              margin-left: auto;
+              margin-bottom: 0;
+              margin-top: 0;              border-bottom: 1px solid black;
+            }
+          }
+        }
       }
+
     }
     .same_box {
       .same {

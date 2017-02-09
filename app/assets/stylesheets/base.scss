@@ -1239,7 +1239,7 @@ input[type="submit"] {
           margin-bottom: 1em;
         }
         .brand_description {
-          font-family: "PT Serif";
+          font-family: "Open Sans";
           font-size: 21px;
           font-weight: 400;
           line-height: 29px;
@@ -1540,7 +1540,9 @@ input[type="submit"] {
             }
             .long {
               margin-left: 0;
+              transition: 0.3s;
             }
+
             .volumes {
               display: flex;
               .volume {
@@ -1554,6 +1556,9 @@ input[type="submit"] {
                 }
               }
             }
+          }
+          .cut {
+            display: none;
           }
         }
 
