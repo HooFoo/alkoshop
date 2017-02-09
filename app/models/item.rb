@@ -50,7 +50,7 @@ class Item < ApplicationRecord
 
 
   def short_description
-    "#{type_extra}. #{region}"
+    "#{type} #{type_extra}. #{region}"
   end
 
   def heading
