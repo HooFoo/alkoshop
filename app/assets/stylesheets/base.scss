@@ -81,7 +81,7 @@ body {
   z-index: 2;
   .columns {
     display: flex;
-    padding: 115px 10vw;
+    padding: 115px 22vw;
     text-align: left;
     .column_right {
       width: 519px;
@@ -449,6 +449,7 @@ body {
         font-weight: 400;
         margin-top: 10px;
         height: 48px;
+        text-overflow: ellipsis;
       }
       .image {
         margin-top: 8%;
@@ -1677,6 +1678,11 @@ input[type="submit"] {
             }
           }
         }
+        .address {
+          color: #b2aaaa;
+          font-size: 10px;
+          margin-left: 56px;
+        }
         .submit {
           color: #350905;
           font-family: Circe;
@@ -1903,6 +1909,7 @@ input[type="submit"] {
           border-bottom: 1px solid rgba(235, 173, 113, 0.34);
           margin-bottom: 1%;
           overflow: hidden;
+          height: 50%;
           .date {
             // Style for "26 сентябр"
             color: #ebad71;
@@ -1940,6 +1947,13 @@ input[type="submit"] {
         max-height: 560px  !important;
         height: 560px;
         border-bottom: 0px !important;
+        height: 100% !important;
+        .news_link {
+          .short_description {
+            max-height: 55%;
+            overflow: hidden;
+          }
+        }
         .sbutton {
           margin-top: 50px;
           width: 120px;
@@ -1962,7 +1976,7 @@ input[type="submit"] {
 
   .navigation {
     display: flex;
-    margin-top: 138px;
+    margin-top: 100px;
     float: right;
 
     .left {

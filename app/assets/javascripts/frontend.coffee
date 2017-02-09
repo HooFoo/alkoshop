@@ -144,9 +144,9 @@ class Ui
     news_wrapper = $('.news_wrapper')
     if news_wrapper.width() < (newsbox.outerWidth())*2
       news_wrapper.width(newsbox.outerWidth())
-      @scrollWidth = newsbox.outerWidth()
+      @scrollWidth = newsbox.outerWidth()+20
     else
-      @scrollWidth = (newsbox.outerWidth())*2
+      @scrollWidth = (newsbox.outerWidth()+20)*2
 
 #  newsWidth = () =>
 #    @scrollWidth = 1474

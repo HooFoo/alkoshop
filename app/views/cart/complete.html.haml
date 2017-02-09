@@ -8,12 +8,16 @@
         = "#{@order.show_price} P"
       = form_tag '/cart/complete', method: :post, remote: true, class: 'delivery_form' do
         %p.delivery
-          = radio_button_tag :delivery, :self
+          = radio_button_tag :delivery, :self, checked: true
           = label_tag :delivery_self, 'Самовывоз'
-        %p.delivery
+          %p.address
+            Москва, Звонарский пер., д.7, стр.1.
+            %br
+            Время работы ПН-ПТ с 10:00 до 19:00.
+        -#%p.delivery
           = radio_button_tag :delivery, :courier, checked: true
           = label_tag :delivery_courier,'Доставка курьером по Вашему адресу'
-        %p.old_address
+        -#%p.old_address
           =text_field_tag :adress, @address
         = submit_tag 'Оформить заказ', class: 'submit sbutton'
     %div.panel.right_panel

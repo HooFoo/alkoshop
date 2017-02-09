@@ -1,7 +1,7 @@
 class News < ApplicationRecord
   default_scope { order(:updated_at).reverse_order }
 
-  def short_description(length = 140)
+  def short_description(length = 340)
     description.slice(0, length)
   end
 

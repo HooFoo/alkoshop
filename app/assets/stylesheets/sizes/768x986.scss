@@ -211,6 +211,11 @@
     .first {
       max-height: 80%  !important;
       height: 100% !important;
+      .news_link {
+        .short_description {
+          max-height: 55% !important;
+        }
+      }
       .sbutton {
         margin-top: 5px;
         width: 92px;
