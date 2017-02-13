@@ -38,6 +38,7 @@ class Shop
       button.href = url
     $('.close_button').click =>
       remove_params()
+      $('.burger').show()
       $('.overlay').remove()
     $('.buy').on 'ajax:success', (e, data) =>
       ui.updateCart(data)
@@ -62,6 +63,7 @@ class Shop
     $('.brands_screen, .catalog_screen').append(data)
     @add_location(e.target['href'])
     ui.activateSlider()
+    $('.burger').hide()
     $('.cut').click =>
       $('.long').css('height', 'auto')
       $('.cut').hide()
