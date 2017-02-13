@@ -195,7 +195,7 @@
             display: block;
             text-align: right;
             transform: translateY(calc(-100% - 0.5em));
-            background: linear-gradient(to right, rgba(0,0,0,0) 0%,rgba(255,255,255,1) 10%);
+            background: linear-gradient(to right, rgba(255,255,255,0) 0%,rgba(255,255,255,1) 10%);
             width: 20ch;
             margin-left: auto;
             cursor: pointer;
@@ -203,7 +203,8 @@
               width: 18ch;
               margin-left: auto;
               margin-bottom: 0;
-              margin-top: 0;              border-bottom: 1px solid black;
+              margin-top: 0;
+              border-bottom: 1px solid black;
             }
           }
         }
