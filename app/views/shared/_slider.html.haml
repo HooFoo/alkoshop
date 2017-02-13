@@ -1,0 +1,8 @@
+%div.gallery_slider
+  %ul.wrp.animate.rslides
+    -slider.each do |slide|
+      %li.elmnt
+        -if size == 'big'
+          %img.slide{src: slide.image.big}
+        -else
+          %img.slide{src: slide.image.news}

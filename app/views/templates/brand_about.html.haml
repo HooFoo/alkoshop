@@ -15,7 +15,10 @@
         =@brand.name
   %div.brand_info
     %div.brand_logo
-      %img.brand_img{src: "#{@brand.image.brand}"}
+      -if @brand.gallery_images.size > 0
+        = render partial: 'shared/slider',  object: @brand.gallery_images, locals: { size: 'big'}
+      -else
+        %img.brand_img{src: "#{@brand.image.brand}"}
     %div.brand_text
       %h3.brand_name
         = @brand.name

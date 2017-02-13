@@ -61,6 +61,7 @@ class Shop
     $('.overlay').remove()
     $('.brands_screen, .catalog_screen').append(data)
     @add_location(e.target['href'])
+    ui.activateSlider()
     $('.cut').click =>
       $('.long').css('height', 'auto')
       $('.cut').hide()

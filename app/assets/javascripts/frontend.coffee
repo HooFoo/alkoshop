@@ -91,6 +91,7 @@ class Ui
 
     $('.news_link').on 'ajax:success', (e,data) =>
       $('.main-screen').append(data)
+      @activateSlider()
       $('.close_button').click =>
         $('.overlay').trigger('mouseleave')
         $('.overlay').remove()
@@ -205,6 +206,13 @@ class Ui
       )
     else
       $('.sidenav').hover(sn_hide,sn_show)
+
+  activateSlider: =>
+    console.log 'slider'
+    $('.rslides').responsiveSlides(
+      pager: true
+    )
+
 ready = ->
   window.ui = new Ui()
 

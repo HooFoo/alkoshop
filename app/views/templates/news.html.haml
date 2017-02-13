@@ -7,10 +7,13 @@
       %h1.title
         = @news.title
       %div.media
-        - if @news.media.nil? || @news.media.empty?
-          %img.image{src: @news.image.news}
-        - else
-          = @news.media.html_safe
+        -if @news.gallery_images.size > 0
+          = render partial: 'shared/slider',  object: @news.gallery_images, locals: { size: 'news'}
+        -else
+          - if @news.media.nil? || @news.media.empty?
+            %img.image{src: @news.image.news}
+          - else
+            = @news.media.html_safe
 
     %div.column_left
       %div.scrollable

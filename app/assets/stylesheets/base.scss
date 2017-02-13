@@ -49,6 +49,91 @@ body {
   }
 }
 
+.gallery_slider {
+  height: 100%;
+  .rslides_tabs {
+    margin: 0px;
+    text-align: center;
+    transform: translateY(-100%);
+    position: relative;
+    z-index: 3;
+    > li {
+      display: inline;
+      float: none;
+      _float: left;
+      *float: left;
+      margin-right: 5px;
+      > a {
+        text-indent: -9999px;
+        overflow: hidden;
+        -webkit-border-radius: 15px;
+        -moz-border-radius: 15px;
+        border-radius: 15px;
+        background: #777;
+        background: rgba(100,100,100, .2);
+        display: inline-block;
+        _display: block;
+        *display: block;
+        -webkit-box-shadow: inset 0 0 2px 0 rgba(100,100,100,.3);
+        -moz-box-shadow: inset 0 0 2px 0 rgba(100,100,100,.3);
+        box-shadow: inset 0 0 2px 0 rgba(100,100,100,.3);
+        width: 9px;
+        height: 9px;
+      }
+    }
+    .rslides_here > a {
+      background: #999;
+      background: rgba(100,100,100, .8);
+    }
+  }
+
+
+  .wrp {
+    max-width: 100%;
+    margin: 0;
+    overflow: hidden;
+    position: relative;
+    display: block;
+    padding: 0;
+    list-style: none;
+
+    .elmnt {
+      -webkit-backface-visibility: hidden;
+      position: absolute;
+      display: none;
+      width: 100%;
+      left: 0;
+      top: 0;
+      &:first-child {
+        position: relative;
+        display: block;
+        float: left;
+      }
+      .slide {
+        display: block;
+        height: auto;
+        float: left;
+        width: 100%;
+        border: 0;
+      }
+    }
+  }
+  .animate {
+    -webkit-transition: margin 0.75s cubic-bezier(0.860, 0.000, 0.070, 1.000);
+    -moz-transition: margin 0.75s cubic-bezier(0.860, 0.000, 0.070, 1.000);
+    -o-transition: margin 0.75s cubic-bezier(0.860, 0.000, 0.070, 1.000);
+    transition: margin 0.75s cubic-bezier(0.860, 0.000, 0.070, 1.000); /* ease-in-out */
+  }
+
+  .clear {
+    display: block;
+    width: 100%;
+    height: 0px;
+    overflow: hidden;
+    clear: both;
+  }
+}
+
 .overlay {
   position: fixed;
   left: 0;
@@ -1228,6 +1313,9 @@ input[type="submit"] {
         float: left;
         margin-right: 8%;
         margin-left: 16%;
+        width: 499px;
+        height: 533px;
+
         .brand_img {
           width: 499px;
           height: 499px;

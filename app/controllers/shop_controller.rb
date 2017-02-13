@@ -30,7 +30,15 @@ class ShopController < ApplicationController
       @item = Item.find params[:item]
       @same = Item.same @item
     end
-    super
+    if request.xhr?
+      super
+    else
+      if @brand.nil?
+        redirect_to "/shop/catalog#item=#{@item.id}"
+      else
+        redirect_to "/shop/brands#brand=#{@brand.name}"
+      end
+    end
   end
 
   private
