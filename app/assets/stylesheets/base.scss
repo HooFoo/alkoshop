@@ -492,7 +492,7 @@ body {
     /* Style for "Rectangle" */
     width: 23.3vw;
     margin: 0.7vw;
-    height: 805px;
+    height: 765px;
     background-color: #fff;
     z-index: 3;
     float: left;
@@ -538,7 +538,7 @@ body {
       }
       .image {
         margin-top: 8%;
-        height: 450px;
+        height: 430px;
         .img {
           height: 420px;
           width: 240px;
@@ -1263,6 +1263,7 @@ input[type="submit"] {
   }
   .overlay {
     background: #fcfcfc;
+    z-index: 2;
     .breadcrumb {
       display: flex;
       margin-top: 57px;
