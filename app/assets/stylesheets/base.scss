@@ -1338,10 +1338,11 @@ input[type="submit"] {
           margin-bottom: 1em;
         }
         .brand_description {
-          font-family: "Open Sans";
+          font-family: "Circe";
+          letter-spacing: 1px;
+          line-height: 24px;
           font-size: 21px;
           font-weight: 400;
-          line-height: 29px;
           margin-bottom: 70px;
         }
       }
@@ -1553,7 +1554,6 @@ input[type="submit"] {
 
         .item_name {
           /* Style for "Вино Elibo" */
-          height: 90px;
           overflow: hidden;
           color: #350905;
           margin: 0;
