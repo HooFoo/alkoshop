@@ -1,7 +1,7 @@
 ActiveAdmin.register Item do
   permit_params  :name, :image, :price, :type_extra, :region, :facturer,
                  :alcohol, :source, :description, :promote, :article,
-                 :brand_id, :type_id, :country_id, :in_stock, :items_volumes_attributes => [:id, :volume_id, :price, :_destroy]
+                 :brand_id, :type_id, :country_id, :in_stock, :created_at, :items_volumes_attributes => [:id, :volume_id, :price, :_destroy]
 
 # See permitted parameters documentation:
 # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
@@ -36,6 +36,7 @@ ActiveAdmin.register Item do
       f.input :promote
       f.input :article
       f.input :in_stock
+      f.input :created_at
 
     end
     f.inputs do
