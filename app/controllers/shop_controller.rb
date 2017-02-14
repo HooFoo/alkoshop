@@ -1,8 +1,8 @@
 class ShopController < ApplicationController
 
   Sorts = {
-      'Сначала новые': 'created_at ASC',
-      'Сначала старые': 'created_at DESC',
+      'Сначала новые': 'created_at DESC',
+      'Сначала старые': 'created_at ASC',
       'Сначала премиальные': 'price DESC',
       'Сначала бюджетные': 'price ASC',
   }
