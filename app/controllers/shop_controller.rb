@@ -56,7 +56,7 @@ class ShopController < ApplicationController
             current: params[:country]},
         sort: {
             values: Sorts,
-            current: params[:sort]
+            current: params[:sort] || Sorts.first[1]
         },
         search: {
           values: '',
