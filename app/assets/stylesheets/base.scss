@@ -1537,8 +1537,8 @@ input[type="submit"] {
       .item_logo {
         padding: 0px 17px;
         margin-right: 40px;
-        margin-left: 11%;
-        width: 746px;
+        margin-left: 13%;
+        width: 500px;
         text-align: center;
         .item_img {
           margin: auto;
@@ -1548,9 +1548,9 @@ input[type="submit"] {
       }
       .item_text {
         float: right;
-        margin-right: 6%;
+        margin-right: auto;
         color: #25160f;
-        max-width: calc(100% - 41% - 360px);
+        max-width: calc(59% - 200px);
 
         .item_name {
           /* Style for "Вино Elibo" */
