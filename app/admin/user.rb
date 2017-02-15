@@ -20,6 +20,7 @@ ActiveAdmin.register User, :as => "Customer" do
     column :country
     column :district
     column :city
+    column :special
     column :created_at
     actions
   end

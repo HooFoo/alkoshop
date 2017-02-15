@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170211141434) do
+ActiveRecord::Schema.define(version: 20170214164258) do
 
   create_table "active_admin_comments", force: :cascade do |t|
     t.string   "namespace"
@@ -96,8 +96,10 @@ ActiveRecord::Schema.define(version: 20170211141434) do
     t.integer "volume_id"
     t.integer "item_id"
     t.float   "price"
+    t.integer "special_id"
     t.index ["id"], name: "index_items_volumes_on_id"
     t.index ["item_id"], name: "index_items_volumes_on_item_id"
+    t.index ["special_id"], name: "index_items_volumes_on_special_id"
     t.index ["volume_id"], name: "index_items_volumes_on_volume_id"
   end
 
@@ -153,6 +155,11 @@ ActiveRecord::Schema.define(version: 20170211141434) do
     t.index ["user_id"], name: "index_orders_on_user_id"
   end
 
+  create_table "specials", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "types", force: :cascade do |t|
     t.string   "name"
     t.datetime "created_at", null: false
@@ -178,8 +185,10 @@ ActiveRecord::Schema.define(version: 20170211141434) do
     t.string   "country"
     t.string   "district"
     t.string   "city"
+    t.integer  "special_id"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
+    t.index ["special_id"], name: "index_users_on_special_id"
   end
 
   create_table "volumes", force: :cascade do |t|
