@@ -1,6 +1,7 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
   before_action :set_user
+  before_action :set_special
   before_action :current_order
   before_action :cart_items
 
@@ -13,6 +14,10 @@ class ApplicationController < ActionController::Base
 
   def set_user
     @user = current_user || User.new
+  end
+
+  def set_special
+    @special = @user.special
   end
 
   def cart_items

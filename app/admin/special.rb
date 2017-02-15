@@ -13,11 +13,15 @@ ActiveAdmin.register Special do
 #   permitted
 # end
 
-  permit_params user_ids: [], users_attributes: [:id, :special_id], items_volumes_attributes: [:id, :volume_id, :item_id, :price, :_destroy]
+  permit_params :text, user_ids: [], users_attributes: [:id, :special_id],
+                items_volumes_attributes: [:id, :volume_id, :item_id, :price, :_destroy]
 
   form do |f|
     f.semantic_errors # shows errors on :base
     f.actions
+    f.inputs do
+      f.input :text
+    end
     f.inputs do
       f.has_many :items_volumes do |item_volume|
         if !item_volume.object.nil?
@@ -41,6 +45,7 @@ ActiveAdmin.register Special do
     panel "Special" do
       table_for special do
         column :id
+        column :text
         column :created_at
         column :updated_at
       end
