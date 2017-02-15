@@ -1,23 +1,9 @@
 %div#shop.shop_screen.screen
-  %div.column.left
+  %div.column
     %div.text
-    = render partial: 'shared/sbutton', object: 'каталог',
-             locals: {extra_class: '', link_class: '', link: "/shop/catalog", remote: false, data: { turbolinks: false, no_turbolink: true}}
-  %div.column.center
-    =link_to("/shop/catalog?brand=#{@item.brand}&country=#{@item.country}&type=#{@item.type}#item=#{@item.id}", remote: false, class: 'about_promo') do
-      %div.name
-        = @item.name
+    %div.buttons
+      = render partial: 'shared/sbutton', object: 'каталог',
+               locals: {extra_class: '', link_class: '', link: "/shop/catalog", remote: false, data: { turbolinks: false, no_turbolink: true}}
+      = render partial: 'shared/sbutton', object: 'бренды',
+               locals: {extra_class: '', link_class: '', link: "/shop/brands", remote: false, data: { turbolinks: false, no_turbolink: true}}
 
-      %div.short_description
-        = @item.short_description
-      %div.image
-        %img.img{src: @item.image.promo_box}
-      %div.price
-        = @item.show_price
-
-    = render partial: 'shared/sbutton', object: 'добавить',
-             locals: {extra_class: '', link_class: 'buy promo_buy', link: "/cart/add?id=#{@item.id}&quantity=1", remote: true}
-
-  %div.column.right
-    = render partial: 'shared/sbutton', object: 'бренды',
-             locals: {extra_class: '', link_class: '', link: "/shop/brands", remote: false, data: { turbolinks: false, no_turbolink: true}}
