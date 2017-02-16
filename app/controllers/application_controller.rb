@@ -17,7 +17,7 @@ class ApplicationController < ActionController::Base
   end
 
   def set_special
-    @special = @user.special
+    @specials = Special.all
   end
 
   def cart_items

@@ -13,8 +13,7 @@ ActiveAdmin.register Special do
 #   permitted
 # end
 
-  permit_params :text, :image, user_ids: [], users_attributes: [:id, :special_id],
-                items_volumes_attributes: [:id, :volume_id, :item_id, :price, :_destroy]
+  permit_params :text, :image, items_volumes_attributes: [:id, :volume_id, :item_id, :price, :_destroy]
 
   form do |f|
     f.semantic_errors # shows errors on :base
@@ -35,9 +34,6 @@ ActiveAdmin.register Special do
         item_volume.input :price
         item_volume.input :item, collection: Item.all.map { |i| [i.name, i.id]}
       end
-    end
-    f.inputs do
-      f.input :user_ids,as: :select, multiple: true, collection: (special.users + User.no_special).map {|u| ["#{u.email} #{u.name}", u.id]}
     end
     f.actions
   end
@@ -61,16 +57,6 @@ ActiveAdmin.register Special do
         end
         column "price" do |item|
           item.price
-        end
-      end
-    end
-    panel "Users" do
-      table_for special.users do
-        column "name" do |user|
-          user.name
-        end
-        column "email" do |user|
-          user.email
         end
       end
     end

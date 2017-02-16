@@ -1,7 +1,7 @@
 %div#shop.shop_screen.screen
-  %div.column{class: @special.nil? ? '' : 'with_special'}
-    -unless @special.nil?
-      = render partial: 'shared/special_slider', object: @special
+  %div.column{class: @specials.nil? ? '' : 'with_special'}
+    -unless @specials.nil?
+      = render partial: 'shared/special_slider', object: @specials
     %div.buttons
       = render partial: 'shared/sbutton', object: 'каталог',
                locals: {extra_class: '', link_class: '', link: "/shop/catalog", remote: false, data: { turbolinks: false, no_turbolink: true}}

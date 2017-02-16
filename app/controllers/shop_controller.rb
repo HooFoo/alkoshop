@@ -14,13 +14,23 @@ class ShopController < ApplicationController
 
   def catalog
     @filters = prepare_filters
-    @items = Item.filtered(@filters).limit(24)
+    if params[:special]
+      @items = Special.find(params[:special]).items_volumes.map(&:item)
+    else
+      @items = Item.filtered(@filters).limit(24)
+    end
   end
 
   def more
     @filters = prepare_filters
-    @items = Item.filtered(@filters).offset(params[:offset]).limit(24)
+
+    if params[:special]
+      @items = []
+    else
+      @items = Item.filtered(@filters).offset(params[:offset]).limit(24)
+    end
     render template: 'shop/more', layout: false
+
   end
 
   def template
@@ -30,9 +40,7 @@ class ShopController < ApplicationController
     if params[:item]
       @item = Item.find params[:item]
       @same = Item.same @item
-      unless @user.special.nil?
-        special_prices
-      end
+      special_prices
     end
     if request.xhr?
       super
@@ -71,7 +79,7 @@ class ShopController < ApplicationController
 
   def special_prices
     unless @item.nil?
-      @prices = @item.all_prices @user
+      @prices = @item.all_prices
     end
   end
 end

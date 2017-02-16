@@ -151,15 +151,6 @@ class Ui
       news_wrapper.width((newsbox.outerWidth()+20)*2)
       @scrollWidth = (newsbox.outerWidth()+20)*2
 
-#  newsWidth = () =>
-#    @scrollWidth = 1474
-#    if window.innerWidth <=1366
-#      @scrollWidth = 994
-#    if window.innerWidth <=1024
-#      @scrollWidth = 780
-#    if window.innerWidth <=760
-#      @scrollWidth = window.innerWidth * 0.80
-#    return scrollWidth
 
   confirmation: =>
     if localStorage.getItem('confirmed') == null
@@ -217,7 +208,7 @@ class Ui
   activateSpecial: =>
     $('.spslider').responsiveSlides(
       pager: true
-      auto: false
+      auto: true
     )
 
 ready = ->

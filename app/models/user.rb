@@ -5,8 +5,5 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable
 
   has_many :orders
-  belongs_to :special
-
-  scope :no_special, -> { left_outer_joins(:special).where( users: { special_id: nil } )}
 end
 

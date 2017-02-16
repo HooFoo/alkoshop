@@ -74,14 +74,13 @@ class Item < ApplicationRecord
     items_volumes.select {|iv| iv.special.nil?}
   end
 
-  def with_special user
-    special = user.special
-    items_volumes.select {|iv| iv.special == special}
+  def with_special
+    items_volumes.select {|iv| !iv.special.nil?}
   end
 
-  def all_prices user
+  def all_prices
     without = without_special.to_a
-    special = with_special(user).to_a
+    special = with_special.to_a
     all = (without + special)
     volumes = all.map(&:volume)
     dups = volumes.select {|item| volumes.count(item) > 1}
