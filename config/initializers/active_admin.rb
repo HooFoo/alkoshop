@@ -273,4 +273,5 @@ ActiveAdmin.setup do |config|
   # config.include_default_association_filters = true
   config.skip_before_filter :current_order
   config.skip_before_filter :cart_items
+  config.skip_before_filter :set_special
 end
