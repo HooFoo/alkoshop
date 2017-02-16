@@ -29,7 +29,7 @@ ActiveAdmin.register User, :as => "Customer" do
     panel "Order History" do
       table_for(customer.orders) do
         column("Order", :sortable => :id) {|order| link_to "##{order.id}", admin_order_path(order) }
-        column("State")                   {|order| status_tag(order.order_state) }
+        column("State")                   {|order| status_tag(order.order_state.name) }
         column("Total")                   {|order| number_to_currency order.show_price }
       end
     end
