@@ -148,6 +148,7 @@ class Ui
       news_wrapper.width(newsbox.outerWidth())
       @scrollWidth = newsbox.outerWidth()+20
     else
+      news_wrapper.width((newsbox.outerWidth()+20)*2)
       @scrollWidth = (newsbox.outerWidth()+20)*2
 
 #  newsWidth = () =>
