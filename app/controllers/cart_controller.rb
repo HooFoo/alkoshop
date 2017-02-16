@@ -40,7 +40,11 @@ class CartController < ApplicationController
   def complete
     if (user = current_user)
       @address = user.orders.last.address unless user.orders.last.nil?
-      render 'complete', layout: 'application'
+      if @order.order_items.size > 0
+        render 'complete', layout: 'application'
+      else
+        redirect_to '/shop/catalog'
+      end
     else
       redirect_to '/profile/registration'
     end
