@@ -70,6 +70,29 @@ class Item < ApplicationRecord
     end
   end
 
+  def without_special
+    items_volumes.select {|iv| iv.special.nil?}
+  end
+
+  def with_special user
+    special = user.special
+    items_volumes.select {|iv| iv.special == special}
+  end
+
+  def all_prices user
+    without = without_special.to_a
+    special = with_special(user).to_a
+    all = (without + special)
+    volumes = all.map(&:volume)
+    dups = volumes.select {|item| volumes.count(item) > 1}
+    all.each do |item|
+      if dups.include?(item.volume) &&  item.special.nil?
+        all.delete item
+      end
+    end
+    all
+  end
+
   private
 
   def set_price

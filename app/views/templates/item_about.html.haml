@@ -22,7 +22,10 @@
       %p.item_art
         = "арт. #{@item.article}"
       %div.item_price
-        = "#{@item.show_price} Р"
+        - if @prices.nil?
+          = "#{@item.show_price} Р"
+        -else
+          = "#{@prices.first.price} Р"
       %div.cart_section
         =select_tag 'quantity', options_for_select((1..@item.in_stock).to_a, 1), class: 'count'
         = render partial: 'shared/sbutton', object: 'в корзину',
@@ -52,8 +55,12 @@
           %div.name
             = "Объем:"
           %div.string.volumes
-            -@item.items_volumes.each do |iv|
-              %p.volume{volume: iv.id, price: iv.price}
+            - if @prices.nil?
+              - prices = @item.without_special
+            -else
+              - prices = @prices
+            -prices.each do |iv|
+              %p.volume{volume: iv.id, price: iv.price, class: iv.special.nil? ? '' : 'special'}
                 ="#{iv.volume.ml} ml"
         %div.extra
           %div.string.long

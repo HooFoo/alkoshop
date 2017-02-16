@@ -1,5 +1,6 @@
 class ShopController < ApplicationController
 
+
   Sorts = {
       'Сначала новые': 'created_at DESC',
       'Сначала старые': 'created_at ASC',
@@ -29,6 +30,9 @@ class ShopController < ApplicationController
     if params[:item]
       @item = Item.find params[:item]
       @same = Item.same @item
+      unless @user.special.nil?
+        special_prices
+      end
     end
     if request.xhr?
       super
@@ -63,5 +67,11 @@ class ShopController < ApplicationController
           current: params[:search]
         }
     }
+  end
+
+  def special_prices
+    unless @item.nil?
+      @prices = @item.all_prices @user
+    end
   end
 end

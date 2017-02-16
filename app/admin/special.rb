@@ -13,7 +13,7 @@ ActiveAdmin.register Special do
 #   permitted
 # end
 
-  permit_params :text, user_ids: [], users_attributes: [:id, :special_id],
+  permit_params :text, :image, user_ids: [], users_attributes: [:id, :special_id],
                 items_volumes_attributes: [:id, :volume_id, :item_id, :price, :_destroy]
 
   form do |f|
@@ -21,6 +21,7 @@ ActiveAdmin.register Special do
     f.actions
     f.inputs do
       f.input :text
+      f.input :image
     end
     f.inputs do
       f.has_many :items_volumes do |item_volume|

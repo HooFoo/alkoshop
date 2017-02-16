@@ -1,0 +1,22 @@
+%div.special_slider{style: "background:url('#{special_slider.image}');"}
+  %ul.wrp.animate.spslider
+    %li.elmnt
+      %div.first_element
+        %div.special_heading
+          специальное предложение
+        %div.special_text
+          = special_slider.text
+    -special_slider.items_volumes.each do |slide|
+      %li.elmnt
+        %div.special_box
+          =link_to(item_link(slide.item), remote: false, class: 'special_link',
+                                          data: {turbolinks: false, no_turbolinks: true}) do
+            %div.img
+              %img.item_thumb{src: slide.item.image.item_box}
+            %div.text
+              %div.name
+                ="#{slide.item.name}, #{slide.volume.ml.to_f/1000}Л"
+              %div.desc
+                = slide.item.short_description
+              %div.price
+                = "#{slide.price} Р"

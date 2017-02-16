@@ -6,6 +6,11 @@ class Special < ApplicationRecord
 
   before_destroy :clear_users
 
+  mount_uploader :image, SpecialUploader
+
+  def to_s
+    text
+  end
   private
 
   def clear_users

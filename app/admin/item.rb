@@ -44,8 +44,10 @@ ActiveAdmin.register Item do
         if !item_volume.object.nil?
           # show the destroy checkbox only if it is an existing appointment
           # else, there's already dynamic JS to add / remove new appointments
-          item_volume.input :_destroy, :as => :boolean, :label => "Destroy?"
+          item_volume.input :_destroy, :as => :boolean, :label => "Destroy?",
+                            input_html: { disabled: !item_volume.object.special.nil? }
         end
+        item_volume.input :special, input_html: { disabled: true }
 
         item_volume.input :volume, :collection => Volume.all# it should automatically generate a drop-down select to choose from your existing patients
         item_volume.input :price

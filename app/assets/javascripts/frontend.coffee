@@ -19,6 +19,7 @@ class Ui
     @activatePromo()
     @enableSubmits()
     @calculateNewsWidth()
+    @activateSpecial()
 
   toggleSidenav: ->
     $('.sidenav').toggleClass('open')
@@ -208,9 +209,14 @@ class Ui
       $('.sidenav').hover(sn_hide,sn_show)
 
   activateSlider: =>
-    console.log 'slider'
     $('.rslides').responsiveSlides(
       pager: true
+    )
+
+  activateSpecial: =>
+    $('.spslider').responsiveSlides(
+      pager: true
+      auto: false
     )
 
 ready = ->
