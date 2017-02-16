@@ -30,7 +30,6 @@ ActiveAdmin.register User, :as => "Customer" do
       table_for(customer.orders) do
         column("Order", :sortable => :id) {|order| link_to "##{order.id}", admin_order_path(order) }
         column("State")                   {|order| status_tag(order.order_state) }
-        column("Date", :sortable => :checked_out_at){|order| pretty_format(order.checked_out_at) }
         column("Total")                   {|order| number_to_currency order.total_price }
       end
     end
