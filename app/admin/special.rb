@@ -37,7 +37,7 @@ ActiveAdmin.register Special do
       end
     end
     f.inputs do
-      f.input :users,as: :select, multiple: true, collection: (special.users + User.no_special).map {|u| ["#{u.email} #{u.name}", u.id]}
+      f.input :user_ids,as: :select, multiple: true, collection: (special.users + User.no_special).map {|u| ["#{u.email} #{u.name}", u.id]}
     end
     f.actions
   end
