@@ -7,7 +7,14 @@
     %div.image
       %img.img{src: item_box.image.item_box}
     %div.price
-      = "#{item_box.show_price} Р"
+      - special = item_box.special_price
+      - if special.size == 0
+        = "#{item_box.show_price} Р"
+      - else
+        %p.new_price
+          = special[0].price > special[1].price ? "#{special[1].show_price} P" :"#{special[0].show_price} P"
+        %p.old_price
+          = special[0].price < special[1].price ? "#{special[1].show_price} P" :"#{special[0].show_price} P"
   = render partial: 'shared/sbutton', object: 'в корзину',
      locals: {extra_class: '', link_class: 'buy', link: "/cart/add?id=#{item_box.id}&quantity=1", remote: true}
     

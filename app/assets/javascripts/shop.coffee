@@ -61,6 +61,8 @@ class Shop
   activate_overlay: (e,data) =>
     $('.overlay').remove()
     $('.brands_screen, .catalog_screen').append(data)
+    $('.overlay').on 'webkitAnimationEnd oanimationend msAnimationEnd animationend', =>
+      @fix_long_names()
     @add_location(e.target['href'])
     ui.activateSlider()
     $('.burger').hide()
@@ -137,7 +139,14 @@ class Shop
   remove_params = () =>
     location.href = location.href.split('#')[0]+'#'
 
-$(document).on('turbolinks:load', ->
+  fix_long_names: ->
+    if window.innerWidth <=768
+      top = $('.item_text > h3.item_name').outerHeight() +
+            $('.item_text > .item_art').outerHeight() +
+            $('.breadcrumb').outerHeight() + 80
+      $('.item_logo').css(top: "#{top}px")
+
+$(document).ready( ->
   window.shop = new Shop()
   window.shop.check_href()
 )

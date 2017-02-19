@@ -92,6 +92,11 @@ class Item < ApplicationRecord
     all
   end
 
+  def special_price
+    special = items_volumes.map(&:volume).select {|item| volumes.count(item) > 1}.first
+    items_volumes.select {|item| item.volume == special}
+  end
+
   private
 
   def set_price

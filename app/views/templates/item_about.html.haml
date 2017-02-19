@@ -25,7 +25,11 @@
         - if @prices.nil?
           = "#{@item.show_price} Р"
         -else
-          = "#{@prices.first.price} Р"
+          = "#{@prices.first.show_price} Р"
+          %div.old_price
+            = "#{@item.show_price} Р"
+
+
       %div.cart_section
         =select_tag 'quantity', options_for_select((1..@item.in_stock).to_a, 1), class: 'count'
         = render partial: 'shared/sbutton', object: 'в корзину',
@@ -60,7 +64,7 @@
             -else
               - prices = @prices
             -prices.each do |iv|
-              %p.volume{volume: iv.id, price: iv.price, class: iv.special.nil? ? '' : 'special'}
+              %p.volume{volume: iv.id, price: iv.show_price, class: iv.special.nil? ? '' : 'special'}
                 ="#{iv.volume.ml} ml"
         %div.extra
           %div.string.long

@@ -214,4 +214,4 @@ class Ui
 ready = ->
   window.ui = new Ui()
 
-$(document).on('turbolinks:load', ready)
+$(document).ready(ready)

@@ -204,7 +204,7 @@ body {
           background-size: cover;
           color: #daa36c;
           font-family: Circe;
-          padding-top: 90px;
+          padding-top: 65px;
           background: rgba(140, 78, 35, 0.31);
 
           .special_heading{
@@ -509,7 +509,7 @@ body {
     margin-left: calc((100vw - 90vw) / 2);
     .close_button {
       left: 8vw;
-      top: 20vh;
+      top: 22vh;
     }
     .tabulated {
       padding: 8vh 0;
@@ -546,7 +546,7 @@ body {
       }
       .forms_container {
         .form_wrapper {
-          padding-top: 13vh;
+          padding-top: 10vh;
           text-align: center;
           transition: 0.3s;
           display: none;
@@ -699,19 +699,29 @@ body {
         }
       }
       .price {
-        height: 24px;
+        height: 34px;
         color: #350905;
         font-family: "PT Serif";
         font-size: 34px;
         font-weight: 700;
         line-height: 41px;
         margin-top: 8%;
-
+        .old_price {
+          font-size: 16px;
+          text-decoration: line-through;
+          margin: 0px;
+          line-height: 20px;
+        }
+        .new_price {
+          font-size: 36px;
+          margin: 0px;
+          line-height: 39px;
+        }
       }
     }
     .sbutton {
       margin: auto;
-      margin-top: 10%;
+      margin-top: 8%;
       color: #350905;
       width: 119px;
       height: 41px;
@@ -1642,6 +1652,13 @@ input[type="submit"] {
           font-family: "PT Serif";
           font-size: 50px;
           font-weight: 700;
+          .old_price {
+            display: inline;
+            font-size: 24pt;
+            text-decoration: line-through;
+            font-weight: 400;
+            padding-left: 20px;
+          }
         }
         .cart_section {
           display: flex;
@@ -2131,7 +2148,7 @@ input[type="submit"] {
 
   .navigation {
     display: flex;
-    margin-top: 100px;
+    margin-top: 5vh;
     float: right;
 
     .left {

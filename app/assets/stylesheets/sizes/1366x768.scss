@@ -114,7 +114,7 @@
   .items {
     .item_box {
       width: 23.3vw;
-      height: 619px;
+      height: 630px;
       .item_about_link {
         .name {
           font-size: 14px;
@@ -135,7 +135,9 @@
           }
         }
       }
-
+      .sbutton {
+        margin-top: 12%;
+      }
     }
   }
   .filters {
@@ -260,6 +262,7 @@
 }
 .news_overlay {
   .columns {
+    padding: 115px 10vw;
     .column_right {
     }
   }

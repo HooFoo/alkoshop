@@ -16,8 +16,10 @@ class ShopController < ApplicationController
     @filters = prepare_filters
     if params[:special]
       @items = Special.find(params[:special]).items_volumes.map(&:item)
+      @specials = true
     else
       @items = Item.filtered(@filters).limit(24)
+      @specials = false
     end
   end
 
