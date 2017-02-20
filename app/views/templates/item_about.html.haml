@@ -22,7 +22,7 @@
       %p.item_art
         = "арт. #{@item.article}"
       %div.item_price
-        - if @prices.nil?
+        - if @prices.size == 0
           = "#{@item.show_price} Р"
         -else
           = "#{@prices.first.show_price} Р"

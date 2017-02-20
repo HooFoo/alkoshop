@@ -80,8 +80,6 @@ class ShopController < ApplicationController
   end
 
   def special_prices
-    unless @item.nil?
-      @prices = @item.all_prices
-    end
+      @prices = @item.special_price.select { |item| !item.special.nil? }
   end
 end
