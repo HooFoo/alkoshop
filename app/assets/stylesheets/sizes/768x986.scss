@@ -128,9 +128,54 @@
     }
   }
 }
-.special_slider .wrp .elmnt .special_box .special_link .text {
-  padding-top: 0px;
-  transform: translateX(-140px);
+
+.special_slider {
+  .wrp {
+
+    .elmnt {
+
+      .special_link {
+        text-align: center;
+        .first_element {
+
+          .special_heading{
+
+          }
+        }
+      }
+      &:first-child {
+      }
+      .slide {
+
+      }
+      .special_box {
+
+        .special_link {
+          display: block;
+          .img {
+            margin: auto;
+            .item_thumb {
+
+            }
+          }
+          .text {
+            padding-top: 0px;
+            transform: translateY(-280px);
+            > div {
+            }
+            .name {
+
+            }
+            .desc {
+
+            }
+            .price {
+            }
+          }
+        }
+      }
+    }
+  }
 }
 
 .index-bg {
