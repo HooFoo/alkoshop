@@ -1494,7 +1494,8 @@ input[type="submit"] {
             margin-bottom: -9px;
             width: 13em;
             white-space: nowrap;
-            overflow: hidden;
+            overflow-x: hidden;
+            -webkit-overflow-scrolling: touch;
             text-overflow: ellipsis;
           }
           .dropdown-content{

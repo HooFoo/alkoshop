@@ -85,6 +85,8 @@ class Shop
       @handle_links()
       @offset += 24
       @update_more()
+      if data.length == 0
+        $('.more_link').hide()
 
   close_search: () =>
     $('.input-field > .prefix').click =>
