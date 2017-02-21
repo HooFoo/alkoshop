@@ -595,9 +595,12 @@
       margin: 5px;
       font-size: 12px;
       margin-top: 60px;
+      &:before {
+        display: none;
+      }
       .breadcrumb-item{
         &:before {
-          line-height: 16px;
+          line-height: 12px;
 
         }
         a > p, p {
