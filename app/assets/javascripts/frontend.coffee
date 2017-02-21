@@ -201,7 +201,7 @@ class Ui
       $('.sidenav').hover(sn_hide,sn_show)
 
   activateSlider: =>
-    $('.rslides').responsiveSlides(
+    $('.resslides').responsiveSlides(
       pager: true
     )
 
