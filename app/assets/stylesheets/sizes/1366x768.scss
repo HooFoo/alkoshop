@@ -249,6 +249,11 @@
     }
     .support_form {
       padding: 30px 223px;
+      .upper_inputs {
+        .input {
+          margin-bottom: 20px;
+        }
+      }
       .input {
         .materialize-textarea {
           height: 3em;
