@@ -18,7 +18,7 @@ class OrderItem < ApplicationRecord
 
   def unit_price
 
-    if persisted?
+    if !self[:unit_price].nil?
       price = self[:unit_price]
     else
       price = item.price

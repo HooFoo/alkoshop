@@ -32,8 +32,9 @@
 
       %div.cart_section
         =select_tag 'quantity', options_for_select((1..@item.in_stock).to_a, 1), class: 'count'
+        - link = @prices.size == 0 ? "/cart/add?id=#{@item.id}&quantity=1" : "/cart/add?id=#{@item.id}&quantity=1&price_id=#{@prices.last.id}"
         = render partial: 'shared/sbutton', object: 'в корзину',
-               locals: {extra_class: '', link_class: 'buy big_buy', link: "/cart/add?id=#{@item.id}&quantity=1", remote: true}
+               locals: {extra_class: '', link_class: 'buy big_buy', link: link, remote: true}
       %div.item_extra
         %div.extra
           %div.name
@@ -59,7 +60,7 @@
           %div.name
             = "Объем:"
           %div.string.volumes
-            - if @prices.nil?
+            - if @prices.size == 0
               - prices = @item.without_special
             -else
               - prices = @prices
