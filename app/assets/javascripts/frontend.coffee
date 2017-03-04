@@ -134,12 +134,20 @@ class Ui
         normalScrollElements: '.overlay, .cart_items'
         normalScrollElementTouchThreshold: 5
         recordHistory: false
-        onLeave: (index, nextIndex, direction) =>
-          $(".nav_items > .nav_quad:eq(#{index-1})").removeClass('active')
-          $(".nav_items > .nav_quad:eq(#{nextIndex-1})").addClass('active')
+        onLeave: (index, nextIndex, direction) ->
+          $('.screens-navigation>.up').show() if nextIndex > 1
+          $('.screens-navigation>.up').hide() if nextIndex == 1
+          $('.screens-navigation>.down').show() if nextIndex < 5
+          $('.screens-navigation>.down').hide() if nextIndex == 5
+      )
+      $('.screens-navigation>.up').click(()->
+        $.fn.fullpage.moveSectionUp()
+      ).hide()
+      $('.screens-navigation>.down').click(()->
+        $.fn.fullpage.moveSectionDown()
       )
     else
-      $('.nav_items').remove()
+      $('.screens-navigation').hide()
 
   calculateNewsWidth: () =>
     newsbox = $('.news_box_wrapper')
