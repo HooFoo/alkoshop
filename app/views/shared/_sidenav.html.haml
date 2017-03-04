@@ -5,6 +5,9 @@
   %li.nav-item.index{data: {menuanchor: 'one'}}
     = link_to('/#one' , class: 'nav-nav', data: { turbolinks: false, no_turbolink: true}) do
       %p.nav-text Главная
+  %li.nav-item.index{data: {menuanchor: 'one'}}
+    = link_to("/template/news?news=#{@about.id}" , class: 'nav-nav news_link', remote: true, data: { turbolinks: false, no_turbolink: true}) do
+      %p.nav-text О проекте
   %li.nav-item.shop{data: {menuanchor: 'two'}}
     = link_to('/#two' , class: 'nav-nav', data: { turbolinks: false, no_turbolink: true}) do
       %p.nav-text Магазин

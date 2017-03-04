@@ -319,7 +319,7 @@ body {
   background-size: cover;
   color: #daa36c;
   font-family: Circe;
-  z-index: 2;
+  z-index: 4;
   .columns {
     display: flex;
     padding: 115px 22vw;
@@ -340,7 +340,6 @@ body {
         font-family: Circe;
         font-size: 40pt;
         font-weight: 700;
-        word-wrap: break-word;
         letter-spacing: 0.05em;
       }
       .media {
@@ -370,6 +369,7 @@ body {
       overflow: hidden;
       max-height: calc(100vh - 107px);
       padding-top: 68px;
+      width: calc(100% - 510px);
       .scrollable {
         width: calc(100% + 17px);
         height: 100%;
@@ -2254,4 +2254,37 @@ input[type="submit"] {
   height: 100vh;
   background-size: cover;
   background: url("/images/index_background.jpg");
+}
+
+.screens-navigation {
+  display: flex;
+  position: fixed;
+  bottom: 15px;
+  right: 27px;
+  width: 44px;
+  height: 50px;
+  z-index: 3;
+
+  div {
+    width: 18px;
+    height: 34px;
+    cursor: pointer;
+    opacity: 0.9;
+    transition: 0.3s ease-in-out;
+    position: absolute;
+
+    &:hover {
+      opacity: 1;
+    }
+
+    &.up {
+      background: url('/images/up.svg');
+      left: 0;
+    }
+
+    &.down {
+      background: url('/images/down.svg');
+      right: 0;
+    }
+  }
 }

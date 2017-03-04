@@ -14,35 +14,50 @@
  */
 @font-face {
   font-family: 'Circe';
-  src:font-url('CRC25.otf');
+  src: font-url('Circe-ExtraLight.eot?') format('eot'),
+       font-url('Circe-ExtraLight.ttf') format('ttf'),
+       font-url('Circe-ExtraLight.woff') format('woff'),
+       font-url('Circe-ExtraLight.svg') format('svg');
   font-weight: 200;
   font-style: normal;
 }
 
 @font-face {
   font-family: 'Circe';
-  src:font-url('CRC35.otf');
+  src: font-url('Circe-Light.eot?') format('eot'),
+       font-url('Circe-Light.ttf') format('ttf'),
+       font-url('Circe-Light.woff') format('woff'),
+       font-url('Circe-Light.svg') format('svg');
   font-weight: 300;
   font-style: normal;
 }
 
 @font-face {
   font-family: 'Circe';
-  src:font-url('CRC55.otf');
+  src: font-url('Circe-Regular.eot?') format('eot'),
+       font-url('Circe-Regular.ttf') format('ttf'),
+       font-url('Circe-Regular.woff') format('woff'),
+       font-url('Circe-Regular.svg') format('svg');
   font-weight: 500;
   font-style: normal;
 }
 
 @font-face {
   font-family: 'Circe';
-  src:font-url('Circe-Bold.otf');
+  src: font-url('Circe-Bold.eot?') format('eot'),
+       font-url('Circe-Bold.ttf') format('ttf'),
+       font-url('Circe-Bold.woff') format('woff'),
+       font-url('Circe-Bold.svg') format('svg');
   font-weight: 700;
   font-style: normal;
 }
 
 @font-face {
   font-family: 'Circe';
-  src:font-url('Circe-ExtraBold.otf');
+  src: font-url('Circe-ExtraBold.eot?') format('eot'),
+       font-url('Circe-ExtraBold.ttf') format('ttf'),
+       font-url('Circe-ExtraBold.woff') format('woff'),
+       font-url('Circe-ExtraBold.svg') format('svg');
   font-weight: 900;
   font-style: normal;
 }
@@ -82,4 +97,24 @@
 }
 @media screen and (max-width: 769px) {
   @import "sizes/768x986";
+  @media screen and (max-height: 585px) {
+    @import "sizes/768x585";
+  }
+}
+
+@media screen and (max-height: 755px) {
+  .index-bg {
+    .text {
+      top: 65vh;
+    }
+    .sbutton {
+      top: 83vh;
+    }
+  }
+}
+
+@media screen and (max-width: 550px) {
+  @media screen and (max-height: 560px) {
+    @import "sizes/550x560";
+  }
 }

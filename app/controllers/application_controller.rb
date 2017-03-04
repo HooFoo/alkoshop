@@ -4,6 +4,7 @@ class ApplicationController < ActionController::Base
   before_action :set_special
   before_action :current_order
   before_action :cart_items
+  before_action :set_about
 
   protected
 
@@ -39,5 +40,9 @@ class ApplicationController < ActionController::Base
       session[:order_id] = @order.id
     end
     @order
+  end
+
+  def set_about
+    @about = News.where(title: 'О проекте').first
   end
 end

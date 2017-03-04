@@ -4,7 +4,6 @@ class FrontendController < ApplicationController
   def index
     @item = Item.promoted
     @news = News.where.not(title: 'О проекте')
-    @about = News.where(title: 'О проекте').first
   end
 
   def profile
