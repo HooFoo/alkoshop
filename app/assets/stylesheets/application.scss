@@ -82,4 +82,24 @@
 }
 @media screen and (max-width: 769px) {
   @import "sizes/768x986";
+  @media screen and (max-height: 585px) {
+    @import "sizes/768x585";
+  }
+}
+
+@media screen and (max-width: 550px) {
+  @media screen and (max-height: 458px) {
+    @import "sizes/530x548";
+  }
+}
+
+@media screen and (max-height: 755px) {
+  .index-bg {
+    .text {
+      top: 65vh;
+    }
+    .sbutton {
+      top: 83vh;
+    }
+  }
 }
