@@ -102,12 +102,6 @@
   }
 }
 
-@media screen and (max-width: 550px) {
-  @media screen and (max-height: 458px) {
-    @import "sizes/530x548";
-  }
-}
-
 @media screen and (max-height: 755px) {
   .index-bg {
     .text {
@@ -116,5 +110,11 @@
     .sbutton {
       top: 83vh;
     }
+  }
+}
+
+@media screen and (max-width: 550px) {
+  @media screen and (max-height: 560px) {
+    @import "sizes/550x560";
   }
 }
