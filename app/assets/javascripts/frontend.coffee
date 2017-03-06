@@ -134,16 +134,8 @@ class Ui
         normalScrollElements: '.overlay, .cart_items'
         normalScrollElementTouchThreshold: 5
         recordHistory: false
-        onLeave: (index, nextIndex, direction) ->
-          $('.screens-navigation>.up').show() if nextIndex > 1
-          $('.screens-navigation>.up').hide() if nextIndex == 1
-          $('.screens-navigation>.down').show() if nextIndex < 5
-          $('.screens-navigation>.down').hide() if nextIndex == 5
       )
-      $('.screens-navigation>.up').click(()->
-        $.fn.fullpage.moveSectionUp()
-      ).hide()
-      $('.screens-navigation>.down').click(()->
+      $('.screens-navigation .down').click(()->
         $.fn.fullpage.moveSectionDown()
       )
     else
