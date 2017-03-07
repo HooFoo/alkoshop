@@ -32,6 +32,10 @@ class Ui
       $('.close_button').click (e) =>
         $('.overlay').trigger('mouseleave')
         $('.overlay').remove()
+      $('#forget_password').click (e) =>
+        e.preventDefault()
+        $('.overlay>.small_overlay.login_register').hide()
+        $('.overlay>.small_overlay.password_recover').show()
       @enableTabs()
       @enableSubmits()
       @checkEmail()

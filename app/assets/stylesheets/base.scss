@@ -619,9 +619,74 @@ body {
         }
       }
     }
+
+    &.password_recover {
+      width: 44vw;
+      margin-left: calc((100vw - 44vw) / 2);
+      padding: 8vh;
+      display: none;
+
+      .top {
+        text-align: center;
+        .text {
+          height: 52px;
+          font-family: "Open Sans";
+          font-size: 45px;
+          font-weight: 700;
+          line-height: 80px;
+          text-transform: uppercase;
+          color: #ebad71;
+          border-bottom: 2px solid  #ebad71;
+          margin: auto;
+          transition: 0.3s;
+        }
+      }
+
+      .close_button {
+        left: 30vw;
+      }
+
+      .forms_container {
+        .form_wrapper {
+          padding-top: 10vh;
+          text-align: center;
+          transition: 0.3s;
+        }
+        form {
+          max-width: 40vw;
+          margin: auto;
+          width: auto;
+
+          .inputs {
+            display: flex;
+            width: calc(526px + 5vw);
+            margin: 0 auto;
+            max-width: 70vw;
+            .input {
+              margin: 0 auto;
+              width: 263px;
+              max-width: 30vw;
+            }
+          }
+
+          .sbutton {
+            margin-top: 120px;
+          }
+        }
+      }
+    }
   }
 
-
+  .form_wrapper.log {
+    #forget_password {
+      color: #5c412c;
+      font-weight: bold;
+      font-size: 12px;
+      margin-top: -12px;
+      text-decoration: underline;
+      float: right;
+    }
+  }
 
 }
 
