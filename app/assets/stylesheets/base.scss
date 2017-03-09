@@ -2267,8 +2267,7 @@ input[type="submit"] {
     display: table-cell;
     vertical-align: middle;
 
-    .down{
-      background: url('/images/down.svg');
+    div {
       width: 29px;
       height: 50px;
       cursor: pointer;
@@ -2278,6 +2277,15 @@ input[type="submit"] {
 
       &:hover {
         opacity: 0.8;
+      }
+
+      &.down{
+        background: url('/images/down.svg');
+      }
+
+      &.up {
+        background: url('/images/up.svg');
+        display: none;
       }
     }
   }

@@ -133,10 +133,15 @@ class Ui
         anchors: ['one','two','three', 'four', 'five']
         normalScrollElements: '.overlay, .cart_items'
         normalScrollElementTouchThreshold: 5
-        recordHistory: false
+        recordHistory: false,
+        onLeave: (index, nextIndex, direction)->
+          $('.screens-navigation>.cell>div').toggle() if nextIndex == 5 || index == 5
       )
       $('.screens-navigation .down').click(()->
         $.fn.fullpage.moveSectionDown()
+      )
+      $('.screens-navigation .up').click(()->
+        $.fn.fullpage.moveSectionUp()
       )
     else
       $('.screens-navigation').hide()
