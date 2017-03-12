@@ -34,8 +34,8 @@ class Ui
         $('.overlay').remove()
       $('#forget_password').click (e) =>
         e.preventDefault()
-        $('.overlay>.small_overlay.login_register').hide()
-        $('.overlay>.small_overlay.password_recover').show()
+        $('.overlay>.small_overlay.login_register').hide(150)
+        $('.overlay>.small_overlay.password_recover').show(150)
       @enableTabs()
       @enableSubmits()
       @checkEmail()

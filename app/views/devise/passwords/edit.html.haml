@@ -1,0 +1,19 @@
+%div.profile_screen
+  %div.top
+    %div.text Измените ваш пароль
+  = simple_form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :put , class: 'password_reset'}) do |f|
+    %div.errors
+      = f.error_notification
+      = f.full_error :reset_password_token
+    %div.inputs
+      %div.input
+        = f.input_field :password, required: true, autofocus: true, hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length)
+        = f.label 'Новый пароль'
+      %div.input
+        = f.input_field :password_confirmation,  required: true
+        = f.label 'Подтверждение'
+
+      = f.input :reset_password_token, as: :hidden
+
+
+    = f.submit 'Изменить пароль', class: 'sbutton'

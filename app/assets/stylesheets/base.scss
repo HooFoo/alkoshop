@@ -661,7 +661,7 @@ body {
 
           .inputs {
             display: flex;
-            width: calc(526px + 5vw);
+            width: auto;
             margin: 0 auto;
             max-width: 70vw;
             .input {
@@ -1280,6 +1280,13 @@ input[type="submit"] {
       float: left;
       margin-left: auto;
     }
+  }
+
+  .password_reset {
+    max-width: 90vw;
+    padding: 10vh 10vw;
+    width: 600px;
+    margin: auto;
   }
 }
 

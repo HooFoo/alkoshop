@@ -81,6 +81,32 @@
         }
       }
     }
+    &.password_recover {
+      width: 80vw;
+      margin-left: 10vw;
+      padding: 8vh 2vw ;
+      .close_button {
+        left: 15vw;
+      }
+      .top {
+        .text {
+          font-size: 22px;
+          line-height: 60px;
+        }
+      }
+      .forms_container {
+        .form_wrapper {
+          .login_form {
+            max-width: 100%;
+            .inputs {
+              .input {
+                max-width: 100%;
+              }
+            }
+          }
+        }
+      }
+    }
   }
   .sign_up {
     padding-top: 0px;

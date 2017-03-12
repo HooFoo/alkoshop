@@ -48,7 +48,7 @@
       %span.text Восстановить пароль
     %div.forms_container
       %div.form_wrapper.form_active
-        = simple_form_for @user, url: new_user_session_path, remote: true, html: {class: 'login_form' }  do |f|
+        = simple_form_for @user, url: user_password_path+'.html', remote: true, html: {class: 'login_form' }  do |f|
           %div.errors
           %div.inputs
             %div.input
