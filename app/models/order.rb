@@ -26,6 +26,7 @@ class Order < ApplicationRecord
     self.address = address
     self.delivery = delivery
     self.order_state =  OrderState.where(name: 'Finished').first_or_create!
+    OrdersMailer.send_order_mail(self).deliver!
     save!
   end
 

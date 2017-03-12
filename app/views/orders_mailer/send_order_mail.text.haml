@@ -1,0 +1,12 @@
+На сайте stashstore.ru был оформлен заказ номер
+= @order.id
+
+= "Пользователь #{@user.name} - #{@user.email} оформил заказ со следующими позициями"
+Название | Количество | Стоимость
+-@order.order_items.each do |item|
+  = "#{item.item.name} | #{item.quantity} | #{item.total_price}"
+
+="Итоговая стоимость заказа: #{@order.price} P"
+
+Подробная информация:
+=@url

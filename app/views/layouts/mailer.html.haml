@@ -1,8 +1,17 @@
-!!!
-%html
-  %head
-    %meta{:content => "text/html; charset=utf-8", "http-equiv" => "Content-Type"}/
-    :css
-      /* Email styles need to be inline */
+%hmtl
   %body
+    :scss
+      table {
+        text-align: center;
+        border-collapse: collapse;
+        tr {
+          border: 2px solid black;
+          th {
+
+          }
+          td {
+            border: 1px solid black;
+          }
+        }
+      }
     = yield

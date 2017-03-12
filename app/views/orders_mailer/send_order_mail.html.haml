@@ -1,0 +1,28 @@
+%h1
+  На сайте stashstore.ru был оформлен заказ номер
+  = @order.id
+
+%p
+  = "Пользователь #{@user.name} - #{@user.email} оформил заказ со следующими позициями"
+%table
+  %tr
+    %th
+      Название
+    %th
+      Количество
+    %th
+      Стоимость
+  -@order.order_items.each do |item|
+    %tr
+      %td
+        = item.item.name
+      %td
+        = item.quantity
+      %td
+        = item.total_price
+%h2
+  ="Итоговая стоимость заказа: #{@order.price} P"
+
+%h3
+  %a{href: @url}
+    Подробная информация

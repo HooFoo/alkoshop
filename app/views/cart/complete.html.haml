@@ -6,7 +6,7 @@
         Итого
       %h1.subprice
         = "#{@order.show_price} P"
-      = form_tag '/cart/complete', method: :post, remote: true, class: 'delivery_form' do
+      = form_tag '/cart/complete', method: :post, remote: false, class: 'delivery_form' do
         %p.delivery
           = radio_button_tag :delivery, :self, checked: true
           = label_tag :delivery_self, 'Самовывоз'
