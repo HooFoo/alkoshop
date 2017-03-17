@@ -3,6 +3,7 @@
   %head
     %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
     %meta{:name => "viewport", :content => "width=device-width, initial-scale=1"}
+    %meta{'http-equiv' => "Content-Security-Policy", 'content'=>"img-src * 'self' data:; default-src * 'self' gap: ; style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline' 'unsafe-eval'; "}
     = render partial: 'shared/icons'
     %title Wine&Liquor Stash
     = csrf_meta_tags
