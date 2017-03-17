@@ -23,11 +23,15 @@ class Order < ApplicationRecord
   end
 
   def complete! address, delivery
-    self.address = address
-    self.delivery = delivery
-    self.order_state =  OrderState.where(name: 'Finished').first_or_create!
-    OrdersMailer.send_order_mail(self).deliver!
-    save!
+    if order_items.size > 0
+      self.address = address
+      self.delivery = delivery
+      self.order_state =  OrderState.where(name: 'Finished').first_or_create!
+      OrdersMailer.send_order_mail(self).deliver!
+      save!
+    else
+      false
+    end
   end
 
   private

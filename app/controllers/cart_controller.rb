@@ -56,7 +56,7 @@ class CartController < ApplicationController
       session[:order_id] = @order.id
       redirect_to '/profile/orders'
     else
-      render text: 'Error'
+      render partial: 'shared/empty_order'
     end
   end
 

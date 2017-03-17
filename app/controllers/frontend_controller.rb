@@ -29,7 +29,9 @@ class FrontendController < ApplicationController
 
   def orders
     if current_user
-      @orders = current_user.orders.joins(:order_state).where('order_states.name':'Finished')
+      @orders = current_user.orders.joins(:order_state)
+                    .where('order_states.name':'Finished')
+                    .select { |order| order.order_items.size > 0} #TODO, fix real data
     else
       redirect_to '/profile'
     end

@@ -1,0 +1,6 @@
+%div.index-bg
+  %h1.cart_error
+    Извините, ваша корзина пуста
+  = render partial: 'shared/sbutton', object: 'Перейти в каталог',
+         locals: {extra_class: '', link_class: '', link: "/shop/catalog", remote: false}
+
