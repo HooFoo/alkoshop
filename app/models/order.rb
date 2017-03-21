@@ -36,7 +36,7 @@ class Order < ApplicationRecord
 
   private
   def set_order_status
-    self.order_state_id = 1
+    self.order_state_id = OrderState.where(name: 'In progress').first_or_create!.id
   end
 
   def update_subtotal
