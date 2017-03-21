@@ -27,7 +27,11 @@ class ApplicationController < ActionController::Base
 
   def current_order
     if !session[:order_id].nil?
-      @order = Order.find(session[:order_id])
+      begin
+        @order = Order.find(session[:order_id])
+      rescue ActiveRecord::RecordNotFound => ex
+        @order = Order.new
+      end
       if @order.user.nil? && !current_user.nil?
         @order.user = current_user
         @order.save
