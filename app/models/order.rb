@@ -28,6 +28,10 @@ class Order < ApplicationRecord
       self.delivery = delivery
       self.order_state =  OrderState.where(name: 'Finished').first_or_create!
       OrdersMailer.send_order_mail(self).deliver!
+      self.order_items.each do |oitem|
+        oitem.item.in_stock -= oitem.quantity
+        oitem.item.save
+      end
       save!
     else
       false

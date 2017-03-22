@@ -16,8 +16,7 @@ class Item < ApplicationRecord
 
   mount_uploader :image, ImagesUploader
 
-  default_scope { where('in_stock > 0') }
-  
+  scope :in_stock, -> {where('in_stock > 0')}
 
   def self.promoted
     where(promote: true).sample
@@ -41,9 +40,9 @@ class Item < ApplicationRecord
       end
     end
     if wheres.size > 0
-      all = Item.joins(*names).where(wheres.join(' AND '))
+      all = Item.joins(*names).in_stock.where(wheres.join(' AND '))
     else
-      all = Item.all
+      all = Item.in_stock
     end
     all.order(filters[:sort][:current])
   end
