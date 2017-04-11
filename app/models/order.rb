@@ -5,12 +5,15 @@ class Order < ApplicationRecord
   before_create :set_order_status
   before_save :update_subtotal
 
+  scope :in_progress, -> { joins(:order_state).where('order_states.name': 'In progress') }
+  scope :complete, -> { joins(:order_state).where('order_states.name': 'Finished') }
+
   def subtotal
     order_items.collect { |oi| oi.valid? ? (oi.quantity * oi.unit_price) : 0 }.sum
   end
 
   def has_user?
-    ! user.nil?
+    !user.nil?
   end
 
   def show_price
@@ -26,7 +29,7 @@ class Order < ApplicationRecord
     if order_items.size > 0
       self.address = address
       self.delivery = delivery
-      self.order_state =  OrderState.where(name: 'Finished').first_or_create!
+      self.order_state = OrderState.where(name: 'Finished').first_or_create!
       OrdersMailer.send_order_mail(self).deliver!
       self.order_items.each do |oitem|
         oitem.item.in_stock -= oitem.quantity
@@ -39,6 +42,7 @@ class Order < ApplicationRecord
   end
 
   private
+
   def set_order_status
     self.order_state_id = OrderState.where(name: 'In progress').first_or_create!.id
   end
@@ -48,7 +52,4 @@ class Order < ApplicationRecord
   end
 
 
-
-  scope :in_progress, ->{joins(:order_state).where('order_states.name': 'In progress')}
-  scope :complete, -> {joins(:order_state).where('order_states.name': 'Finished')}
 end
