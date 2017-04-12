@@ -9,7 +9,7 @@
           войти
       %div.forms_container
         %div.form_wrapper.log.form_active
-          = simple_form_for @user, url: new_user_session_path, remote: false, html: {class: 'login_form' }  do |f|
+          = simple_form_for @user, url: new_user_session_path, remote: true, html: {class: 'login_form' }  do |f|
             %div.errors
             %div.inputs
               %div.input

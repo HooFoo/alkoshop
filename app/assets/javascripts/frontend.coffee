@@ -188,7 +188,7 @@ class Ui
     $('.login_form').on( "ajax:success", (e, data) =>
       $('.overlay').trigger('mouseleave')
       $('.overlay').remove()
-      @updateTop(data)
+      window.location.reload()
     ).on "ajax:error", (e, data) ->
       $('.errors').html(data.responseText)
 
