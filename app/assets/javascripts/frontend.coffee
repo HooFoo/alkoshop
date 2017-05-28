@@ -20,6 +20,7 @@ class Ui
     @enableSubmits()
     @calculateNewsWidth()
     @activateSpecial()
+    @activateCompleteOrder()
 
   toggleSidenav: ->
     $('.sidenav').toggleClass('open')
@@ -220,6 +221,24 @@ class Ui
       auto: true
     )
 
+  activateCompleteOrder: ()->
+    timeoutId = null
+    $('#discount-card-number-field').on('keyup', ()=>
+      clearTimeout(timeoutId) if timeoutId?
+      timeoutId = setTimeout(()=>
+        @updateDiscount();
+      , 500)
+    )
+
+  updateDiscount: ()->
+    cardNumber = $('#discount-card-number-field').val()
+    $.ajax("/cart/complete/discount", { method: 'POST', data: { card_number: cardNumber } })
+    .then((data)=>
+      $('section.screens').html(data)
+      ready()
+    , (error)=>
+      console.log(error)
+    )
 ready = ->
   window.ui = new Ui()
 

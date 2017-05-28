@@ -51,6 +51,10 @@ class CartController < ApplicationController
   end
 
   def finish
+    unless params[:discount_card].empty?
+      card = DiscountCard.where(number: params[:discount_card]).first
+      @order.discount_card = card if card.user && card.user.id == current_user.id
+    end
     if @order.complete! params[:adress], params[:delivery]
       @order = Order.create
       session[:order_id] = @order.id
@@ -68,6 +72,26 @@ class CartController < ApplicationController
       session[:order_id] = @order.id
     end
     redirect_to '/cart/complete'
+  end
+
+  def discount
+    card = DiscountCard.where(number: params[:card_number]).first
+    @discount_card_number = params[:card_number]
+    @discount = 0
+    @discount_multiplier = 1
+    if card && card.user.nil?
+      card.user = current_user
+      current_user.discount_card = card
+      current_user.save
+    end
+    if card && card.user.id == current_user.id
+      @discount = card.discount
+      @discount_multiplier = 1.0 - card.discount / 100.0
+      @discount_card_number = card.number
+    else
+      @discount_card_error = 'Дисконтная карта не найдена'
+    end
+    render '/cart/complete'
   end
 
   private

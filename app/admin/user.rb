@@ -21,6 +21,7 @@ ActiveAdmin.register User, :as => "Customer" do
     column :district
     column :city
     column :special
+    column :discount_card
     column :created_at
     actions
   end

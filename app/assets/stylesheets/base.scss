@@ -569,6 +569,11 @@ body {
                 width: 100%;
               }
             }
+
+            .input.discount-card-field {
+              float: left;
+              margin-left: 0;
+            }
           }
           form {
             margin: auto;
@@ -612,7 +617,7 @@ body {
 
             }
             .sbutton {
-              margin-top: 120px;
+              margin-top: 42px;
             }
           }
         }
@@ -1947,6 +1952,20 @@ input[type="submit"] {
           border-bottom: 2px solid #350905;
           width: 100%;
           margin-top: 112px;
+        }
+        .discount-card-field {
+          margin-top: 40px;
+          width: 305px;
+          label {
+            color: #350905;
+          }
+          input[type=text] {
+            color: #ebad71;
+            &:focus:not([readonly]) {
+              border-bottom: 1px solid #ebad71;
+              box-shadow: 0 1px 0 0 #ebad71;
+            }
+          }
         }
       }
     }

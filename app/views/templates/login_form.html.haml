@@ -9,7 +9,7 @@
           войти
       %div.forms_container
         %div.form_wrapper.log.form_active
-          = simple_form_for @user, url: new_user_session_path, remote: true, html: {class: 'login_form' }  do |f|
+          = simple_form_for @user, url: new_user_session_path, remote: true, html: {class: 'login_form', novalidate: true}  do |f|
             %div.errors
             %div.inputs
               %div.input
@@ -40,6 +40,11 @@
               %div.input
                 = f.input_field :password_confirmation, required: true
                 = f.label 'Подтверждение пароля'
+            %div.inputs
+              %div.input.discount-card-field
+                = f.fields_for :discount_card, DiscountCard.new do |fdc|
+                  = fdc.input_field :number, required: true
+                  = fdc.label 'Номер дисконтной карты', required: false
 
             =f.submit 'зарегистрироваться', class: 'sbutton'
   %div.small_overlay.password_recover

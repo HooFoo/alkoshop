@@ -5,7 +5,7 @@
       %h1.subprice
         Итого
       %h1.subprice
-        = "#{@order.show_price} P"
+        = "#{@order.show_price * @discount_multiplier} P"
       = form_tag '/cart/complete', method: :post, remote: false, class: 'delivery_form' do
         %p.delivery
           = radio_button_tag :delivery, :self, checked: true
@@ -19,6 +19,14 @@
           = label_tag :delivery_courier,'Доставка курьером по Вашему адресу'
         -#%p.old_address
           =text_field_tag :adress, @address
+        %p.discount-card-field
+          - if @discount_card_error
+            .errors
+              %ul
+                %li
+                  = @discount_card_error
+          = label_tag 'Номер дисконтной карты'
+          = text_field_tag :discount_card, @discount_card_number, placeholder: 'Введите номер карты', id: 'discount-card-number-field'
         = submit_tag 'Оформить заказ', class: 'submit sbutton'
     %div.panel.right_panel
       = render partial: 'shared/cart_items', object: @order_items, locals: {removable: true}

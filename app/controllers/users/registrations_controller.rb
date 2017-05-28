@@ -9,7 +9,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
   # POST /resource
   def create
     user = User.new user_params
-    if user.save
+    if set_user_card(user) && user.save
       sign_in(:user, user)
       redirect_to after_sign_up_path_for(user)
     else
@@ -22,7 +22,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
   # PUT /resource
   def update
     user = current_user
-    if user.update_without_password(user_params)
+    if set_user_card(user) && user.update_without_password(user_params)
       sign_in(:user, user)
       redirect_to after_sign_up_path_for(user)
     else
@@ -46,6 +46,20 @@ class Users::RegistrationsController < Devise::RegistrationsController
   # end
 
   protected
+
+  def set_user_card(user)
+    unless params[:user][:discount_card_attributes][:number].empty?
+      card = DiscountCard.where(number: params[:user][:discount_card_attributes][:number]).first
+      if card && (card.user.nil? || card.user.id == user.id)
+        user.discount_card = card
+        return true
+      else
+        user.errors.add('Дисконтная карта', 'не найдена')
+        return false
+      end
+    end
+    true
+  end
 
   def user_params
     params.require(:user).permit(:name,:surname,:email,:phone,:country,:district,:city, :password, :password_confirmation)

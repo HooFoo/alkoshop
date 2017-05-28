@@ -7,6 +7,7 @@ Rails.application.routes.draw do
     get '/complete', controller: 'cart', action: :complete
     get '/repeat', controller: 'cart', action: :repeat
     post '/complete', controller: 'cart', action: :finish
+    post '/complete/discount', controller: 'cart', action: 'discount'
   end
 
 

@@ -3,6 +3,7 @@ class ApplicationController < ActionController::Base
   before_action :set_user
   before_action :set_special
   before_action :current_order
+  before_action :set_discount
   before_action :cart_items
   before_action :set_about
 
@@ -48,5 +49,17 @@ class ApplicationController < ActionController::Base
 
   def set_about
     @about = News.where(title: 'О проекте').first
+  end
+
+  def set_discount
+    if @order.nil?
+      @discount = 0
+      @discount_card_number = ''
+      @discount_multiplier = 1
+    else
+      @discount = @order.user&.discount_card ? @order.user.discount_card.discount : 0
+      @discount_card_number = @order.user&.discount_card ? @order.user.discount_card.number : ''
+      @discount_multiplier = 1.0 - @discount / 100.0
+    end
   end
 end

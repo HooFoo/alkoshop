@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170216150720) do
+ActiveRecord::Schema.define(version: 20170527232417) do
 
   create_table "active_admin_comments", force: :cascade do |t|
     t.string   "namespace"
@@ -56,6 +56,13 @@ ActiveRecord::Schema.define(version: 20170216150720) do
     t.string   "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "discount_cards", force: :cascade do |t|
+    t.string  "number"
+    t.string  "user_name"
+    t.string  "user_email"
+    t.integer "discount"
   end
 
   create_table "gallery_images", force: :cascade do |t|
@@ -145,13 +152,11 @@ ActiveRecord::Schema.define(version: 20170216150720) do
     t.integer  "user_id"
     t.float    "price"
     t.string   "address"
-    t.datetime "created_at",      null: false
-    t.datetime "updated_at",      null: false
-    t.integer  "order_states_id"
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
     t.integer  "order_state_id"
     t.string   "delivery"
     t.index ["order_state_id"], name: "index_orders_on_order_state_id"
-    t.index ["order_states_id"], name: "index_orders_on_order_states_id"
     t.index ["user_id"], name: "index_orders_on_user_id"
   end
 
@@ -187,6 +192,8 @@ ActiveRecord::Schema.define(version: 20170216150720) do
     t.string   "country"
     t.string   "district"
     t.string   "city"
+    t.integer  "discount_card_id"
+    t.index ["discount_card_id"], name: "index_users_on_discount_card_id"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end

@@ -26,5 +26,9 @@
               %div.input
                 = f.input_field :city
                 = f.label 'Город'
-
+            %div.inputs
+              %div.input.discount-card-field
+                = f.fields_for :discount_card, f.object.discount_card || DiscountCard.new do |fdc|
+                  = fdc.input_field :number, required: false
+                  = fdc.label 'Номер дисконтной карты', required: false
             =f.submit 'обновить', class: 'sbutton'

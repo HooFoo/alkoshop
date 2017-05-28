@@ -5,5 +5,8 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable
 
   has_many :orders
+  belongs_to :discount_card, optional: true
+
+  accepts_nested_attributes_for :discount_card
 end
 

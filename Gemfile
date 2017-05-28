@@ -32,6 +32,8 @@ gem 'redis', '~> 3.0'
 # gem 'capistrano-rails', group: :development
 gem 'activeadmin', github: 'activeadmin'
 gem 'devise'
+gem 'devise-i18n'
+gem 'russian', '~> 0.6.0'
 gem 'kaminari'
 gem 'haml-rails'
 gem 'simple_form'
@@ -67,6 +69,7 @@ group :development do
   gem 'spring-watcher-listen', '~> 2.0.0'
   gem 'letter_opener'
   gem 'dotenv-rails'
+  gem 'binding_of_caller'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem

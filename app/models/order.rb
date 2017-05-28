@@ -1,6 +1,7 @@
 class Order < ApplicationRecord
   belongs_to :user, optional: true
   belongs_to :order_state
+  belongs_to :discount_card, optional: true
   has_many :order_items, dependent: :destroy
   before_create :set_order_status
   before_save :update_subtotal
