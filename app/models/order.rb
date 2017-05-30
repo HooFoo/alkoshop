@@ -1,7 +1,6 @@
 class Order < ApplicationRecord
   belongs_to :user, optional: true
   belongs_to :order_state
-  belongs_to :discount_card, optional: true
   has_many :order_items, dependent: :destroy
   before_create :set_order_status
   before_save :update_subtotal
@@ -20,9 +19,9 @@ class Order < ApplicationRecord
   def show_price
     sub = subtotal
     if sub.modulo(1) == 0
-      sub.to_i
-    else
       sub
+    else
+      sub.to_i
     end
   end
 

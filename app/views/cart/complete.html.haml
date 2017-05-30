@@ -5,7 +5,7 @@
       %h1.subprice
         Итого
       %h1.subprice
-        = "#{@order.show_price * @discount_multiplier} P"
+        = "#{@order.show_price} P"
       = form_tag '/cart/complete', method: :post, remote: false, class: 'delivery_form' do
         %p.delivery
           = radio_button_tag :delivery, :self, checked: true

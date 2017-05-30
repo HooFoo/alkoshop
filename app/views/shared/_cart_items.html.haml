@@ -11,7 +11,7 @@
               %p.name
                 = "#{item.name}, #{cart_item.volume.ml.to_f/1000}л"
               %p.price
-                = "#{cart_item.unit_price * @discount_multiplier} Р"
+                = "#{cart_item.unit_price} Р"
             %div.control_box
               =select_tag 'quantity', options_for_select((1..item.in_stock).to_a, cart_item.quantity),
                           class: 'cart-count', data: {item: item.id}, disabled: !removable

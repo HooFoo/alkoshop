@@ -12,7 +12,7 @@ ActiveAdmin.register Order do
           order.user.email unless order.user.nil?
         end
         column 'Discount card' do
-          order.discount_card.number if order.discount_card
+          order.user.discount_card.number if order.user&.discount_card
         end
         column :created_at
         column :updated_at

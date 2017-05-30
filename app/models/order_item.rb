@@ -16,22 +16,18 @@ class OrderItem < ApplicationRecord
     @item = Item.find opts[:item_id]
   end
 
-  def unit_price(discount = 0)
-    discount = if order.discount_card
-                 1.0 - order.discount_card.discount / 100.0
+  def unit_price
+    discount = if order.user&.discount_card
+                 1.0 - order.user.discount_card.discount / 100.0
                else
                  1
                end
     if !self[:unit_price].nil?
       price = self[:unit_price]
     else
-      price = item.price
+      price = item.price * discount
     end
-    if price.modulo(1) == 0
-      price.to_i * discount
-    else
-      price * discount
-    end
+    price.to_i
   end
 
   def total_price

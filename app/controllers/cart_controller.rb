@@ -17,7 +17,7 @@ class CartController < ApplicationController
     rescue ActiveRecord::RecordNotFound => e
       item_volume = @order_item.item.items_volumes.first
     ensure
-      @order_item.unit_price = item_volume.price
+      @order_item.unit_price = (item_volume.price * @discount_multiplier).to_i
       @order_item.volume = item_volume.volume
     end
     @order_item.save
