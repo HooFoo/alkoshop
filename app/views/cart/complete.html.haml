@@ -4,6 +4,8 @@
     %div.panel.left_panel
       %h1.subprice
         Итого
+      - if @discount_multiplier < 1
+        %h5.subprice с учетом скидки
       %h1.subprice
         = "#{@order.show_price} P"
       = form_tag '/cart/complete', method: :post, remote: false, class: 'delivery_form' do

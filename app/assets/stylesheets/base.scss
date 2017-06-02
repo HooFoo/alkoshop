@@ -1894,7 +1894,7 @@ input[type="submit"] {
       padding-top: 176px;
       .subprice {
         width: 100%;
-        margin: 0px;
+        margin: 0;
 
         text-align: center;
         color: #240604;
@@ -1902,6 +1902,10 @@ input[type="submit"] {
         font-size: 94px;
         font-weight: 700;
         font-variant: small-caps;
+      }
+      h5.subprice {
+        font-size: 34px;
+        margin-bottom: 5px;
       }
       .delivery_form {
         margin-top: 104px;
