@@ -714,6 +714,13 @@
           .text {
             margin: 0 0 0.2em 0;
             line-height: 30px;
+            &.with-discount {
+              margin-bottom: 0;
+              line-height: 20px;
+              .discount-text {
+                font-size: 14px;
+              }
+            }
           }
         }
       }

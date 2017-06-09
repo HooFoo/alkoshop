@@ -3,8 +3,14 @@
   =render partial: 'shared/cart_items', object: @order_items, locals: {removable: true}
   %div.order_box
     %div.order_price
-      %p.text
-        итого
+      - if @discount_card_number == ''
+        %p.text
+          итого
+      - else
+        %p.text.with-discount
+          итого
+          %br
+          %span.discount-text с учетом скидки
       %p.text.subtotal
         = "#{@order.show_price} Р"
     = render partial: 'shared/sbutton', object: 'оформить заказ',

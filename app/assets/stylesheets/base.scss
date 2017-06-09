@@ -1168,7 +1168,11 @@ input[type="submit"] {
           padding-top: 20px;
           margin: auto;
           .text {
-            margin: 0px 0px 1em 0px;
+            margin: 0 0 1em 0;
+            &.with-discount {
+              margin-bottom: 0;
+              line-height: 25px;
+            }
           }
           .subtotal {
             margin-bottom: 6px;
