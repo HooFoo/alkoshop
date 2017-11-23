@@ -5,7 +5,9 @@ ActiveAdmin.register Brand do
     a truncate(brand.name), :href => admin_brand_path(brand)
     div do
       a :href => admin_brand_path(brand) do
-        image_tag(brand.image.url(:thumb))
+        if brand.image
+          image_tag(brand.image.url(:thumb))
+        end
       end
     end
     a truncate(brand.description), :href => admin_brand_path(brand)
@@ -41,7 +43,9 @@ ActiveAdmin.register Brand do
         column :name
         column :description
         column 'Image' do |brand|
-          image_tag brand.image.thumb, class: 'thumb'
+          if brand.image
+            image_tag brand.image.thumb, class: 'thumb'
+          end
         end
         column :sort
         column :created_at
@@ -53,7 +57,7 @@ ActiveAdmin.register Brand do
         column :sort
 
         column 'Image' do |g_img|
-          image_tag g_img.image.thumb, class: 'thumb'
+          image_tag g_img.image.try(:thumb), class: 'thumb'
         end
       end
     end
