@@ -5,9 +5,7 @@ ActiveAdmin.register Brand do
     a truncate(brand.name), :href => admin_brand_path(brand)
     div do
       a :href => admin_brand_path(brand) do
-        if brand.image
-          image_tag(brand.image.url(:thumb))
-        end
+        image_tag(brand.image.try(:thumb))
       end
     end
     a truncate(brand.description), :href => admin_brand_path(brand)
