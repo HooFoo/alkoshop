@@ -8,7 +8,7 @@
       %img.img{src: item_box.image.item_box}
     %div.price
       - special = item_box.special_price
-      - if special.size == 0
+      - if special.size < 2
         = "#{item_box.show_price} Р"
       - else
         %p.new_price
