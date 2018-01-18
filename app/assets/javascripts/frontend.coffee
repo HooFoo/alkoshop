@@ -140,7 +140,8 @@ class Ui
         normalScrollElementTouchThreshold: 5
         recordHistory: false,
         onLeave: (index, nextIndex, direction)->
-          $('.screens-navigation>.cell>div').toggle() if nextIndex == 5 || index == 5
+          $('.screens-navigation>.cell>.down').toggle() if nextIndex == 5 || index == 5
+          $('.screens-navigation>.cell>.up').toggle() if nextIndex == 1 || index == 1
       )
       $('.screens-navigation .down').click(()->
         $.fn.fullpage.moveSectionDown()
