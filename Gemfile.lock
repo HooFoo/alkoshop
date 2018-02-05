@@ -122,6 +122,14 @@ GEM
       countries (~> 2.0)
       sort_alphabetical (~> 1.0)
     debug_inspector (0.0.2)
+    delayed_job (4.1.3)
+      activesupport (>= 3.0, < 5.2)
+    delayed_job_active_record (4.1.2)
+      activerecord (>= 3.0, < 5.2)
+      delayed_job (>= 3.0, < 5)
+    delayed_job_recurring (0.3.7)
+      delayed_job (>= 3.0)
+      delayed_job_active_record
     devise (4.2.0)
       bcrypt (~> 3.0)
       orm_adapter (~> 0.1)
@@ -326,6 +334,8 @@ DEPENDENCIES
   cloudinary
   coffee-rails (~> 4.2)
   country_select
+  delayed_job_active_record
+  delayed_job_recurring
   devise
   devise-i18n
   dotenv-rails
@@ -358,4 +368,4 @@ RUBY VERSION
    ruby 2.3.0p0
 
 BUNDLED WITH
-   1.15.0
+   1.15.4

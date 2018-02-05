@@ -44,6 +44,9 @@ gem 'rmagick', '~> 2.13.1'
 gem 'bootstrap'
 gem 'ckeditor'
 gem 'non-stupid-digest-assets', '~> 1.0.4'
+gem 'delayed_job_active_record'
+gem 'delayed_job_recurring'
+
 
 
 gem 'inherited_resources', github: 'activeadmin/inherited_resources'

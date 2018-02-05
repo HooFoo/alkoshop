@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170527232417) do
+ActiveRecord::Schema.define(version: 20171016115026) do
 
   create_table "active_admin_comments", force: :cascade do |t|
     t.string   "namespace"
@@ -58,11 +58,27 @@ ActiveRecord::Schema.define(version: 20170527232417) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "delayed_jobs", force: :cascade do |t|
+    t.integer  "priority",   default: 0, null: false
+    t.integer  "attempts",   default: 0, null: false
+    t.text     "handler",                null: false
+    t.text     "last_error"
+    t.datetime "run_at"
+    t.datetime "locked_at"
+    t.datetime "failed_at"
+    t.string   "locked_by"
+    t.string   "queue"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.index ["priority", "run_at"], name: "delayed_jobs_priority"
+  end
+
   create_table "discount_cards", force: :cascade do |t|
     t.string  "number"
     t.string  "user_name"
     t.string  "user_email"
     t.integer "discount"
+    t.index ["number"], name: "index_discount_cards_on_number", unique: true
   end
 
   create_table "gallery_images", force: :cascade do |t|
@@ -152,11 +168,13 @@ ActiveRecord::Schema.define(version: 20170527232417) do
     t.integer  "user_id"
     t.float    "price"
     t.string   "address"
-    t.datetime "created_at",     null: false
-    t.datetime "updated_at",     null: false
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+    t.integer  "order_states_id"
     t.integer  "order_state_id"
     t.string   "delivery"
     t.index ["order_state_id"], name: "index_orders_on_order_state_id"
+    t.index ["order_states_id"], name: "index_orders_on_order_states_id"
     t.index ["user_id"], name: "index_orders_on_user_id"
   end
 
