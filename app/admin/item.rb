@@ -15,7 +15,7 @@ ActiveAdmin.register Item do
     column(:picture, humanize_name: false){ |i| i.image.url }
     column(:delivery, humanize_name: false) { 'false' }
     column(:country_of_origin, humanize_name: false, &:country)
-    column(:available, humanize_name: false) {|i| i.in_stock > 0}
+    column(:available, humanize_name: false) {|i| i.in_stock ? i.in_stock > 0 : false }
     column(:param, humanize_name: false) {|i| "\"Объем|#{1000/i.items_volumes.first.volume.ml}|л;\""}
     column :description, humanize_name: false
     column :barcode, humanize_name: false
