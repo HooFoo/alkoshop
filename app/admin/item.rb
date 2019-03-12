@@ -1,6 +1,6 @@
 ActiveAdmin.register Item do
   permit_params  :name, :image, :price, :type_extra, :region, :facturer,
-                 :alcohol, :source, :description, :promote, :article,
+                 :alcohol, :source, :description, :promote, :article, :barcode,
                  :brand_id, :type_id, :country_id, :in_stock, :created_at, :items_volumes_attributes => [:id, :volume_id, :price, :_destroy]
 
   csv do
