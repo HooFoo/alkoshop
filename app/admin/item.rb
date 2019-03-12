@@ -3,7 +3,25 @@ ActiveAdmin.register Item do
                  :alcohol, :source, :description, :promote, :article,
                  :brand_id, :type_id, :country_id, :in_stock, :created_at, :items_volumes_attributes => [:id, :volume_id, :price, :_destroy]
 
-
+  csv do
+    column(:type, humanize_name: false) { 'alco' }
+    column :id, humanize_name: false
+    column(:model, humanize_name: false, &:name)
+    column(:vendor, humanize_name: false, &:brand)
+    column(:url, humanize_name: false) { |i| "https://stashstore.rushop/catalog?brand=#{i.brand.name.strip}&type=#{i.type.name.strip}&country=#{i.country.name.strip}#item=#{i.id}"}
+    column :price, humanize_name: false
+    column(:currencyId, humanize_name: false) {'RUR'}
+    column(:category, humanize_name: false, &:type)
+    column(:picture, humanize_name: false){ |i| i.image.url }
+    column(:delivery, humanize_name: false) { 'false' }
+    column(:country_of_origin, humanize_name: false, &:country)
+    column(:available, humanize_name: false) {|i| i.in_stock > 0}
+    column(:param, humanize_name: false) {|i| "\"Объем|#{1000/i.items_volumes.first.volume.ml}|л;\""}
+    column :description, humanize_name: false
+    column :barcode, humanize_name: false
+    column(:age, humanize_name: false) { '18' }
+    column(:typePrefix, humanize_name: false) { |i| i.type_extra }
+  end
 
   form do |f|
     f.semantic_errors # shows errors on :base
@@ -26,7 +44,7 @@ ActiveAdmin.register Item do
       f.input :article
       f.input :in_stock
       f.input :created_at
-
+      f.input :barcode
     end
     f.inputs do
       f.has_many :items_volumes do |item_volume|
