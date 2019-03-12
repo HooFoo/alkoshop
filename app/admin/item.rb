@@ -8,7 +8,7 @@ ActiveAdmin.register Item do
     column :id, humanize_name: false
     column(:model, humanize_name: false, &:name)
     column(:vendor, humanize_name: false, &:brand)
-    column(:url, humanize_name: false) { |i| "https://stashstore.rushop/catalog?brand=#{i.brand.name.strip}&type=#{i.type.name.strip}&country=#{i.country.name.strip}#item=#{i.id}"}
+    column(:url, humanize_name: false) { |i| "https://stashstore.ru/shop/catalog?brand=#{i.brand.name.strip}&type=#{i.type.name.strip}&country=#{i.country.name.strip}#item=#{i.id}"}
     column :price, humanize_name: false
     column(:currencyId, humanize_name: false) {'RUR'}
     column(:category, humanize_name: false, &:type)
