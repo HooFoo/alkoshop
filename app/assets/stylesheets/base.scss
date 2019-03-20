@@ -470,6 +470,8 @@ body {
       overflow-y: auto;
       text-align: left;
       color: #ebad71;
+      overflow-y: -moz-scrollbars-none;
+      -ms-overflow-style: none;
       .small_heading {
         color: #ebad71;
         font-family: Circe;
@@ -484,6 +486,7 @@ body {
         font-weight: 400;
         line-height: 31px;
       }
+      &::-webkit-scrollbar { width: 0 ! important }
     }
     .map_container {
       width: 100%;
