@@ -34,7 +34,7 @@ class Item < ApplicationRecord
           wheres << "items.name LIKE '%#{filter[:current]}%'"
           nil
         else
-          wheres << "#{type}.name = '#{filter[:current].to_s}'"
+          wheres << "#{type}.id = #{filter[:current]}"
           type.to_s.singularize.to_sym
         end
       end

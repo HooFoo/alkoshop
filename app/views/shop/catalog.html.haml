@@ -3,19 +3,7 @@
     %a.close{href:'/#two', data: { turbolinks: false, no_turbolink: true}}
       %div.spacer
     Каталог
-  %div.filters
-    %ul.filters_list
-      %li.filter_item
-        = select_tag 'brand_select', options_for_select(@filters[:brands][:values],@filters[:brands][:current]), prompt: 'Все бренды',class: 'filter', id: 'brand'
-      %li.filter_item
-        = select_tag 'type_select', options_for_select(@filters[:types][:values],@filters[:types][:current]), prompt: 'Все напитки',class: 'filter',  id: 'type'
-      %li.filter_item
-        = select_tag 'country_select', options_for_select(@filters[:countries][:values],@filters[:countries][:current]), prompt: 'Все страны',class: 'filter',  id: 'country'
-      %li.filter_item
-        = select_tag 'sort_select', options_for_select(@filters[:sort][:values],@filters[:sort][:current]),class: 'filter',  id: 'sort'
-      %li.filter_item.input-field
-        %img.material-icons.prefix{src: '/images/search.svg'}
-        = text_field_tag 'search','' , class: 'filter', id: 'search'
+  = render partial: 'filters'
 
   %div.whitespace
 

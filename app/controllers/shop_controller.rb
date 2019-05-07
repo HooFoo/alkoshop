@@ -60,13 +60,13 @@ class ShopController < ApplicationController
   def prepare_filters
     {
         brands: {
-            values: Brand.cached_all,
+            values: Brand.cached_all.map {|i| [i.name, i.id]},
             current: params[:brand]},
         types: {
-            values: Type.cached_all,
+            values: Type.cached_all.map {|i| [i.name, i.id]},
             current: params[:type]},
         countries: {
-            values: Country.cached_all,
+            values: Country.cached_all.map {|i| [i.name, i.id]},
             current: params[:country]},
         sort: {
             values: Sorts,
