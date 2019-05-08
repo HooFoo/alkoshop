@@ -22,7 +22,7 @@ ActiveAdmin.register Item do
     column(:currencyId, humanize_name: false) {'RUR'}
     column(:picture, humanize_name: false) { |i| "\"#{i.image.url}\"" }
     column(:description, humanize_name: false) { |i| "\"#{i.description}\"" }
-    column(:param, humanize_name: false) {|i| "\"Объем|#{i.items_volumes.first.volume.ml/1000}|л;\""}
+    column(:param, humanize_name: false) {|i| "\"Объем|#{i.items_volumes.first.volume.ml.to_f/1000}|л;\""}
     column(:country_of_origin, humanize_name: false) { |i| "\"#{i.country}\"" }
     column :barcode, humanize_name: false
     column(:age, humanize_name: false) { '18' }
