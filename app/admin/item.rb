@@ -12,7 +12,7 @@ ActiveAdmin.register Item do
     column(:pickup, humanize_name: false) { 'true' }
     column(:store, humanize_name: false) { 'true' }
     column(:url, humanize_name: false) do |i|
-      "\"https://stashstore.ru/shop/catalog?brand=#{i.brand_id}&type=#{i.type_id}&country=#{i.country_id}#item=#{i.id}\""
+      "https://stashstore.ru/shop/catalog?brand=#{i.brand_id}&type=#{i.type_id}&country=#{i.country_id}#item=#{i.id}"
     end
     column(:vendor, humanize_name: false) { |i| "\"#{i.brand}\"" }
     column(:name, humanize_name: false) { |i| "\"#{i.name}, #{i.type_extra}\"" }
@@ -20,7 +20,7 @@ ActiveAdmin.register Item do
     column :price, humanize_name: false
     column(:oldprice, humanize_name: false) { '' }
     column(:currencyId, humanize_name: false) {'RUR'}
-    column(:picture, humanize_name: false) { |i| "\"#{i.image.url}\"" }
+    column(:picture, humanize_name: false) { |i| "#{i.image.url}" }
     column(:description, humanize_name: false) { |i| "\"#{i.description}\"" }
     column(:param, humanize_name: false) {|i| "\"Объем|#{i.items_volumes.first.volume.ml.to_f/1000}|л;\""}
     column(:country_of_origin, humanize_name: false) { |i| "\"#{i.country}\"" }
