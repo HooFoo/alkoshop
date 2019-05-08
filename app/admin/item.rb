@@ -20,8 +20,8 @@ ActiveAdmin.register Item do
     column :price, humanize_name: false
     column(:oldprice, humanize_name: false) { '' }
     column(:currencyId, humanize_name: false) {'RUR'}
-    column(:picture, humanize_name: false){ |i| "\"#{i.image.url}\"" }
-    column :description, humanize_name: false
+    column(:picture, humanize_name: false) { |i| "\"#{i.image.url}\"" }
+    column(:description, humanize_name: false) { |i| "\"#{i.description}\"" }
     column(:param, humanize_name: false) {|i| "\"Объем|#{1000/i.items_volumes.first.volume.ml}|л;\""}
     column(:country_of_origin, humanize_name: false) { |i| "\"#{i.country}\"" }
     column :barcode, humanize_name: false
