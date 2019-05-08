@@ -12,10 +12,10 @@ ActiveAdmin.register Item do
     column(:pickup, humanize_name: false) { 'true' }
     column(:store, humanize_name: false) { 'true' }
     column(:url, humanize_name: false) do |i|
-      "https://stashstore.ru/shop/catalog?brand=#{i.brand_id}&type=#{i.type_id}&country=#{i.country_id}#item=#{i.id}"
+      "\"https://stashstore.ru/shop/catalog?brand=#{i.brand_id}&type=#{i.type_id}&country=#{i.country_id}#item=#{i.id}\""
     end
     column(:vendor, humanize_name: false) { |i| "\"#{i.brand}\"" }
-    column(:name, humanize_name: false) { |i| "#{i.name}, #{i.type_extra}" }
+    column(:name, humanize_name: false) { |i| "\"#{i.name}, #{i.type_extra}\"" }
     column(:category, humanize_name: false) { |i| "\"#{i.type}\"" }
     column :price, humanize_name: false
     column(:oldprice, humanize_name: false) { '' }
