@@ -14,17 +14,16 @@ ActiveAdmin.register Item do
     column(:url, humanize_name: false) do |i|
       "https://stashstore.ru/shop/catalog?brand=#{i.brand_id}&type=#{i.type_id}&country=#{i.country_id}#item=#{i.id}"
     end
-    column(:vendor, humanize_name: false, &:brand)
+    column(:vendor, humanize_name: false) { |i| "\"#{i.brand}\"" }
     column(:name, humanize_name: false) { |i| "#{i.name}, #{i.type_extra}" }
-    column(:category, humanize_name: false, &:type)
+    column(:category, humanize_name: false) { |i| "\"#{i.type}\"" }
     column :price, humanize_name: false
     column(:oldprice, humanize_name: false) { '' }
     column(:currencyId, humanize_name: false) {'RUR'}
-    column(:picture, humanize_name: false){ |i| i.image.url }
+    column(:picture, humanize_name: false){ |i| "\"#{i.image.url}\"" }
     column :description, humanize_name: false
-    column(:typePrefix, humanize_name: false) { |i| i.type_extra }
     column(:param, humanize_name: false) {|i| "\"Объем|#{1000/i.items_volumes.first.volume.ml}|л;\""}
-    column(:country_of_origin, humanize_name: false, &:country)
+    column(:country_of_origin, humanize_name: false) { |i| "\"#{i.country}\"" }
     column :barcode, humanize_name: false
     column(:age, humanize_name: false) { '18' }
   end
