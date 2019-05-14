@@ -487,6 +487,12 @@ body {
         line-height: 31px;
       }
       &::-webkit-scrollbar { width: 0 ! important }
+      .license_image {
+        width: 80%;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 20px;
+      }
     }
     .map_container {
       width: 100%;
