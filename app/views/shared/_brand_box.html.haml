@@ -3,7 +3,7 @@
     %img.brand_image{src:brand_box.image.brand}
   %div.back
     = render partial: 'shared/sbutton', object: 'О бренде',
-             locals: {extra_class: '', link_class: 'show_brand about', link: "/shop/template/brand_about?brand=#{brand_box.name}", remote: true}
+             locals: {extra_class: '', link_class: 'show_brand about', link: "/shop/template/brand_about?brand=#{brand_box.id}", remote: true}
 
     = render partial: 'shared/sbutton', object: 'Продукция',
          locals: {extra_class: '', link_class: '', link: "/shop/catalog?brand=#{brand_box.id}", remote: false}
