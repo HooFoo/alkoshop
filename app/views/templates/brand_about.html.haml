@@ -25,5 +25,5 @@
       %div.brand_description
         = @brand.description
       = render partial: 'shared/sbutton', object: 'Продукция',
-               locals: {extra_class: '', link_class: '', link: "/shop/catalog?brand=#{@brand.name}", remote: false}
+               locals: {extra_class: '', link_class: '', link: "/shop/catalog?brand=#{@brand.id}", remote: false}
 
