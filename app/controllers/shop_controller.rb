@@ -37,7 +37,7 @@ class ShopController < ApplicationController
 
   def template
     if params[:brand]
-      @brand = Brand.find_by_name params[:brand]
+      @brand = Brand.find params[:brand]
     end
     if params[:item]
       @item = Item.find params[:item]
@@ -50,7 +50,7 @@ class ShopController < ApplicationController
       if @brand.nil?
         redirect_to "/shop/catalog#item=#{@item.id}"
       else
-        redirect_to "/shop/brands#brand=#{@brand.name}"
+        redirect_to "/shop/brands#brand=#{@brand.id}"
       end
     end
   end
