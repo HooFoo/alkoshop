@@ -5,27 +5,26 @@ ActiveAdmin.register Item do
                  :items_volumes_attributes => [:id, :volume_id, :price, :_destroy]
 
   csv do
-    column(:type, humanize_name: false) { 'alco' }
     column :id, humanize_name: false
-    column(:available, humanize_name: false) {|i| i.in_stock ? i.in_stock > 0 : false }
-    column(:delivery, humanize_name: false) { 'false' }
-    column(:pickup, humanize_name: false) { 'true' }
-    column(:store, humanize_name: false) { 'true' }
-    column(:url, humanize_name: false) do |i|
+    column('Название') { |i| "\"#{i.name}, #{i.type_extra}\"" }
+    column('Производитель') { |i| "\"#{i.brand}\"" }
+    column('Категория') { |i| "\"#{i.type}\"" }
+    column('Ссылка на товар на сайте магазина') do |i|
       "https://stashstore.ru/shop/catalog?brand=#{i.brand_id}&type=#{i.type_id}&country=#{i.country_id}#item=#{i.id}"
     end
-    column(:vendor, humanize_name: false) { |i| "\"#{i.brand}\"" }
-    column(:name, humanize_name: false) { |i| "\"#{i.name}, #{i.type_extra}\"" }
-    column(:category, humanize_name: false) { |i| "\"#{i.type}\"" }
-    column :price, humanize_name: false
-    column(:oldprice, humanize_name: false) { '' }
-    column(:currencyId, humanize_name: false) {'RUR'}
-    column(:picture, humanize_name: false) { |i| "#{i.image.url}" }
-    column(:description, humanize_name: false) { |i| "\"#{i.description}\"" }
-    column(:param, humanize_name: false) {|i| "Объем|#{i.items_volumes.first.volume.ml.to_f/1000}|л;"}
-    column(:country_of_origin, humanize_name: false) { |i| "#{i.country}" }
-    column :barcode, humanize_name: false
-    column(:age, humanize_name: false) { '18' }
+    column ('цена'), &:price
+    column('Старая цена (до скидки)') { '' }
+    column('Валюта') {'RUR'}
+    column('Ссылка на картинку') { |i| "#{i.image.url}" }
+    column('Характеристики товара') {|i| "Объем|#{i.items_volumes.first.volume.ml.to_f/1000}|л;"}
+    column ('Штрихкод'), &:barcode
+    column('Самовывоз') { 'Есть' }
+    column('Стоимость самовывоза') { 0 }
+    column('Срок самовывоза') { '1-2' }
+    column('Описание') { |i| "\"#{i.description}\"" }
+    column('Условия продажи') { "" }
+    column('Страна происходжения') { |i| "#{i.country}" }
+    column(:bid, humanize_name: false) { }
   end
 
   form do |f|
