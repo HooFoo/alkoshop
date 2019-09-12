@@ -11,7 +11,7 @@ class Item < ApplicationRecord
   validates :brand, presence: true
   validates :type, presence: true
   validates :country, presence: true
-  
+
   before_save :set_price
 
   mount_uploader :image, ImagesUploader
@@ -23,7 +23,7 @@ class Item < ApplicationRecord
   end
 
   def self.same(item)
-    Item.where(type: item.type).sample(4)
+    Item.in_stock.where(type: item.type).sample(4)
   end
 
   def self.filtered(filters, options = {limit:24, offset:0})
